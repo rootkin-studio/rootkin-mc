@@ -1,0 +1,1 @@
+java -Xms8G -Xmx18G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -jar paper-1.21.11-132.jar

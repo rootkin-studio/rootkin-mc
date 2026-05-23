@@ -1,0 +1,13 @@
+armario:
+  itemname: <yellow>Armario de Herramientas
+  material: PAPER
+  pack:
+    model: furniture/armario
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      properties:
+        display_transform: NONE
+      barriers:
+        - origin
+        - y: 1

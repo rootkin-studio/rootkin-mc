@@ -1,0 +1,13 @@
+armario:
+  mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      # Asegúrate de que el ID del modelo sea el mismo que el que usaste en Oraxen
+      model: furniture/armario 
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,2,0
+      commands:
+        place:
+          - "armariovariable %player% %world% %x% %y% %z%"

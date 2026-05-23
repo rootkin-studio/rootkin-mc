@@ -1,0 +1,28 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "Wapply",
+      "uniqueId": "cca7e922-e1d3-3335-bf22-3942cae9f9cf"
+    },
+    "time": 1779548661533,
+    "type": "Heap dump summary",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/omzZ4vJ8xD"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Wapply",
+      "uniqueId": "cca7e922-e1d3-3335-bf22-3942cae9f9cf"
+    },
+    "time": 1779548645799,
+    "type": "Heap dump",
+    "data": {
+      "type": "file",
+      "value": "plugins/spark/heap-2026-05-23_15.04.04.hprof"
+    }
+  }
+]
