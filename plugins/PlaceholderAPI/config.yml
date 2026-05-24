@@ -12,7 +12,7 @@
 # Download placeholders: /papi ecloud
 check_updates: true
 cloud_enabled: true
-cloud_sorting: "name"
+cloud_sorting: name
 boolean:
   'true': 'yes'
   'false': 'no'
@@ -20,3 +20,19 @@ date_format: MM/dd/yy HH:mm:ss
 detect_malicious_expansions: true
 use_adventure_provided_replacer: false
 debug: false
+expansions:
+  server:
+    server_name: A Minecraft Server
+    time:
+      locale: en
+      zone: Etc/UTC
+      suffix:
+        week: w
+        day: d
+        hour: h
+        minute: m
+        second: s
+    tps_color:
+      high: '&a'
+      medium: '&e'
+      low: '&c'
