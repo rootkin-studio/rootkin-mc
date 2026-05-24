@@ -1,0 +1,9 @@
+menu_title: '%oraxen_gui_tienda%'
+open_command: tienda
+size: 54
+items:
+  'filler_paper':
+    material: oraxen-papel_invisible
+    slots:
+      - 0-53
+    display_name: ' '

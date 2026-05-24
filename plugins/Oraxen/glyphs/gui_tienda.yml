@@ -1,0 +1,4 @@
+gui_tienda:
+  texture: required/ui/gui_tienda
+  ascent: -16
+  height: 256

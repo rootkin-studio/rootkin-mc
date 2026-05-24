@@ -15,5 +15,7 @@ gui_menus:
     file: advanced_menu.yml
   requirements_menu:
     file: requirements_menu.yml
-  nuevo_menu:
-    file: nuevo_menu.yml
+  gui_tienda:
+    file: gui_tienda.yml
+  gui_vender:
+    file: gui_vender.yml

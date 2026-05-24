@@ -1,0 +1,4 @@
+gui_vender:
+  texture: required/ui/gui_vender
+  ascent: -16
+  height: 256

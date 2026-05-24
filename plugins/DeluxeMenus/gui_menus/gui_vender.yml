@@ -1,0 +1,9 @@
+menu_title: '%oraxen_gui_vender%'
+open_command: vender
+size: 54
+items:
+  'filler_paper':
+    material: oraxen-papel_invisible
+    slots:
+      - 0-53
+    display_name: ' '
