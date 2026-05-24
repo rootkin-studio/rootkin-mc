@@ -1,5 +1,0 @@
-papel_invisible:
-  itemname: " "
-  material: PAPER
-  pack:
-    texture: required/ui/invisible_paper
