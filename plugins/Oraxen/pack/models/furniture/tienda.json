@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [128, 128],
+	"textures": {
+		"0": "furniture/tienda",
+		"particle": "tienda"
+	},
+	"elements": [
+		{
+			"from": [-4, 0, 0],
+			"to": [20, 32, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-4, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 5.33333, 7.11111], "texture": "#0"},
+				"east": {"uv": [0, 7.11111, 3.55556, 14.22222], "texture": "#0"},
+				"south": {"uv": [5.33333, 0, 10.66667, 7.11111], "texture": "#0"},
+				"west": {"uv": [3.55556, 7.11111, 7.11111, 14.22222], "texture": "#0"},
+				"up": {"uv": [12.44444, 10.66667, 7.11111, 7.11111], "texture": "#0"},
+				"down": {"uv": [16, 0, 10.66667, 3.55556], "texture": "#0"}
+			}
+		}
+	],
+	"display": {}
+}
