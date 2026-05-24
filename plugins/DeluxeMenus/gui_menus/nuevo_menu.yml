@@ -1,4 +1,12 @@
 menu_title: 'ꐑ'
 open_command: nuevomenu
 size: 54
-items: {}
+items:
+  'filler':
+    material: BARRIER
+    slot: 0
+    view_requirement:
+      requirements:
+        impossible:
+          type: has permission
+          permission: impossible.permission.node
