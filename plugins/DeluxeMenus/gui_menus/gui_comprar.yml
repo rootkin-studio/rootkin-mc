@@ -1,0 +1,286 @@
+menu_title: "§f<shift:-8>ꐕ"
+open_command: comprar
+size: 54
+items:
+    "preview_stack_1":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 10
+        dynamic_amount: "%pool_buying_stack_1%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_1:
+                    type: ">="
+                    input: "%pool_buying_amount%"
+                    output: 1
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_1%"
+                    output: "%pool_buying_stack_1%"
+    "preview_stack_1_fallback":
+        material: STONE
+        slot: 10
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_1:
+                    type: ">="
+                    input: "%pool_buying_amount%"
+                    output: 1
+    "preview_stack_2":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 11
+        dynamic_amount: "%pool_buying_stack_2%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_65:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 64
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_2%"
+                    output: "%pool_buying_stack_2%"
+    "preview_stack_2_fallback":
+        material: STONE
+        slot: 11
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_65:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 64
+    "preview_stack_3":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 12
+        dynamic_amount: "%pool_buying_stack_3%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_129:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 128
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_3%"
+                    output: "%pool_buying_stack_3%"
+    "preview_stack_3_fallback":
+        material: STONE
+        slot: 12
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_129:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 128
+    "preview_stack_4":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 13
+        dynamic_amount: "%pool_buying_stack_4%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_193:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 192
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_4%"
+                    output: "%pool_buying_stack_4%"
+    "preview_stack_4_fallback":
+        material: STONE
+        slot: 13
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_193:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 192
+    "preview_stack_5":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 14
+        dynamic_amount: "%pool_buying_stack_5%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_257:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 256
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_5%"
+                    output: "%pool_buying_stack_5%"
+    "preview_stack_5_fallback":
+        material: STONE
+        slot: 14
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_257:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 256
+    "preview_stack_6":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 15
+        dynamic_amount: "%pool_buying_stack_6%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_321:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 320
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_6%"
+                    output: "%pool_buying_stack_6%"
+    "preview_stack_6_fallback":
+        material: STONE
+        slot: 15
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_321:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 320
+    "preview_stack_7":
+        material: "placeholder-%pool_buying_item%"
+        dynamic_upgrade: true
+        slot: 16
+        dynamic_amount: "%pool_buying_stack_7%"
+        priority: 1
+        display_name: "&fÍtem seleccionado"
+        view_requirement:
+            requirements:
+                min_385:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 384
+                update_trigger:
+                    type: "=="
+                    input: "%pool_buying_stack_7%"
+                    output: "%pool_buying_stack_7%"
+    "preview_stack_7_fallback":
+        material: STONE
+        slot: 16
+        amount: 1
+        priority: 2
+        display_name: "&fCargando..."
+        view_requirement:
+            requirements:
+                min_385:
+                    type: ">"
+                    input: "%pool_buying_amount%"
+                    output: 384
+    "back":
+        material: PAPER
+        slot: 45
+        model_data: 500
+        display_name: "&7Volver"
+        left_click_commands:
+            - "[player] %pool_buying_last_menu%"
+    "sub_64":
+        material: PAPER
+        slot: 28
+        model_data: 500
+        display_name: "&c-64"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% -64"
+            - "[refresh]"
+    "sub_10":
+        material: PAPER
+        slot: 29
+        model_data: 500
+        display_name: "&c-10"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% -10"
+            - "[refresh]"
+    "sub_1":
+        material: PAPER
+        slot: 30
+        model_data: 500
+        display_name: "&c-1"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% -1"
+            - "[refresh]"
+    "reset":
+        material: PAPER
+        slot: 31
+        model_data: 500
+        display_name: "&eReiniciar (1)"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% -1000"
+            - "[refresh]"
+    "add_1":
+        material: PAPER
+        slot: 32
+        model_data: 500
+        display_name: "&a+1"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% 1"
+            - "[refresh]"
+    "add_10":
+        material: PAPER
+        slot: 33
+        model_data: 500
+        display_name: "&a+10"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% 10"
+            - "[refresh]"
+    "add_64":
+        material: PAPER
+        slot: 34
+        model_data: 500
+        display_name: "&a+64"
+        left_click_commands:
+            - "[console] ammbuyadjust %player_name% 64"
+            - "[refresh]"
+    "confirmar":
+        material: PAPER
+        slots: [46, 47, 48, 49, 50, 51, 52, 53]
+        model_data: 500
+        display_name: "&a&lCONFIRMAR COMPRA"
+        lore:
+            - "&7Cantidad total: &f%pool_buying_amount%"
+            - "&7Precio base: &f%pool_buyprice_base% chatarra"
+            - "&7Tasa servicio (5%): &f%pool_buyprice_fee% chatarra"
+            - "&7Impuesto (redondeo): &f%pool_buying_tax% chatarra"
+            - "&7Coste total: &f%pool_buyprice_total% chatarra"
+            - ""
+            - "&eHaz clic para finalizar la compra"
+        left_click_commands:
+            - "[console] ammbuy %player_name%"
+            - "[refresh]"

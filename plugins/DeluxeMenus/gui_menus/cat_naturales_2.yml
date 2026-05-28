@@ -1,0 +1,393 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_naturales_2
+size: 54
+items:
+  dark_oak_leaves:
+    material: DARK_OAK_LEAVES
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_dark_oak_leaves%"
+    - "&7Stock: &f%pool_stock_dark_oak_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem dark_oak_leaves cat_naturales_2'
+  mangrove_leaves:
+    material: MANGROVE_LEAVES
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_mangrove_leaves%"
+    - "&7Stock: &f%pool_stock_mangrove_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem mangrove_leaves cat_naturales_2'
+  cherry_leaves:
+    material: CHERRY_LEAVES
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_cherry_leaves%"
+    - "&7Stock: &f%pool_stock_cherry_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem cherry_leaves cat_naturales_2'
+  azalea_leaves:
+    material: AZALEA_LEAVES
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_azalea_leaves%"
+    - "&7Stock: &f%pool_stock_azalea_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem azalea_leaves cat_naturales_2'
+  flowering_azalea_leaves:
+    material: FLOWERING_AZALEA_LEAVES
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_flowering_azalea_leaves%"
+    - "&7Stock: &f%pool_stock_flowering_azalea_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem flowering_azalea_leaves cat_naturales_2'
+  oak_sapling:
+    material: OAK_SAPLING
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_oak_sapling%"
+    - "&7Stock: &f%pool_stock_oak_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_sapling cat_naturales_2'
+  spruce_sapling:
+    material: SPRUCE_SAPLING
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_spruce_sapling%"
+    - "&7Stock: &f%pool_stock_spruce_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem spruce_sapling cat_naturales_2'
+  birch_sapling:
+    material: BIRCH_SAPLING
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_birch_sapling%"
+    - "&7Stock: &f%pool_stock_birch_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem birch_sapling cat_naturales_2'
+  jungle_sapling:
+    material: JUNGLE_SAPLING
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_jungle_sapling%"
+    - "&7Stock: &f%pool_stock_jungle_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem jungle_sapling cat_naturales_2'
+  acacia_sapling:
+    material: ACACIA_SAPLING
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_acacia_sapling%"
+    - "&7Stock: &f%pool_stock_acacia_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem acacia_sapling cat_naturales_2'
+  dark_oak_sapling:
+    material: DARK_OAK_SAPLING
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_dark_oak_sapling%"
+    - "&7Stock: &f%pool_stock_dark_oak_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem dark_oak_sapling cat_naturales_2'
+  mangrove_propagule:
+    material: MANGROVE_PROPAGULE
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_mangrove_propagule%"
+    - "&7Stock: &f%pool_stock_mangrove_propagule%"
+    left_click_commands:
+    - '[player] setbuyingitem mangrove_propagule cat_naturales_2'
+  cherry_sapling:
+    material: CHERRY_SAPLING
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_cherry_sapling%"
+    - "&7Stock: &f%pool_stock_cherry_sapling%"
+    left_click_commands:
+    - '[player] setbuyingitem cherry_sapling cat_naturales_2'
+  azalea:
+    material: AZALEA
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_azalea%"
+    - "&7Stock: &f%pool_stock_azalea%"
+    left_click_commands:
+    - '[player] setbuyingitem azalea cat_naturales_2'
+  short_grass:
+    material: SHORT_GRASS
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_short_grass%"
+    - "&7Stock: &f%pool_stock_short_grass%"
+    left_click_commands:
+    - '[player] setbuyingitem short_grass cat_naturales_2'
+  tall_grass:
+    material: TALL_GRASS
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_tall_grass%"
+    - "&7Stock: &f%pool_stock_tall_grass%"
+    left_click_commands:
+    - '[player] setbuyingitem tall_grass cat_naturales_2'
+  fern:
+    material: FERN
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_fern%"
+    - "&7Stock: &f%pool_stock_fern%"
+    left_click_commands:
+    - '[player] setbuyingitem fern cat_naturales_2'
+  large_fern:
+    material: LARGE_FERN
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_large_fern%"
+    - "&7Stock: &f%pool_stock_large_fern%"
+    left_click_commands:
+    - '[player] setbuyingitem large_fern cat_naturales_2'
+  vine:
+    material: VINE
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_vine%"
+    - "&7Stock: &f%pool_stock_vine%"
+    left_click_commands:
+    - '[player] setbuyingitem vine cat_naturales_2'
+  moss_block:
+    material: MOSS_BLOCK
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_moss_block%"
+    - "&7Stock: &f%pool_stock_moss_block%"
+    left_click_commands:
+    - '[player] setbuyingitem moss_block cat_naturales_2'
+  kelp:
+    material: KELP
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_kelp%"
+    - "&7Stock: &f%pool_stock_kelp%"
+    left_click_commands:
+    - '[player] setbuyingitem kelp cat_naturales_2'
+  spore_blossom:
+    material: SPORE_BLOSSOM
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_spore_blossom%"
+    - "&7Stock: &f%pool_stock_spore_blossom%"
+    left_click_commands:
+    - '[player] setbuyingitem spore_blossom cat_naturales_2'
+  dandelion:
+    material: DANDELION
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_dandelion%"
+    - "&7Stock: &f%pool_stock_dandelion%"
+    left_click_commands:
+    - '[player] setbuyingitem dandelion cat_naturales_2'
+  poppy:
+    material: POPPY
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_poppy%"
+    - "&7Stock: &f%pool_stock_poppy%"
+    left_click_commands:
+    - '[player] setbuyingitem poppy cat_naturales_2'
+  blue_orchid:
+    material: BLUE_ORCHID
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_blue_orchid%"
+    - "&7Stock: &f%pool_stock_blue_orchid%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_orchid cat_naturales_2'
+  allium:
+    material: ALLIUM
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_allium%"
+    - "&7Stock: &f%pool_stock_allium%"
+    left_click_commands:
+    - '[player] setbuyingitem allium cat_naturales_2'
+  azure_bluet:
+    material: AZURE_BLUET
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_azure_bluet%"
+    - "&7Stock: &f%pool_stock_azure_bluet%"
+    left_click_commands:
+    - '[player] setbuyingitem azure_bluet cat_naturales_2'
+  red_tulip:
+    material: RED_TULIP
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_red_tulip%"
+    - "&7Stock: &f%pool_stock_red_tulip%"
+    left_click_commands:
+    - '[player] setbuyingitem red_tulip cat_naturales_2'
+  orange_tulip:
+    material: ORANGE_TULIP
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_orange_tulip%"
+    - "&7Stock: &f%pool_stock_orange_tulip%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_tulip cat_naturales_2'
+  white_tulip:
+    material: WHITE_TULIP
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_white_tulip%"
+    - "&7Stock: &f%pool_stock_white_tulip%"
+    left_click_commands:
+    - '[player] setbuyingitem white_tulip cat_naturales_2'
+  pink_tulip:
+    material: PINK_TULIP
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_pink_tulip%"
+    - "&7Stock: &f%pool_stock_pink_tulip%"
+    left_click_commands:
+    - '[player] setbuyingitem pink_tulip cat_naturales_2'
+  oxeye_daisy:
+    material: OXEYE_DAISY
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_oxeye_daisy%"
+    - "&7Stock: &f%pool_stock_oxeye_daisy%"
+    left_click_commands:
+    - '[player] setbuyingitem oxeye_daisy cat_naturales_2'
+  cornflower:
+    material: CORNFLOWER
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_cornflower%"
+    - "&7Stock: &f%pool_stock_cornflower%"
+    left_click_commands:
+    - '[player] setbuyingitem cornflower cat_naturales_2'
+  lily_of_the_valley:
+    material: LILY_OF_THE_VALLEY
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_lily_of_the_valley%"
+    - "&7Stock: &f%pool_stock_lily_of_the_valley%"
+    left_click_commands:
+    - '[player] setbuyingitem lily_of_the_valley cat_naturales_2'
+  wither_rose:
+    material: WITHER_ROSE
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_wither_rose%"
+    - "&7Stock: &f%pool_stock_wither_rose%"
+    left_click_commands:
+    - '[player] setbuyingitem wither_rose cat_naturales_2'
+  torchflower:
+    material: TORCHFLOWER
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_torchflower%"
+    - "&7Stock: &f%pool_stock_torchflower%"
+    left_click_commands:
+    - '[player] setbuyingitem torchflower cat_naturales_2'
+  sunflower:
+    material: SUNFLOWER
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_sunflower%"
+    - "&7Stock: &f%pool_stock_sunflower%"
+    left_click_commands:
+    - '[player] setbuyingitem sunflower cat_naturales_2'
+  lilac:
+    material: LILAC
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_lilac%"
+    - "&7Stock: &f%pool_stock_lilac%"
+    left_click_commands:
+    - '[player] setbuyingitem lilac cat_naturales_2'
+  rose_bush:
+    material: ROSE_BUSH
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_rose_bush%"
+    - "&7Stock: &f%pool_stock_rose_bush%"
+    left_click_commands:
+    - '[player] setbuyingitem rose_bush cat_naturales_2'
+  peony:
+    material: PEONY
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_peony%"
+    - "&7Stock: &f%pool_stock_peony%"
+    left_click_commands:
+    - '[player] setbuyingitem peony cat_naturales_2'
+  pitcher_plant:
+    material: PITCHER_PLANT
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_pitcher_plant%"
+    - "&7Stock: &f%pool_stock_pitcher_plant%"
+    left_click_commands:
+    - '[player] setbuyingitem pitcher_plant cat_naturales_2'
+  brown_mushroom:
+    material: BROWN_MUSHROOM
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_brown_mushroom%"
+    - "&7Stock: &f%pool_stock_brown_mushroom%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_mushroom cat_naturales_2'
+  red_mushroom:
+    material: RED_MUSHROOM
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_red_mushroom%"
+    - "&7Stock: &f%pool_stock_red_mushroom%"
+    left_click_commands:
+    - '[player] setbuyingitem red_mushroom cat_naturales_2'
+  brown_mushroom_block:
+    material: BROWN_MUSHROOM_BLOCK
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_brown_mushroom_block%"
+    - "&7Stock: &f%pool_stock_brown_mushroom_block%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_mushroom_block cat_naturales_2'
+  red_mushroom_block:
+    material: RED_MUSHROOM_BLOCK
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_red_mushroom_block%"
+    - "&7Stock: &f%pool_stock_red_mushroom_block%"
+    left_click_commands:
+    - '[player] setbuyingitem red_mushroom_block cat_naturales_2'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  prev_page:
+    material: PAPER
+    slots:
+    - 46
+    - 47
+    - 48
+    - 49
+    model_data: 500
+    display_name: '&cAnterior'
+    left_click_commands:
+    - '[player] cat_naturales'
+  next_page:
+    material: PAPER
+    slots:
+    - 50
+    - 51
+    - 52
+    - 53
+    model_data: 500
+    display_name: '&aSiguiente'
+    left_click_commands:
+    - '[player] cat_naturales_3'

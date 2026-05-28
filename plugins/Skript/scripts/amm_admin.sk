@@ -1,0 +1,77 @@
+# ========================================================
+# COMANDOS ADMINISTRATIVOS PARA ECONOMÍA AMM
+# ========================================================
+
+command /ammstock <integer> <text>:
+    permission: op
+    description: Aumenta o disminuye el stock de items AMM. Uso: /ammstock <cantidad> <item|all>
+    usage: /ammstock <cantidad> <item|all>
+    trigger:
+        set {_amount} to arg-1
+        # Si cantidad es negativa, se entiende como reducción
+
+        if arg-2 is "all":
+            set {_count} to 0
+            loop {amm::stock::*}:
+                add {_amount} to {amm::stock::%loop-index%}
+                # Evitar stock negativo
+                if {amm::stock::%loop-index%} < 0:
+                    set {amm::stock::%loop-index%} to 0
+                add 1 to {_count}
+            send "<green>Éxito: Se ha ajustado el stock de <yellow>%{_count}%<green> ítems en <yellow>%{_amount}%<green> unidades."
+
+        else:
+            set {_i} to arg-2 parsed as itemtype
+            if {_i} is not set:
+                set {_i} to arg-2 parsed as item
+
+            if {_i} is not set:
+                send "<red>Error: El ítem '<yellow>%arg-2%<red>' no es válido."
+                stop
+
+            set {_type} to type of {_i}
+
+            if {amm::stock::%{_type}%} is not set:
+                if {_amount} < 0:
+                    send "<red>El ítem no está en el sistema, no se puede reducir stock."
+                    stop
+                set {amm::k::%{_type}%} to 50 * 100
+                set {amm::stock::%{_type}%} to 100
+                send "<yellow>Aviso: El ítem se ha inicializado."
+
+            add {_amount} to {amm::stock::%{_type}%}
+
+            if {amm::stock::%{_type}%} < 0:
+                set {amm::stock::%{_type}%} to 0
+
+            # updatePlaceholders({_i})
+
+            send "<green>Éxito: Stock de <yellow>%{_type}%<green> ajustado en <yellow>%{_amount}%<green>. Nuevo stock: <yellow>%{amm::stock::%{_type}%}%<green>."# Comando de ayuda/info
+command /amminfo [<text>]:
+    permission: op
+    trigger:
+        if arg-1 is not set:
+            send "<yellow>--- Info Economía AMM ---"
+            set {_total} to 0
+            loop {amm::stock::*}:
+                add 1 to {_total}
+            send "<white>Ítems en el sistema: <yellow>%{_total}%"
+            send "<white>Uso: <yellow>/ammstock <cantidad> <item|all>"
+        else:
+            set {_i} to arg-1 parsed as itemtype
+            if {_i} is not set:
+                set {_i} to arg-1 parsed as item
+
+            if {_i} is not set:
+                send "<red>Ítem no válido."
+                stop
+
+            set {_type} to type of {_i}
+            if {amm::stock::%{_type}%} is not set:
+                send "<red>Este ítem no está en el sistema AMM."
+            else:
+                send "<yellow>--- Info de %{_type}% ---"
+                send "<white>Stock actual: <green>%{amm::stock::%{_type}%}%"
+                send "<white>K (Liquidez): <green>%{amm::k::%{_type}%}%"
+                set {_price} to {amm::k::%{_type}%} / {amm::stock::%{_type}%}
+                send "<white>Precio actual: <green>%{_price}% chatarras"

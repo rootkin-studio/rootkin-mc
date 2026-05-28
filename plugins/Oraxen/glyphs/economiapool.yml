@@ -1,0 +1,20 @@
+gui_categorias:
+    texture: required/ui/gui_categorias
+    ascent: 13
+    height: 256
+    char: ꐓ
+gui_lista_items:
+    texture: required/ui/gui_lista-items
+    ascent: 13
+    height: 256
+    char: ꐔ
+gui_comprar:
+    texture: required/ui/gui_comprar
+    ascent: 13
+    height: 256
+    char: ꐕ
+gui_banco:
+    texture: required/ui/gui_banco
+    ascent: 13
+    height: 256
+    char: ꐗ

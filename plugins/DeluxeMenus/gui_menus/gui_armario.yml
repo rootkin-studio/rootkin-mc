@@ -1,0 +1,11 @@
+menu_title: "§f<shift:-8>%oraxen_gui_default%"
+open_command: gui_armario_dummy
+size: 54
+items:
+    "timer":
+        material: PAPER
+        slot: 49
+        model_data: 502
+        display_name: "&6Tiempo de Vida"
+        lore:
+            - "&7Este item es manejado por Skript"

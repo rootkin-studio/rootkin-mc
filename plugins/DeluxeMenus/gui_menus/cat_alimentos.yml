@@ -1,0 +1,339 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_alimentos
+size: 54
+items:
+    apple:
+        material: APPLE
+        slot: 0
+        lore:
+            - "&7Precio: &a€%pool_price_apple%"
+            - "&7Stock: &f%pool_stock_apple%"
+        left_click_commands:
+            - "[player] setbuyingitem apple cat_alimentos"
+    melon_slice:
+        material: MELON_SLICE
+        slot: 1
+        lore:
+            - "&7Precio: &a€%pool_price_melon_slice%"
+            - "&7Stock: &f%pool_stock_melon_slice%"
+        left_click_commands:
+            - "[player] setbuyingitem melon_slice cat_alimentos"
+    sweet_berries:
+        material: SWEET_BERRIES
+        slot: 2
+        lore:
+            - "&7Precio: &a€%pool_price_sweet_berries%"
+            - "&7Stock: &f%pool_stock_sweet_berries%"
+        left_click_commands:
+            - "[player] setbuyingitem sweet_berries cat_alimentos"
+    glow_berries:
+        material: GLOW_BERRIES
+        slot: 3
+        lore:
+            - "&7Precio: &a€%pool_price_glow_berries%"
+            - "&7Stock: &f%pool_stock_glow_berries%"
+        left_click_commands:
+            - "[player] setbuyingitem glow_berries cat_alimentos"
+    chorus_fruit:
+        material: CHORUS_FRUIT
+        slot: 4
+        lore:
+            - "&7Precio: &a€%pool_price_chorus_fruit%"
+            - "&7Stock: &f%pool_stock_chorus_fruit%"
+        left_click_commands:
+            - "[player] setbuyingitem chorus_fruit cat_alimentos"
+    carrot:
+        material: CARROT
+        slot: 5
+        lore:
+            - "&7Precio: &a€%pool_price_carrot%"
+            - "&7Stock: &f%pool_stock_carrot%"
+        left_click_commands:
+            - "[player] setbuyingitem carrot cat_alimentos"
+    potato:
+        material: POTATO
+        slot: 6
+        lore:
+            - "&7Precio: &a€%pool_price_potato%"
+            - "&7Stock: &f%pool_stock_potato%"
+        left_click_commands:
+            - "[player] setbuyingitem potato cat_alimentos"
+    baked_potato:
+        material: BAKED_POTATO
+        slot: 7
+        lore:
+            - "&7Precio: &a€%pool_price_baked_potato%"
+            - "&7Stock: &f%pool_stock_baked_potato%"
+        left_click_commands:
+            - "[player] setbuyingitem baked_potato cat_alimentos"
+    beetroot:
+        material: BEETROOT
+        slot: 8
+        lore:
+            - "&7Precio: &a€%pool_price_beetroot%"
+            - "&7Stock: &f%pool_stock_beetroot%"
+        left_click_commands:
+            - "[player] setbuyingitem beetroot cat_alimentos"
+    beef:
+        material: BEEF
+        slot: 9
+        lore:
+            - "&7Precio: &a€%pool_price_beef%"
+            - "&7Stock: &f%pool_stock_beef%"
+        left_click_commands:
+            - "[player] setbuyingitem beef cat_alimentos"
+    porkchop:
+        material: PORKCHOP
+        slot: 10
+        lore:
+            - "&7Precio: &a€%pool_price_porkchop%"
+            - "&7Stock: &f%pool_stock_porkchop%"
+        left_click_commands:
+            - "[player] setbuyingitem porkchop cat_alimentos"
+    chicken:
+        material: CHICKEN
+        slot: 11
+        lore:
+            - "&7Precio: &a€%pool_price_chicken%"
+            - "&7Stock: &f%pool_stock_chicken%"
+        left_click_commands:
+            - "[player] setbuyingitem chicken cat_alimentos"
+    mutton:
+        material: MUTTON
+        slot: 12
+        lore:
+            - "&7Precio: &a€%pool_price_mutton%"
+            - "&7Stock: &f%pool_stock_mutton%"
+        left_click_commands:
+            - "[player] setbuyingitem mutton cat_alimentos"
+    rabbit:
+        material: RABBIT
+        slot: 13
+        lore:
+            - "&7Precio: &a€%pool_price_rabbit%"
+            - "&7Stock: &f%pool_stock_rabbit%"
+        left_click_commands:
+            - "[player] setbuyingitem rabbit cat_alimentos"
+    cod:
+        material: COD
+        slot: 14
+        lore:
+            - "&7Precio: &a€%pool_price_cod%"
+            - "&7Stock: &f%pool_stock_cod%"
+        left_click_commands:
+            - "[player] setbuyingitem cod cat_alimentos"
+    salmon:
+        material: SALMON
+        slot: 15
+        lore:
+            - "&7Precio: &a€%pool_price_salmon%"
+            - "&7Stock: &f%pool_stock_salmon%"
+        left_click_commands:
+            - "[player] setbuyingitem salmon cat_alimentos"
+    tropical_fish:
+        material: TROPICAL_FISH
+        slot: 16
+        lore:
+            - "&7Precio: &a€%pool_price_tropical_fish%"
+            - "&7Stock: &f%pool_stock_tropical_fish%"
+        left_click_commands:
+            - "[player] setbuyingitem tropical_fish cat_alimentos"
+    pufferfish:
+        material: PUFFERFISH
+        slot: 17
+        lore:
+            - "&7Precio: &a€%pool_price_pufferfish%"
+            - "&7Stock: &f%pool_stock_pufferfish%"
+        left_click_commands:
+            - "[player] setbuyingitem pufferfish cat_alimentos"
+    cooked_beef:
+        material: COOKED_BEEF
+        slot: 18
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_beef%"
+            - "&7Stock: &f%pool_stock_cooked_beef%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_beef cat_alimentos"
+    cooked_porkchop:
+        material: COOKED_PORKCHOP
+        slot: 19
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_porkchop%"
+            - "&7Stock: &f%pool_stock_cooked_porkchop%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_porkchop cat_alimentos"
+    cooked_chicken:
+        material: COOKED_CHICKEN
+        slot: 20
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_chicken%"
+            - "&7Stock: &f%pool_stock_cooked_chicken%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_chicken cat_alimentos"
+    cooked_mutton:
+        material: COOKED_MUTTON
+        slot: 21
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_mutton%"
+            - "&7Stock: &f%pool_stock_cooked_mutton%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_mutton cat_alimentos"
+    cooked_rabbit:
+        material: COOKED_RABBIT
+        slot: 22
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_rabbit%"
+            - "&7Stock: &f%pool_stock_cooked_rabbit%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_rabbit cat_alimentos"
+    cooked_cod:
+        material: COOKED_COD
+        slot: 23
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_cod%"
+            - "&7Stock: &f%pool_stock_cooked_cod%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_cod cat_alimentos"
+    cooked_salmon:
+        material: COOKED_SALMON
+        slot: 24
+        lore:
+            - "&7Precio: &a€%pool_price_cooked_salmon%"
+            - "&7Stock: &f%pool_stock_cooked_salmon%"
+        left_click_commands:
+            - "[player] setbuyingitem cooked_salmon cat_alimentos"
+    bread:
+        material: BREAD
+        slot: 25
+        lore:
+            - "&7Precio: &a€%pool_price_bread%"
+            - "&7Stock: &f%pool_stock_bread%"
+        left_click_commands:
+            - "[player] setbuyingitem bread cat_alimentos"
+    cookie:
+        material: COOKIE
+        slot: 26
+        lore:
+            - "&7Precio: &a€%pool_price_cookie%"
+            - "&7Stock: &f%pool_stock_cookie%"
+        left_click_commands:
+            - "[player] setbuyingitem cookie cat_alimentos"
+    cake:
+        material: CAKE
+        slot: 27
+        lore:
+            - "&7Precio: &a€%pool_price_cake%"
+            - "&7Stock: &f%pool_stock_cake%"
+        left_click_commands:
+            - "[player] setbuyingitem cake cat_alimentos"
+    pumpkin_pie:
+        material: PUMPKIN_PIE
+        slot: 28
+        lore:
+            - "&7Precio: &a€%pool_price_pumpkin_pie%"
+            - "&7Stock: &f%pool_stock_pumpkin_pie%"
+        left_click_commands:
+            - "[player] setbuyingitem pumpkin_pie cat_alimentos"
+    mushroom_stew:
+        material: MUSHROOM_STEW
+        slot: 29
+        lore:
+            - "&7Precio: &a€%pool_price_mushroom_stew%"
+            - "&7Stock: &f%pool_stock_mushroom_stew%"
+        left_click_commands:
+            - "[player] setbuyingitem mushroom_stew cat_alimentos"
+    rabbit_stew:
+        material: RABBIT_STEW
+        slot: 30
+        lore:
+            - "&7Precio: &a€%pool_price_rabbit_stew%"
+            - "&7Stock: &f%pool_stock_rabbit_stew%"
+        left_click_commands:
+            - "[player] setbuyingitem rabbit_stew cat_alimentos"
+    beetroot_soup:
+        material: BEETROOT_SOUP
+        slot: 31
+        lore:
+            - "&7Precio: &a€%pool_price_beetroot_soup%"
+            - "&7Stock: &f%pool_stock_beetroot_soup%"
+        left_click_commands:
+            - "[player] setbuyingitem beetroot_soup cat_alimentos"
+    suspicious_stew:
+        material: SUSPICIOUS_STEW
+        slot: 32
+        lore:
+            - "&7Precio: &a€%pool_price_suspicious_stew%"
+            - "&7Stock: &f%pool_stock_suspicious_stew%"
+        left_click_commands:
+            - "[player] setbuyingitem suspicious_stew cat_alimentos"
+    golden_apple:
+        material: GOLDEN_APPLE
+        slot: 33
+        lore:
+            - "&7Precio: &a€%pool_price_golden_apple%"
+            - "&7Stock: &f%pool_stock_golden_apple%"
+        left_click_commands:
+            - "[player] setbuyingitem golden_apple cat_alimentos"
+    enchanted_golden_apple:
+        material: ENCHANTED_GOLDEN_APPLE
+        slot: 34
+        lore:
+            - "&7Precio: &a€%pool_price_enchanted_golden_apple%"
+            - "&7Stock: &f%pool_stock_enchanted_golden_apple%"
+        left_click_commands:
+            - "[player] setbuyingitem enchanted_golden_apple cat_alimentos"
+    golden_carrot:
+        material: GOLDEN_CARROT
+        slot: 35
+        lore:
+            - "&7Precio: &a€%pool_price_golden_carrot%"
+            - "&7Stock: &f%pool_stock_golden_carrot%"
+        left_click_commands:
+            - "[player] setbuyingitem golden_carrot cat_alimentos"
+    honey_bottle:
+        material: HONEY_BOTTLE
+        slot: 36
+        lore:
+            - "&7Precio: &a€%pool_price_honey_bottle%"
+            - "&7Stock: &f%pool_stock_honey_bottle%"
+        left_click_commands:
+            - "[player] setbuyingitem honey_bottle cat_alimentos"
+    milk_bucket:
+        material: MILK_BUCKET
+        slot: 37
+        lore:
+            - "&7Precio: &a€%pool_price_milk_bucket%"
+            - "&7Stock: &f%pool_stock_milk_bucket%"
+        left_click_commands:
+            - "[player] setbuyingitem milk_bucket cat_alimentos"
+    potion:
+        material: POTION
+        slot: 38
+        lore:
+            - "&7Precio: &a€%pool_price_potion%"
+            - "&7Stock: &f%pool_stock_potion%"
+        left_click_commands:
+            - "[player] setbuyingitem potion cat_alimentos"
+    splash_potion:
+        material: SPLASH_POTION
+        slot: 39
+        lore:
+            - "&7Precio: &a€%pool_price_splash_potion%"
+            - "&7Stock: &f%pool_stock_splash_potion%"
+        left_click_commands:
+            - "[player] setbuyingitem splash_potion cat_alimentos"
+    lingering_potion:
+        material: LINGERING_POTION
+        slot: 40
+        lore:
+            - "&7Precio: &a€%pool_price_lingering_potion%"
+            - "&7Stock: &f%pool_stock_lingering_potion%"
+        left_click_commands:
+            - "[player] setbuyingitem lingering_potion cat_alimentos"
+    back:
+        material: PAPER
+        slot: 45
+        model_data: 500
+        display_name: "&7Volver a Categorías"
+        left_click_commands:
+            - "[player] categorias"

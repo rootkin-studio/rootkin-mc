@@ -1,0 +1,10 @@
+on first join:
+    wait 2 seconds
+    execute console command "rtp force %player% world"
+    send "&a¡Bienvenido! Has sido teletransportado aleatoriamente para comenzar tu aventura." to player
+
+on respawn:
+    if player's bed location is not set:
+        wait 1 second
+        execute console command "rtp force %player% world"
+        send "&cNo tenías una cama configurada, así que has sido teletransportado aleatoriamente." to player

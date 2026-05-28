@@ -1,0 +1,18 @@
+owner:
+    texture: "tags/owner-tag"
+    height: 8
+    ascent: 8
+    chat:
+        placeholder:
+            - ":owner:"
+        permission: oraxen.emoji.owner
+    char: α
+premium:
+    texture: "tags/premium-tag"
+    height: 8
+    ascent: 8
+    chat:
+        placeholder:
+            - ":premium:"
+        permission: oraxen.emoji.premium
+    char: �

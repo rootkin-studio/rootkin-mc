@@ -1,0 +1,382 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_ingredientes
+size: 54
+items:
+  coal:
+    material: COAL
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_coal%"
+    - "&7Stock: &f%pool_stock_coal%"
+    left_click_commands:
+    - '[player] setbuyingitem coal cat_ingredientes'
+  charcoal:
+    material: CHARCOAL
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_charcoal%"
+    - "&7Stock: &f%pool_stock_charcoal%"
+    left_click_commands:
+    - '[player] setbuyingitem charcoal cat_ingredientes'
+  raw_iron:
+    material: RAW_IRON
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_raw_iron%"
+    - "&7Stock: &f%pool_stock_raw_iron%"
+    left_click_commands:
+    - '[player] setbuyingitem raw_iron cat_ingredientes'
+  raw_copper:
+    material: RAW_COPPER
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_raw_copper%"
+    - "&7Stock: &f%pool_stock_raw_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem raw_copper cat_ingredientes'
+  raw_gold:
+    material: RAW_GOLD
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_raw_gold%"
+    - "&7Stock: &f%pool_stock_raw_gold%"
+    left_click_commands:
+    - '[player] setbuyingitem raw_gold cat_ingredientes'
+  iron_ingot:
+    material: IRON_INGOT
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_iron_ingot%"
+    - "&7Stock: &f%pool_stock_iron_ingot%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_ingot cat_ingredientes'
+  copper_ingot:
+    material: COPPER_INGOT
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_copper_ingot%"
+    - "&7Stock: &f%pool_stock_copper_ingot%"
+    left_click_commands:
+    - '[player] setbuyingitem copper_ingot cat_ingredientes'
+  gold_ingot:
+    material: GOLD_INGOT
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_gold_ingot%"
+    - "&7Stock: &f%pool_stock_gold_ingot%"
+    left_click_commands:
+    - '[player] setbuyingitem gold_ingot cat_ingredientes'
+  netherite_scrap:
+    material: NETHERITE_SCRAP
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_scrap%"
+    - "&7Stock: &f%pool_stock_netherite_scrap%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_scrap cat_ingredientes'
+  netherite_ingot:
+    material: NETHERITE_INGOT
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_ingot%"
+    - "&7Stock: &f%pool_stock_netherite_ingot%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_ingot cat_ingredientes'
+  diamond:
+    material: DIAMOND
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_diamond%"
+    - "&7Stock: &f%pool_stock_diamond%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond cat_ingredientes'
+  emerald:
+    material: EMERALD
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_emerald%"
+    - "&7Stock: &f%pool_stock_emerald%"
+    left_click_commands:
+    - '[player] setbuyingitem emerald cat_ingredientes'
+  lapis_lazuli:
+    material: LAPIS_LAZULI
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_lapis_lazuli%"
+    - "&7Stock: &f%pool_stock_lapis_lazuli%"
+    left_click_commands:
+    - '[player] setbuyingitem lapis_lazuli cat_ingredientes'
+  nether_quartz:
+    material: QUARTZ
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_nether_quartz%"
+    - "&7Stock: &f%pool_stock_nether_quartz%"
+    left_click_commands:
+    - '[player] setbuyingitem nether_quartz cat_ingredientes'
+  amethyst_shard:
+    material: AMETHYST_SHARD
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_amethyst_shard%"
+    - "&7Stock: &f%pool_stock_amethyst_shard%"
+    left_click_commands:
+    - '[player] setbuyingitem amethyst_shard cat_ingredientes'
+  stick:
+    material: STICK
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_stick%"
+    - "&7Stock: &f%pool_stock_stick%"
+    left_click_commands:
+    - '[player] setbuyingitem stick cat_ingredientes'
+  flint:
+    material: FLINT
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_flint%"
+    - "&7Stock: &f%pool_stock_flint%"
+    left_click_commands:
+    - '[player] setbuyingitem flint cat_ingredientes'
+  feather:
+    material: FEATHER
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_feather%"
+    - "&7Stock: &f%pool_stock_feather%"
+    left_click_commands:
+    - '[player] setbuyingitem feather cat_ingredientes'
+  string:
+    material: STRING
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_string%"
+    - "&7Stock: &f%pool_stock_string%"
+    left_click_commands:
+    - '[player] setbuyingitem string cat_ingredientes'
+  leather:
+    material: LEATHER
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_leather%"
+    - "&7Stock: &f%pool_stock_leather%"
+    left_click_commands:
+    - '[player] setbuyingitem leather cat_ingredientes'
+  rabbit_hide:
+    material: RABBIT_HIDE
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_rabbit_hide%"
+    - "&7Stock: &f%pool_stock_rabbit_hide%"
+    left_click_commands:
+    - '[player] setbuyingitem rabbit_hide cat_ingredientes'
+  bone:
+    material: BONE
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_bone%"
+    - "&7Stock: &f%pool_stock_bone%"
+    left_click_commands:
+    - '[player] setbuyingitem bone cat_ingredientes'
+  bone_meal:
+    material: BONE_MEAL
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_bone_meal%"
+    - "&7Stock: &f%pool_stock_bone_meal%"
+    left_click_commands:
+    - '[player] setbuyingitem bone_meal cat_ingredientes'
+  ink_sac:
+    material: INK_SAC
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_ink_sac%"
+    - "&7Stock: &f%pool_stock_ink_sac%"
+    left_click_commands:
+    - '[player] setbuyingitem ink_sac cat_ingredientes'
+  glow_ink_sac:
+    material: GLOW_INK_SAC
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_glow_ink_sac%"
+    - "&7Stock: &f%pool_stock_glow_ink_sac%"
+    left_click_commands:
+    - '[player] setbuyingitem glow_ink_sac cat_ingredientes'
+  slime_ball:
+    material: SLIME_BALL
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_slime_ball%"
+    - "&7Stock: &f%pool_stock_slime_ball%"
+    left_click_commands:
+    - '[player] setbuyingitem slime_ball cat_ingredientes'
+  magma_cream:
+    material: MAGMA_CREAM
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_magma_cream%"
+    - "&7Stock: &f%pool_stock_magma_cream%"
+    left_click_commands:
+    - '[player] setbuyingitem magma_cream cat_ingredientes'
+  ender_pearl:
+    material: ENDER_PEARL
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_ender_pearl%"
+    - "&7Stock: &f%pool_stock_ender_pearl%"
+    left_click_commands:
+    - '[player] setbuyingitem ender_pearl cat_ingredientes'
+  ender_eye:
+    material: ENDER_EYE
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_ender_eye%"
+    - "&7Stock: &f%pool_stock_ender_eye%"
+    left_click_commands:
+    - '[player] setbuyingitem ender_eye cat_ingredientes'
+  blaze_rod:
+    material: BLAZE_ROD
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_blaze_rod%"
+    - "&7Stock: &f%pool_stock_blaze_rod%"
+    left_click_commands:
+    - '[player] setbuyingitem blaze_rod cat_ingredientes'
+  blaze_powder:
+    material: BLAZE_POWDER
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_blaze_powder%"
+    - "&7Stock: &f%pool_stock_blaze_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem blaze_powder cat_ingredientes'
+  ghast_tear:
+    material: GHAST_TEAR
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_ghast_tear%"
+    - "&7Stock: &f%pool_stock_ghast_tear%"
+    left_click_commands:
+    - '[player] setbuyingitem ghast_tear cat_ingredientes'
+  sugar:
+    material: SUGAR
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_sugar%"
+    - "&7Stock: &f%pool_stock_sugar%"
+    left_click_commands:
+    - '[player] setbuyingitem sugar cat_ingredientes'
+  gunpowder:
+    material: GUNPOWDER
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_gunpowder%"
+    - "&7Stock: &f%pool_stock_gunpowder%"
+    left_click_commands:
+    - '[player] setbuyingitem gunpowder cat_ingredientes'
+  glowstone_dust:
+    material: GLOWSTONE_DUST
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_glowstone_dust%"
+    - "&7Stock: &f%pool_stock_glowstone_dust%"
+    left_click_commands:
+    - '[player] setbuyingitem glowstone_dust cat_ingredientes'
+  spider_eye:
+    material: SPIDER_EYE
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_spider_eye%"
+    - "&7Stock: &f%pool_stock_spider_eye%"
+    left_click_commands:
+    - '[player] setbuyingitem spider_eye cat_ingredientes'
+  fermented_spider_eye:
+    material: FERMENTED_SPIDER_EYE
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_fermented_spider_eye%"
+    - "&7Stock: &f%pool_stock_fermented_spider_eye%"
+    left_click_commands:
+    - '[player] setbuyingitem fermented_spider_eye cat_ingredientes'
+  dragon_breath:
+    material: DRAGON_BREATH
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_dragon_breath%"
+    - "&7Stock: &f%pool_stock_dragon_breath%"
+    left_click_commands:
+    - '[player] setbuyingitem dragon_breath cat_ingredientes'
+  nautilus_shell:
+    material: NAUTILUS_SHELL
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_nautilus_shell%"
+    - "&7Stock: &f%pool_stock_nautilus_shell%"
+    left_click_commands:
+    - '[player] setbuyingitem nautilus_shell cat_ingredientes'
+  heart_of_the_sea:
+    material: HEART_OF_THE_SEA
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_heart_of_the_sea%"
+    - "&7Stock: &f%pool_stock_heart_of_the_sea%"
+    left_click_commands:
+    - '[player] setbuyingitem heart_of_the_sea cat_ingredientes'
+  clay_ball:
+    material: CLAY_BALL
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_clay_ball%"
+    - "&7Stock: &f%pool_stock_clay_ball%"
+    left_click_commands:
+    - '[player] setbuyingitem clay_ball cat_ingredientes'
+  brick:
+    material: BRICK
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_brick%"
+    - "&7Stock: &f%pool_stock_brick%"
+    left_click_commands:
+    - '[player] setbuyingitem brick cat_ingredientes'
+  nether_brick:
+    material: NETHER_BRICK
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_nether_brick%"
+    - "&7Stock: &f%pool_stock_nether_brick%"
+    left_click_commands:
+    - '[player] setbuyingitem nether_brick cat_ingredientes'
+  prismarine_shard:
+    material: PRISMARINE_SHARD
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_prismarine_shard%"
+    - "&7Stock: &f%pool_stock_prismarine_shard%"
+    left_click_commands:
+    - '[player] setbuyingitem prismarine_shard cat_ingredientes'
+  prismarine_crystals:
+    material: PRISMARINE_CRYSTALS
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_prismarine_crystals%"
+    - "&7Stock: &f%pool_stock_prismarine_crystals%"
+    left_click_commands:
+    - '[player] setbuyingitem prismarine_crystals cat_ingredientes'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  next_page:
+    material: PAPER
+    slots:
+    - 50
+    - 51
+    - 52
+    - 53
+    model_data: 500
+    display_name: '&aSiguiente'
+    left_click_commands:
+    - '[player] cat_ingredientes_2'

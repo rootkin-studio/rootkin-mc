@@ -1,453 +1,1145 @@
-# --------------------------------------------------------
-# SISTEMA DE ARMARIO DE PROTECCIÓN RUST (Versión Sostenida Geométrica Final)
-# --------------------------------------------------------
-
-options:
-    oraxen_id: armario
-    permiso_admin: armario.admin
-    nivel_fatiga: 3
-    vida_armario: 30
-
-# --- COMANDO DE LIMPIEZA ABSOLUTA DE BASE DE DATOS (ADMIN) ---
-command /armarioclear:
-    permission: {@permiso_admin}
-    permission message: &cNo tienes permisos para usar este comando.
-    trigger:
-        clear {armario::locations::*}
-        clear {armario::owner::*}
-        clear {armario::hp::*}
-        clear {armario::inside_zone::*}
-        clear {armario::raiding::*}
-        loop all players:
-            reset worldborder of loop-player
-            apply mining fatigue 0 to loop-player for 0 seconds
-            if {armario::fatigued::%loop-player's uuid%} is set:
-                delete {armario::fatigued::%loop-player's uuid%}
-        send "&a&l[+] &a¡Base de datos de armarios y World Borders restablecida con éxito!" to player
-
-# --- COMANDO DE DIAGNÓSTICO DE ARMARIOS (ADMIN) ---
-command /armariolist:
-    permission: {@permiso_admin}
-    permission message: &cNo tienes permisos para usar este comando.
-    trigger:
-        send "&e&l[+] Armarios registrados actualmente en la base de datos:" to player
-        if size of {armario::locations::*} is 0:
-            send "&7- No hay ningún armario registrado." to player
-            stop
-        loop {armario::locations::*}:
-            send "&7- Coordenadas: &f%loop-value% &7| Dueño UUID: &f%{armario::owner::%loop-value%}% &7| Vida: &f%{armario::hp::%loop-value%}% HP" to player
-
-# --- PREVENCIÓN DE BORDES ATRAPADOS AL CONECTAR/DESCONECTAR ---
-on join:
-    reset worldborder of player
-    delete {armario::inside_zone::%player's uuid%}
-
-on quit:
-    reset worldborder of player
-    delete {armario::inside_zone::%player's uuid%}
-
-# --- DETECCIÓN AL COLOCAR EL MUEBLE (ESCANEO FÍSICO DE BLOQUES) ---
-on oraxen furniture place:
-    set {_id} to event-string
-    if {_id} contains "{@oraxen_id}":
-        set {_min_dist} to 999
-        delete {_loc} # Inicializamos la variable vacía de forma compatible
-        
-        # Escaneamos los bloques físicos alrededor del jugador para hallar la barrera del armario
-        loop blocks in radius 5 of player:
-            if loop-block is barrier:
-                # Buscamos la barrera que esté más cerca del bloque al que apunta el jugador
-                set {_dist} to distance between loop-block and player's targeted block
-                if {_dist} < {_min_dist}:
-                    set {_min_dist} to {_dist}
-                    set {_loc} to location of loop-block
-        
-        # Fallback de seguridad si por algún motivo no se detecta la barrera (usa la ubicación del evento)
-        if {_loc} is not set:
-            set {_loc} to location of block at event-location
-        
-        # --- NORMALIZACIÓN GEOMÉTRICA (Forzar centro de bloque .5 para simetría perfecta) ---
-        set {_x_floor} to floor(x-coordinate of {_loc})
-        set {_y_floor} to floor(y-coordinate of {_loc})
-        set {_z_floor} to floor(z-coordinate of {_loc})
-        set x-coordinate of {_loc} to {_x_floor} + 0.5
-        set y-coordinate of {_loc} to {_y_floor} + 0.5
-        set z-coordinate of {_loc} to {_z_floor} + 0.5
-        set yaw of {_loc} to 0
-        set pitch of {_loc} to 0
-        
-        set {_world} to world of {_loc}
-        loop {armario::locations::*}:
-            if world of loop-value is {_world}:
-                # Comprobación de colisión cuadrada perfecta
-                set {_x_diff} to abs(x-coord of {_loc} - x-coord of loop-value)
-                set {_z_diff} to abs(z-coord of {_loc} - z-coord of loop-value)
-                if {_x_diff} < 16:
-                    if {_z_diff} < 16:
-                        cancel event
-                        send "&c&l[!] &cNo puedes colocar un armario dentro del rango de otra protección." to player
-                        stop
-        add {_loc} to {armario::locations::*}
-        set {armario::owner::%{_loc}%} to player's uuid
-        set {armario::hp::%{_loc}%} to {@vida_armario}
-        
-        # LOG EN CMD
-        send "[Armario-Log] Jugador %player% coloco un armario en %{_loc}% (Dueño UUID: %player's uuid%)" to console
-        send "&a&l[+] &a¡Armario establecido! Vida: &e%{armario::hp::%{_loc}%}% HP" to player
-
-# --- DETECTOR DE ANIMACIÓN DE BRAZO ---
-on arm swing:
-    set {armario::last_swing::%player's uuid%} to now
-
-# --- INTERCEPCIÓN NATIVA DE ORAXEN (SISTEMA DE RAID Y RETIRO) ---
-on oraxen furniture break:
-    set {_id} to event-string
-    if {_id} contains "{@oraxen_id}":
-        set {_loc} to location of block at event-location
-        
-        # Normalizamos la ubicación del bloque roto al centro .5
-        set {_x_floor} to floor(x-coordinate of {_loc})
-        set {_y_floor} to floor(y-coordinate of {_loc})
-        set {_z_floor} to floor(z-coordinate of {_loc})
-        set x-coordinate of {_loc} to {_x_floor} + 0.5
-        set y-coordinate of {_loc} to {_y_floor} + 0.5
-        set z-coordinate of {_loc} to {_z_floor} + 0.5
-        set yaw of {_loc} to 0
-        set pitch of {_loc} to 0
-        
-        # Buscamos el armario de forma segura validando mundos primero
-        loop {armario::locations::*}:
-            if world of {_loc} is world of loop-value:
-                # Comprobación cuadrada de proximidad para el bloque roto (alineado al centro .5)
-                set {_x_diff} to abs(x-coord of {_loc} - x-coord of loop-value)
-                set {_z_diff} to abs(z-coord of {_loc} - z-coord of loop-value)
-                if {_x_diff} < 3:
-                    if {_z_diff} < 3:
-                        set {_match_loc} to loop-value
-                        set {_match_index} to loop-index
-                        exit loop
-        
-        # --- ELIMINACIÓN DIRECTA POR DUEÑO ---
-        if {_match_loc} is set:
-            if {armario::owner::%{_match_loc}%} is player's uuid:
-                set {_temp_loc} to {_match_loc}
-                
-                # 1. Limpieza de base de datos
-                delete {armario::locations::%{_match_index}%}
-                delete {armario::owner::%{_match_loc}%}
-                delete {armario::hp::%{_match_loc}%}
-                
-                # 2. Quitar fatiga y World Border inmediatamente a jugadores cercanos
-                loop all players:
-                    if world of loop-player is world of {_temp_loc}:
-                        if distance between loop-player and {_temp_loc} < 25:
-                            if loop-player has mining fatigue:
-                                apply mining fatigue 0 to loop-player for 0 seconds
-                            if {armario::inside_zone::%loop-player's uuid%} is set:
-                                delete {armario::inside_zone::%loop-player's uuid%}
-                                reset worldborder of loop-player
-                
-                # 3. Dropear el item del armario si el dueño está en supervivencia
-                if gamemode of player is survival:
-                    drop 1 of oraxen item "armario" at {_temp_loc} without velocity
-                
-                # LOG EN CMD
-                send "[Armario-Log] El dueño %player% ha retirado manualmente su armario en %{_temp_loc}%" to console
-                send "&e&l[-] &eHas retirado tu armario." to player
-                stop
-            
-        # --- ELIMINACIÓN DIRECTA POR ADMIN ---
-        if {_match_loc} is set:
-            if player has permission "{@permiso_admin}":
-                set {_temp_loc} to {_match_loc}
-                
-                # 1. Limpieza de base de datos
-                delete {armario::locations::%{_match_index}%}
-                delete {armario::owner::%{_match_loc}%}
-                delete {armario::hp::%{_match_loc}%}
-                
-                # 2. Quitar fatiga y World Border inmediatamente a jugadores cercanos
-                loop all players:
-                    if world of loop-player is world of {_temp_loc}:
-                        if distance between loop-player and {_temp_loc} < 25:
-                            if loop-player has mining fatigue:
-                                apply mining fatigue 0 to loop-player for 0 seconds
-                            if {armario::inside_zone::%loop-player's uuid%} is set:
-                                delete {armario::inside_zone::%loop-player's uuid%}
-                                reset worldborder of loop-player
-                
-                # 3. Dropear el item del armario si el admin está en supervivencia
-                if gamemode of player is survival:
-                    drop 1 of oraxen item "armario" at {_temp_loc} without velocity
-                
-                # LOG EN CMD
-                send "[Armario-Log] El administrador %player% ha retirado el armario en %{_temp_loc}%" to console
-                send "&c&l[-] &cProtección removida por Admin." to player
-                stop
-            
-        # --- DETECTAR E INICIAR RAID CONTÍNUO (Manteniendo Clic) ---
-        cancel event
-        
-        # Evitamos duplicar bucles si el jugador ya está raideando este armario
-        if {armario::raiding::%player's uuid%} is set:
-            stop
-        set {armario::raiding::%player's uuid%} to true
-        
-        while {armario::raiding::%player's uuid%} is true:
-            if player is offline:
-                delete {armario::raiding::%player's uuid%}
-                stop
-                
-            if {armario::hp::%{_match_loc}%} is not set:
-                delete {armario::raiding::%player's uuid%}
-                stop
-            
-            if world of player is not world of {_match_loc}:
-                delete {armario::raiding::%player's uuid%}
-                stop
-            
-            # Verificación de que el jugador se mantiene en rango del armario durante el raid
-            set {_x_diff} to abs(x-coord of player - x-coord of {_match_loc})
-            set {_z_diff} to abs(z-coord of player - z-coord of {_match_loc})
-            if {_x_diff} > 5:
-                delete {armario::raiding::%player's uuid%}
-                stop
-            if {_z_diff} > 5:
-                delete {armario::raiding::%player's uuid%}
-                stop
-            
-            # Verificación de que el jugador sigue manteniendo presionado el clic (animación de brazo activa)
-            set {_diff} to difference between {armario::last_swing::%player's uuid%} and now
-            if {_diff} > 0.4 seconds:
-                delete {armario::raiding::%player's uuid%}
-                stop
-
-            set {_tool} to "%type of player's tool%"
-            set {_dmg} to 1
-            if {_tool} contains "axe":
-                set {_dmg} to 3
-                
-            remove {_dmg} from {armario::hp::%{_match_loc}%}
-            
-            # --- COMPROBACIÓN DE DESTRUCCIÓN DENTRO DEL BUCLE ---
-            if {armario::hp::%{_match_loc}%} <= 0:
-                set {_owner} to {armario::owner::%{_match_loc}%}
-                set {_w} to name of world of {_match_loc}
-                
-                # --- PASO 1: REDONDEO MATEMÁTICO PERFECTO (Inmune a coordenadas negativas) ---
-                set {_x_val} to floor(x-coord of {_match_loc})
-                set {_y_val} to floor(y-coord of {_match_loc})
-                set {_z_val} to floor(z-coord of {_match_loc})
-                
-                # --- PASO 2: RECORTAR PUNTO DECIMAL .0 ---
-                set {_x_str} to "%{_x_val}%"
-                replace all "," with "." in {_x_str}
-                set {_split_x::*} to {_x_str} split at "."
-                set {_x} to {_split_x::1} parsed as integer
-                
-                set {_y_str} to "%{_y_val}%"
-                replace all "," with "." in {_y_str}
-                set {_split_y::*} to {_y_str} split at "."
-                set {_y} to {_split_y::1} parsed as integer
-                
-                set {_z_str} to "%{_z_val}%"
-                replace all "," with "." in {_z_str}
-                set {_split_z::*} to {_z_str} split at "."
-                set {_z} to {_split_z::1} parsed as integer
-                
-                set {_y_above} to {_y} + 1
-                
-                # 1. Limpieza absoluta de la base de datos de Skript
-                delete {armario::locations::%{_match_index}%}
-                delete {armario::owner::%{_match_loc}%}
-                delete {armario::hp::%{_match_loc}%}
-                delete {armario::raiding::%player's uuid%}
-                
-                # 2. Desactivar fatiga de minería y World Border a jugadores cercanos
-                loop all players:
-                    if world of loop-player is world of {_match_loc}:
-                        if distance between loop-player and {_match_loc} < 25:
-                            if loop-player has mining fatigue:
-                                apply mining fatigue 0 to loop-player for 0 seconds
-                            if {armario::inside_zone::%loop-player's uuid%} is set:
-                                delete {armario::inside_zone::%loop-player's uuid%}
-                                reset worldborder of loop-player
-                
-                # 3. Notificación al dueño
-                loop all players:
-                    if loop-player's uuid is {_owner}:
-                        send "&4&l[!] &c¡Tu armario ha sido destruido!" to loop-player
-                
-                # 4. Mensajes y LOG EN CMD
-                send "[Armario-Log] ¡El jugador %player% ha DESTRUIDO el armario en %{_match_loc}%!" to console
-                send "&a&l[+] &a¡Has destruido el armario con éxito!" to player
-                
-                # 5. DROPEAR EL ITEM DEL ARMARIO (Dropeo nativo de Oraxen en el suelo)
-                drop 1 of oraxen item "armario" at {_match_loc} without velocity
-                
-                # 6. ELIMINACIÓN DE SEGURIDAD - PASO CRÍTICO 1: ELIMINACIÓN DE ENTIDADES PRIMERO
-                set {_block_loc} to location of block at {_match_loc}
-                remove oraxen furniture at {_block_loc}
-                
-                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=item_display]"
-                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=interaction]"
-                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=armor_stand]"
-                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=item_frame]"
-                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=glow_item_frame]"
-                
-                loop entities in radius 3 of {_match_loc}:
-                    set {_ent_type} to "%type of loop-entity%"
-                    if {_ent_type} contains "display" or "interaction" or "armor stand" or "item frame" or "frame":
-                        delete loop-entity
-                
-                # Retardo técnico de 1 tick
-                wait 1 tick
-                
-                # 7. ELIMINACIÓN DE SEGURIDAD - PASO CRÍTICO 2: TRIPLE SEGURIDAD DE BLOQUES AL FINAL
-                set block at {_block_loc} to air
-                set block at location 1 above {_block_loc} to air
-                
-                make console execute command "execute at %player% run setblock %{_x}% %{_y}% %{_z}% minecraft:air"
-                make console execute command "execute at %player% run setblock %{_x}% %{_y_above}% %{_z}% minecraft:air"
-                
-                loop blocks in radius 3 of {_match_loc}:
-                    if "%type of loop-block%" contains "barrier":
-                        set loop-block to air
-                stop
-            else:
-                # --- RAID EN PROGRESO (Aún tiene vida) ---
-                play sound "block.wood.break" with volume 0.8 and pitch 0.7 at {_loc}
-                send action bar "&c&lBUILD-PROTECT: &7Vida: &c%{armario::hp::%{_match_loc}%}%&7/{@vida_armario}" to player
-                
-                # LOG EN CMD
-                send "[Armario-Log] Raider %player% golpeo armario en %{_match_loc}% con %{_tool}% (Dmg: %{_dmg}% | HP restante: %{armario::hp::%{_match_loc}%}%/{@vida_armario})" to console
-                
-            wait 0.25 seconds
-
-# --- SISTEMA DE FATIGA Y PROTECCIÓN (HUD Universal & World Border Dinámico Pasable) ---
-every 1 second:
-    loop all players:
-        set {_p} to loop-player
-        # Solo escanea el HUD si el jugador no está raideando activamente
-        if {armario::raiding::%{_p}'s uuid%} is not set:
-            set {_inside} to false
-            set {_pworld} to world of {_p}
-            
-            # Analiza si se encuentra dentro del rango cuadrado de 16 bloques de CUALQUIER armario
-            loop {armario::locations::*}:
-                set {_loc} to loop-value-2
-                if world of {_loc} is {_pworld}:
-                    # --- COMPENSACIÓN DIAGONAL COMPLETA PARA EL MODELO DE ORAXEN (X e Z) ---
-                    # Desplazamos el centro virtual 0.5 bloques en X y Z para corregir la alineación del bloque central
-                    set {_visual_center} to {_loc}
-                    set x-coordinate of {_visual_center} to x-coordinate of {_visual_center} - 0.5
-                    set z-coordinate of {_visual_center} to z-coordinate of {_visual_center} - 0.5
-                    
-                    set {_x_diff} to abs(x-coord of {_p} - x-coord of {_visual_center})
-                    set {_z_diff} to abs(z-coord of {_p} - z-coord of {_visual_center})
-                    if {_x_diff} <= 16:
-                        if {_z_diff} <= 16:
-                            if {armario::owner::%{_loc}%} is set:
-                                set {_inside} to true
-                                set {_zone_owner_uuid} to {armario::owner::%{_loc}%}
-                                set {_zone_loc} to {_visual_center}
-                                set {_final_x_diff} to {_x_diff}
-                                set {_final_z_diff} to {_z_diff}
-                                exit loop
-            
-            if {_inside} is true:
-                # --- APLICACIÓN DE FATIGA ---
-                # Solo se le aplica fatiga si NO es el dueño y NO es administrador
-                if {_p} doesn't have permission "{@permiso_admin}":
-                    if {_zone_owner_uuid} is not {_p}'s uuid:
-                        apply mining fatigue {@nivel_fatiga} to {_p} for 2 seconds
-                
-                # --- CONTROL DE WORLD BORDER DINÁMICO ---
-                # Si el jugador está seguro dentro (a más de 1.2 bloques del borde real de 16)
-                if {_final_x_diff} < 14.8:
-                    if {_final_z_diff} < 14.8:
-                        # Mostramos el World Border visual (tamaño 32 con centro exacto del armario)
-                        set worldborder of {_p} to a virtual worldborder:
-                            set worldborder center of event-worldborder to {_zone_loc}
-                            set worldborder size of event-worldborder to 32
-                    else:
-                        # Si está muy cerca del borde para cruzar, quitamos la colisión temporalmente
-                        reset worldborder of {_p}
-                else:
-                    reset worldborder of {_p}
-                
-                # --- COMPROBACIÓN DE ENTRADA A LA ZONA (HUD & CMD Logs) ---
-                if {armario::inside_zone::%{_p}'s uuid%} is not set:
-                    set {armario::inside_zone::%{_p}'s uuid%} to {_zone_loc}
-                    
-                    # Caso 1: Es el dueño del armario
-                    if {_zone_owner_uuid} is {_p}'s uuid:
-                        send action bar "&a&l[+] &7¡Entrando a tu zona protegida!" to {_p}
-                        send "[Armario-Log] El dueño %{_p}% entro a su propia zona protegida." to console
-                    # Caso 2: Es un intruso o un administrador
-                    else:
-                        send action bar "&c&l[!] &7¡Entrando a zona protegida!" to {_p}
-                        if {_p} has permission "{@permiso_admin}":
-                            send "[Armario-Log] El admin %{_p}% entro a una zona protegida ajena." to console
-                        else:
-                            send "[Armario-Log] Jugador %{_p}% entro en zona protegida ajena. Applying Fatigue." to console
-            else:
-                # --- COMPROBACIÓN DE SALIDA DE LA ZONA (HUD & CMD Logs & World Border Reset) ---
-                if {armario::inside_zone::%{_p}'s uuid%} is set:
-                    set {_prev_zone} to {armario::inside_zone::%{_p}'s uuid%}
-                    set {_prev_owner_uuid} to {armario::owner::%{_prev_zone}%}
-                    delete {armario::inside_zone::%{_p}'s uuid%}
-                    
-                    # Quitamos definitivamente el World Border al salir de la zona
-                    reset worldborder of {_p}
-                    
-                    if {_p} has mining fatigue:
-                        apply mining fatigue 0 to {_p} for 0 seconds
-                    
-                    # Caso 1: Era el dueño del armario saliendo de su zona
-                    if {_prev_owner_uuid} is {_p}'s uuid:
-                        send action bar "&a&l[-] &7Saliendo de tu zona protegida" to {_p}
-                        send "[Armario-Log] El dueño %{_p}% salio de su propia zona protegida." to console
-                    # Caso 2: Era un intruso o un administrador saliendo de la zona
-                    else:
-                        send action bar "&a&l[-] &7Saliendo de zona protegida" to {_p}
-                        if {_prev_owner_uuid} is set:
-                            if {_p} has permission "{@permiso_admin}":
-                                send "[Armario-Log] El admin %{_p}% salio de una zona protegida ajena." to console
-                            else:
-                                send "[Armario-Log] Jugador %{_p}% salio de zona protegida ajena. Removiendo Fatiga." to console
-
-on right click:
-    if player doesn't have permission "{@permiso_admin}":
-        if clicked block is set:
-            set {_block_world} to world of clicked block
-            set {_block_loc} to location of clicked block
-            
-            # Normalizamos geométricamente el bloque clickeado (.5)
-            set {_bx_floor} to floor(x-coordinate of {_block_loc})
-            set {_by_floor} to floor(y-coordinate of {_block_loc})
-            set {_bz_floor} to floor(z-coordinate of {_block_loc})
-            set x-coordinate of {_block_loc} to {_bx_floor} + 0.0
-            set y-coordinate of {_block_loc} to {_by_floor} + 0.0
-            set z-coordinate of {_block_loc} to {_bz_floor} + 0.0
-            set yaw of {_block_loc} to 0
-            set pitch of {_block_loc} to 0
-            
-            loop {armario::locations::*}:
-                set {_loc} to loop-value
-                if world of {_loc} is {_block_world}:
-                    # Aplicamos la misma compensación diagonal para la protección de click derecho
-                    set {_visual_center} to {_loc}
-                    set x-coordinate of {_visual_center} to x-coordinate of {_visual_center} + 0.0
-                    set z-coordinate of {_visual_center} to z-coordinate of {_visual_center} + 0.0
-                    
-                    # Comprobación de click derecho en rango cuadrado (16 bloques)
-                    set {_x_diff} to abs(x-coord of {_block_loc} - x-coord of {_visual_center})
-                    set {_z_diff} to abs(z-coord of {_block_loc} - z-coord of {_visual_center})
-                    if {_x_diff} <= 16:
-                        if {_z_diff} <= 16:
-                            if {armario::owner::%{_loc}%} is set:
-                                if {armario::owner::%{_loc}%} is not player's uuid:
-                                    cancel event
-                                    send "&c&l[!] &cEstructuras bloqueadas." to player
+# --------------------------------------------------------
+
+# SISTEMA DE ARMARIO DE PROTECCIÓN RUST (Versión Sostenida Geométrica Final)
+
+# --------------------------------------------------------
+
+
+
+options:
+
+    oraxen_id: armario
+
+    permiso_admin: armario.admin
+
+    nivel_fatiga: 3
+
+    vida_armario: 30
+
+
+
+on load:
+    if {armario::last_decay_tick} is not set:
+        set {armario::last_decay_tick} to now
+
+# --- COMANDO DE LIMPIEZA ABSOLUTA DE BASE DE DATOS (ADMIN) ---
+
+command /armarioclear:
+
+    permission: {@permiso_admin}
+
+    permission message: &cNo tienes permisos para usar este comando.
+
+    trigger:
+
+        clear {armario::locations::*}
+
+        clear {armario::owner::*}
+
+        clear {armario::hp::*}
+
+        clear {armario::inside_zone::*}
+
+        clear {armario::raiding::*}
+
+        loop all players:
+
+            reset worldborder of loop-player
+
+            apply mining fatigue 0 to loop-player for 0 seconds
+
+            if {armario::fatigued::%loop-player's uuid%} is set:
+
+                delete {armario::fatigued::%loop-player's uuid%}
+
+        send "&a&l[+] &a¡Base de datos de armarios y World Borders restablecida con éxito!" to player
+
+
+
+# --- COMANDO DE DIAGNÓSTICO DE ARMARIOS (ADMIN) ---
+
+command /armariolist:
+
+    permission: {@permiso_admin}
+
+    permission message: &cNo tienes permisos para usar este comando.
+
+    trigger:
+
+        send "&e&l[+] Armarios registrados actualmente en la base de datos:" to player
+
+        if size of {armario::locations::*} is 0:
+
+            send "&7- No hay ningún armario registrado." to player
+
+            stop
+
+        loop {armario::locations::*}:
+
+            send "&7- Coordenadas: &f%loop-value% &7| Dueño UUID: &f%{armario::owner::%loop-value%}% &7| Vida: &f%{armario::hp::%loop-value%}% HP" to player
+
+
+
+# --- PREVENCIÓN DE BORDES ATRAPADOS AL CONECTAR/DESCONECTAR ---
+
+on join:
+
+    reset worldborder of player
+
+    delete {armario::inside_zone::%player's uuid%}
+
+
+
+on quit:
+
+    reset worldborder of player
+
+    delete {armario::inside_zone::%player's uuid%}
+
+
+
+# --- DETECCIÓN AL COLOCAR EL MUEBLE (ESCANEO FÍSICO DE BLOQUES) ---
+
+on oraxen furniture place:
+
+    set {_id} to event-string
+
+    if {_id} contains "{@oraxen_id}":
+
+        set {_min_dist} to 999
+
+        delete {_loc} # Inicializamos la variable vacía de forma compatible
+
+
+
+        # Escaneamos los bloques físicos alrededor del jugador para hallar la barrera del armario
+
+        loop blocks in radius 5 of player:
+
+            if loop-block is barrier:
+
+                # Buscamos la barrera que esté más cerca del bloque al que apunta el jugador
+
+                set {_dist} to distance between loop-block and player's targeted block
+
+                if {_dist} < {_min_dist}:
+
+                    set {_min_dist} to {_dist}
+
+                    set {_loc} to location of loop-block
+
+
+
+        # Fallback de seguridad si por algún motivo no se detecta la barrera (usa la ubicación del evento)
+
+        if {_loc} is not set:
+
+            set {_loc} to location of block at event-location
+
+
+
+        # --- NORMALIZACIÓN GEOMÉTRICA (Forzar centro de bloque .5 para simetría perfecta) ---
+
+        set {_x_floor} to floor(x-coordinate of {_loc})
+
+        set {_y_floor} to floor(y-coordinate of {_loc})
+
+        set {_z_floor} to floor(z-coordinate of {_loc})
+
+        set x-coordinate of {_loc} to {_x_floor} + 0.5
+
+        set y-coordinate of {_loc} to {_y_floor} + 0.5
+
+        set z-coordinate of {_loc} to {_z_floor} + 0.5
+
+        set yaw of {_loc} to 0
+
+        set pitch of {_loc} to 0
+
+
+
+        set {_world} to world of {_loc}
+
+        loop {armario::locations::*}:
+
+            if world of loop-value is {_world}:
+
+                # Comprobación de colisión cuadrada perfecta
+
+                set {_x_diff} to abs(x-coord of {_loc} - x-coord of loop-value)
+
+                set {_z_diff} to abs(z-coord of {_loc} - z-coord of loop-value)
+
+                if {_x_diff} < 16:
+
+                    if {_z_diff} < 16:
+
+                        cancel event
+
+                        send "&c&l[!] &cNo puedes colocar un armario dentro del rango de otra protección." to player
+
+                        stop
+
+        add {_loc} to {armario::locations::*}
+
+        set {armario::owner::%{_loc}%} to player's uuid
+
+        set {armario::hp::%{_loc}%} to {@vida_armario}
+
+
+
+        # LOG EN CMD
+
+        send "[Armario-Log] Jugador %player% coloco un armario en %{_loc}% (Dueño UUID: %player's uuid%)" to console
+
+        send "&a&l[+] &a¡Armario establecido! Vida: &e%{armario::hp::%{_loc}%}% HP" to player
+
+
+
+# --- DETECTOR DE ANIMACIÓN DE BRAZO ---
+
+on arm swing:
+
+    set {armario::last_swing::%player's uuid%} to now
+
+
+
+# --- INTERCEPCIÓN NATIVA DE ORAXEN (SISTEMA DE RAID Y RETIRO) ---
+
+on oraxen furniture break:
+
+    set {_id} to event-string
+
+    if {_id} contains "{@oraxen_id}":
+
+        set {_loc} to location of block at event-location
+
+
+
+        # Normalizamos la ubicación del bloque roto al centro .5
+
+        set {_x_floor} to floor(x-coordinate of {_loc})
+
+        set {_y_floor} to floor(y-coordinate of {_loc})
+
+        set {_z_floor} to floor(z-coordinate of {_loc})
+
+        set x-coordinate of {_loc} to {_x_floor} + 0.5
+
+        set y-coordinate of {_loc} to {_y_floor} + 0.5
+
+        set z-coordinate of {_loc} to {_z_floor} + 0.5
+
+        set yaw of {_loc} to 0
+
+        set pitch of {_loc} to 0
+
+
+
+        # Buscamos el armario de forma segura validando mundos primero
+
+        loop {armario::locations::*}:
+
+            if world of {_loc} is world of loop-value:
+
+                # Comprobación cuadrada de proximidad para el bloque roto (alineado al centro .5)
+
+                set {_x_diff} to abs(x-coord of {_loc} - x-coord of loop-value)
+
+                set {_z_diff} to abs(z-coord of {_loc} - z-coord of loop-value)
+
+                if {_x_diff} < 3:
+
+                    if {_z_diff} < 3:
+
+                        set {_match_loc} to loop-value
+
+                        set {_match_index} to loop-index
+
+                        exit loop
+
+
+
+        # --- ELIMINACIÓN DIRECTA POR DUEÑO ---
+        if {_match_loc} is set:
+            if {armario::owner::%{_match_loc}%} is player's uuid:
+                set {_temp_loc} to {_match_loc}
+
+                # 1. Limpieza de base de datos
+                dropArmarioStorage({_match_loc})
+                delete {armario::locations::%{_match_index}%}
+
+
+                delete {armario::owner::%{_match_loc}%}
+
+                delete {armario::hp::%{_match_loc}%}
+
+
+
+                # 2. Quitar fatiga y World Border inmediatamente a jugadores cercanos
+
+                loop all players:
+
+                    if world of loop-player is world of {_temp_loc}:
+
+                        if distance between loop-player and {_temp_loc} < 25:
+
+                            if loop-player has mining fatigue:
+
+                                apply mining fatigue 0 to loop-player for 0 seconds
+
+                            if {armario::inside_zone::%loop-player's uuid%} is set:
+
+                                delete {armario::inside_zone::%loop-player's uuid%}
+
+                                reset worldborder of loop-player
+
+
+
+                # 3. Dropear el item del armario si el dueño está en supervivencia
+
+                if gamemode of player is survival:
+
+                    drop 1 of oraxen item "armario" at {_temp_loc} without velocity
+
+
+
+                # LOG EN CMD
+
+                send "[Armario-Log] El dueño %player% ha retirado manualmente su armario en %{_temp_loc}%" to console
+
+                send "&e&l[-] &eHas retirado tu armario." to player
+
+                stop
+
+
+
+        # --- ELIMINACIÓN DIRECTA POR ADMIN ---
+        if {_match_loc} is set:
+            if player has permission "{@permiso_admin}":
+                set {_temp_loc} to {_match_loc}
+
+                # 1. Limpieza de base de datos
+                dropArmarioStorage({_match_loc})
+                delete {armario::locations::%{_match_index}%}
+
+
+                delete {armario::owner::%{_match_loc}%}
+
+                delete {armario::hp::%{_match_loc}%}
+
+
+
+                # 2. Quitar fatiga y World Border inmediatamente a jugadores cercanos
+
+                loop all players:
+
+                    if world of loop-player is world of {_temp_loc}:
+
+                        if distance between loop-player and {_temp_loc} < 25:
+
+                            if loop-player has mining fatigue:
+
+                                apply mining fatigue 0 to loop-player for 0 seconds
+
+                            if {armario::inside_zone::%loop-player's uuid%} is set:
+
+                                delete {armario::inside_zone::%loop-player's uuid%}
+
+                                reset worldborder of loop-player
+
+
+
+                # 3. Dropear el item del armario si el admin está en supervivencia
+
+                if gamemode of player is survival:
+
+                    drop 1 of oraxen item "armario" at {_temp_loc} without velocity
+
+
+
+                # LOG EN CMD
+
+                send "[Armario-Log] El administrador %player% ha retirado el armario en %{_temp_loc}%" to console
+
+                send "&c&l[-] &cProtección removida por Admin." to player
+
+                stop
+
+
+
+        # --- DETECTAR E INICIAR RAID CONTÍNUO (Manteniendo Clic) ---
+
+        cancel event
+
+
+
+        # Evitamos duplicar bucles si el jugador ya está raideando este armario
+
+        if {armario::raiding::%player's uuid%} is set:
+
+            stop
+
+        set {armario::raiding::%player's uuid%} to true
+
+
+
+        while {armario::raiding::%player's uuid%} is true:
+
+            if player is offline:
+
+                delete {armario::raiding::%player's uuid%}
+
+                stop
+
+
+
+            if {armario::hp::%{_match_loc}%} is not set:
+
+                delete {armario::raiding::%player's uuid%}
+
+                stop
+
+
+
+            if world of player is not world of {_match_loc}:
+
+                delete {armario::raiding::%player's uuid%}
+
+                stop
+
+
+
+            # Verificación de que el jugador se mantiene en rango del armario durante el raid
+
+            set {_x_diff} to abs(x-coord of player - x-coord of {_match_loc})
+
+            set {_z_diff} to abs(z-coord of player - z-coord of {_match_loc})
+
+            if {_x_diff} > 5:
+
+                delete {armario::raiding::%player's uuid%}
+
+                stop
+
+            if {_z_diff} > 5:
+
+                delete {armario::raiding::%player's uuid%}
+
+                stop
+
+
+
+            # Verificación de que el jugador sigue manteniendo presionado el clic (animación de brazo activa)
+
+            set {_diff} to difference between {armario::last_swing::%player's uuid%} and now
+
+            if {_diff} > 0.4 seconds:
+
+                delete {armario::raiding::%player's uuid%}
+
+                stop
+
+
+
+            set {_tool} to "%type of player's tool%"
+
+            set {_dmg} to 1
+
+            if {_tool} contains "axe":
+
+                set {_dmg} to 3
+
+
+
+            remove {_dmg} from {armario::hp::%{_match_loc}%}
+
+
+
+            # --- COMPROBACIÓN DE DESTRUCCIÓN DENTRO DEL BUCLE ---
+
+            if {armario::hp::%{_match_loc}%} <= 0:
+                dropArmarioStorage({_match_loc})
+                set {_owner} to {armario::owner::%{_match_loc}%}
+
+                set {_w} to name of world of {_match_loc}
+
+
+
+                # --- PASO 1: REDONDEO MATEMÁTICO PERFECTO (Inmune a coordenadas negativas) ---
+
+                set {_x_val} to floor(x-coord of {_match_loc})
+
+                set {_y_val} to floor(y-coord of {_match_loc})
+
+                set {_z_val} to floor(z-coord of {_match_loc})
+
+
+
+                # --- PASO 2: RECORTAR PUNTO DECIMAL .0 ---
+
+                set {_x_str} to "%{_x_val}%"
+
+                replace all "," with "." in {_x_str}
+
+                set {_split_x::*} to {_x_str} split at "."
+
+                set {_x} to {_split_x::1} parsed as integer
+
+
+
+                set {_y_str} to "%{_y_val}%"
+
+                replace all "," with "." in {_y_str}
+
+                set {_split_y::*} to {_y_str} split at "."
+
+                set {_y} to {_split_y::1} parsed as integer
+
+
+
+                set {_z_str} to "%{_z_val}%"
+
+                replace all "," with "." in {_z_str}
+
+                set {_split_z::*} to {_z_str} split at "."
+
+                set {_z} to {_split_z::1} parsed as integer
+
+
+
+                set {_y_above} to {_y} + 1
+
+
+
+                # 1. Limpieza absoluta de la base de datos de Skript
+
+                delete {armario::locations::%{_match_index}%}
+
+                delete {armario::owner::%{_match_loc}%}
+
+                delete {armario::hp::%{_match_loc}%}
+
+                delete {armario::raiding::%player's uuid%}
+
+
+
+                # 2. Desactivar fatiga de minería y World Border a jugadores cercanos
+
+                loop all players:
+
+                    if world of loop-player is world of {_match_loc}:
+
+                        if distance between loop-player and {_match_loc} < 25:
+
+                            if loop-player has mining fatigue:
+
+                                apply mining fatigue 0 to loop-player for 0 seconds
+
+                            if {armario::inside_zone::%loop-player's uuid%} is set:
+
+                                delete {armario::inside_zone::%loop-player's uuid%}
+
+                                reset worldborder of loop-player
+
+
+
+                # 3. Notificación al dueño
+
+                loop all players:
+
+                    if loop-player's uuid is {_owner}:
+
+                        send "&4&l[!] &c¡Tu armario ha sido destruido!" to loop-player
+
+
+
+                # 4. Mensajes y LOG EN CMD
+
+                send "[Armario-Log] ¡El jugador %player% ha DESTRUIDO el armario en %{_match_loc}%!" to console
+
+                send "&a&l[+] &a¡Has destruido el armario con éxito!" to player
+
+
+
+                # 5. DROPEAR EL ITEM DEL ARMARIO (Dropeo nativo de Oraxen en el suelo)
+
+                drop 1 of oraxen item "armario" at {_match_loc} without velocity
+
+
+
+                # 6. ELIMINACIÓN DE SEGURIDAD - PASO CRÍTICO 1: ELIMINACIÓN DE ENTIDADES PRIMERO
+
+                set {_block_loc} to location of block at {_match_loc}
+
+                remove oraxen furniture at {_block_loc}
+
+
+
+                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=item_display]"
+
+                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=interaction]"
+
+                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=armor_stand]"
+
+                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=item_frame]"
+
+                make console execute command "execute at %player% run kill @e[x=%{_x}%,y=%{_y}%,z=%{_z}%,distance=..3,type=glow_item_frame]"
+
+
+
+                loop entities in radius 3 of {_match_loc}:
+
+                    set {_ent_type} to "%type of loop-entity%"
+
+                    if {_ent_type} contains "display" or "interaction" or "armor stand" or "item frame" or "frame":
+
+                        delete loop-entity
+
+
+
+                # Retardo técnico de 1 tick
+
+                wait 1 tick
+
+
+
+                # 7. ELIMINACIÓN DE SEGURIDAD - PASO CRÍTICO 2: TRIPLE SEGURIDAD DE BLOQUES AL FINAL
+
+                set block at {_block_loc} to air
+
+                set block at location 1 above {_block_loc} to air
+
+
+
+                make console execute command "execute at %player% run setblock %{_x}% %{_y}% %{_z}% minecraft:air"
+
+                make console execute command "execute at %player% run setblock %{_x}% %{_y_above}% %{_z}% minecraft:air"
+
+
+
+                loop blocks in radius 3 of {_match_loc}:
+
+                    if "%type of loop-block%" contains "barrier":
+
+                        set loop-block to air
+
+                stop
+
+            else:
+
+                # --- RAID EN PROGRESO (Aún tiene vida) ---
+
+                play sound "block.wood.break" with volume 0.8 and pitch 0.7 at {_loc}
+
+                send action bar "&c&lBUILD-PROTECT: &7Vida: &c%{armario::hp::%{_match_loc}%}%&7/{@vida_armario}" to player
+
+
+
+                # LOG EN CMD
+
+                send "[Armario-Log] Raider %player% golpeo armario en %{_match_loc}% con %{_tool}% (Dmg: %{_dmg}% | HP restante: %{armario::hp::%{_match_loc}%}%/{@vida_armario})" to console
+
+
+
+            wait 0.25 seconds
+
+
+
+# --- SISTEMA DE FATIGA Y PROTECCIÓN (HUD Universal & World Border Dinámico Pasable) ---
+
+every 1 second:
+
+    loop all players:
+
+        set {_p} to loop-player
+
+        # --- ACTUALIZACIÓN DE TIMER EN TIEMPO REAL (GUI) ---
+        if {armario::current_gui::%{_p}'s uuid%} is set:
+            if name of {_p}'s current inventory contains "ꐖ":
+                updateArmarioTimer({_p}, {armario::current_gui::%{_p}'s uuid%}, {_p}'s current inventory)
+
+        # Solo escanea el HUD si el jugador no está raideando activamente
+
+        if {armario::raiding::%{_p}'s uuid%} is not set:
+
+            set {_inside} to false
+
+            set {_pworld} to world of {_p}
+
+
+
+            # Analiza si se encuentra dentro del rango cuadrado de 16 bloques de CUALQUIER armario
+
+            loop {armario::locations::*}:
+
+                set {_loc} to loop-value-2
+
+                if world of {_loc} is {_pworld}:
+
+                    # --- COMPENSACIÓN DIAGONAL COMPLETA PARA EL MODELO DE ORAXEN (X e Z) ---
+
+                    # Desplazamos el centro virtual 0.5 bloques en X y Z para corregir la alineación del bloque central
+
+                    set {_visual_center} to {_loc}
+
+                    set x-coordinate of {_visual_center} to x-coordinate of {_visual_center} - 0.5
+
+                    set z-coordinate of {_visual_center} to z-coordinate of {_visual_center} - 0.5
+
+
+
+                    set {_x_diff} to abs(x-coord of {_p} - x-coord of {_visual_center})
+
+                    set {_z_diff} to abs(z-coord of {_p} - z-coord of {_visual_center})
+
+                    if {_x_diff} <= 16:
+
+                        if {_z_diff} <= 16:
+
+                            if {armario::owner::%{_loc}%} is set:
+
+                                set {_inside} to true
+
+                                set {_zone_owner_uuid} to {armario::owner::%{_loc}%}
+
+                                set {_zone_loc} to {_visual_center}
+
+                                set {_final_x_diff} to {_x_diff}
+
+                                set {_final_z_diff} to {_z_diff}
+
+                                exit loop
+
+
+
+            if {_inside} is true:
+
+                # --- APLICACIÓN DE FATIGA ---
+
+                # Solo se le aplica fatiga si NO es el dueño y NO es administrador
+
+                if {_p} doesn't have permission "{@permiso_admin}":
+
+                    if {_zone_owner_uuid} is not {_p}'s uuid:
+
+                        apply mining fatigue {@nivel_fatiga} to {_p} for 2 seconds
+
+
+
+                # --- CONTROL DE WORLD BORDER DINÁMICO ---
+
+                # Si el jugador está seguro dentro (a más de 1.2 bloques del borde real de 16)
+
+                if {_final_x_diff} < 14.8:
+
+                    if {_final_z_diff} < 14.8:
+
+                        # Mostramos el World Border visual (tamaño 32 con centro exacto del armario)
+
+                        set worldborder of {_p} to a virtual worldborder:
+
+                            set worldborder center of event-worldborder to {_zone_loc}
+
+                            set worldborder size of event-worldborder to 32
+
+                    else:
+
+                        # Si está muy cerca del borde para cruzar, quitamos la colisión temporalmente
+
+                        reset worldborder of {_p}
+
+                else:
+
+                    reset worldborder of {_p}
+
+
+
+                # --- COMPROBACIÓN DE ENTRADA A LA ZONA (HUD & CMD Logs) ---
+
+                if {armario::inside_zone::%{_p}'s uuid%} is not set:
+
+                    set {armario::inside_zone::%{_p}'s uuid%} to {_zone_loc}
+
+
+
+                    # Caso 1: Es el dueño del armario
+
+                    if {_zone_owner_uuid} is {_p}'s uuid:
+
+                        send action bar "&a&l[+] &7¡Entrando a tu zona protegida!" to {_p}
+
+                        send "[Armario-Log] El dueño %{_p}% entro a su propia zona protegida." to console
+
+                    # Caso 2: Es un intruso o un administrador
+
+                    else:
+
+                        send action bar "&c&l[!] &7¡Entrando a zona protegida!" to {_p}
+
+                        if {_p} has permission "{@permiso_admin}":
+
+                            send "[Armario-Log] El admin %{_p}% entro a una zona protegida ajena." to console
+
+                        else:
+
+                            send "[Armario-Log] Jugador %{_p}% entro en zona protegida ajena. Applying Fatigue." to console
+
+            else:
+
+                # --- COMPROBACIÓN DE SALIDA DE LA ZONA (HUD & CMD Logs & World Border Reset) ---
+
+                if {armario::inside_zone::%{_p}'s uuid%} is set:
+
+                    set {_prev_zone} to {armario::inside_zone::%{_p}'s uuid%}
+
+                    set {_prev_owner_uuid} to {armario::owner::%{_prev_zone}%}
+
+                    delete {armario::inside_zone::%{_p}'s uuid%}
+
+
+
+                    # Quitamos definitivamente el World Border al salir de la zona
+
+                    reset worldborder of {_p}
+
+
+
+                    if {_p} has mining fatigue:
+
+                        apply mining fatigue 0 to {_p} for 0 seconds
+
+
+
+                    # Caso 1: Era el dueño del armario saliendo de su zona
+
+                    if {_prev_owner_uuid} is {_p}'s uuid:
+
+                        send action bar "&a&l[-] &7Saliendo de tu zona protegida" to {_p}
+
+                        send "[Armario-Log] El dueño %{_p}% salio de su propia zona protegida." to console
+
+                    # Caso 2: Era un intruso o un administrador saliendo de la zona
+
+                    else:
+
+                        send action bar "&a&l[-] &7Saliendo de zona protegida" to {_p}
+
+                        if {_prev_owner_uuid} is set:
+
+                            if {_p} has permission "{@permiso_admin}":
+
+                                send "[Armario-Log] El admin %{_p}% salio de una zona protegida ajena." to console
+
+                            else:
+
+                                send "[Armario-Log] Jugador %{_p}% salio de zona protegida ajena. Removiendo Fatiga." to console
+
+
+
+# --- CONFIGURACIÓN DE VALORES DE CHATARRA (Canasta por Proporción de Crafteo) ---
+function getScrapValue(i: item) :: number:
+    # 1. Verificar si es el item especial "chatarra" de Oraxen
+    set {_id} to oraxen id of {_i}
+    if {_id} is "chatarra":
+        return 30 # 1 Chatarra = 1 Hora de vida
+
+    set {_type} to type of {_i}
+    set {_item_str} to "%{_type}%"
+
+    # Lista de materiales válidos para chatarra
+    set {_is_valid} to false
+    if {_item_str} contains "iron" or "gold" or "copper" or "netherite" or "diamond" or "emerald" or "coal" or "redstone" or "lapis":
+        if {_item_str} contains "ingot" or "block" or "diamond" or "emerald" or "coal" or "redstone" or "lapis lazuli":
+            set {_is_valid} to true
+
+    if {_is_valid} is false:
+        return 0
+
+    # Determinar si es bloque para aplicar proporción
+    set {_multiplier} to 1
+    set {_base_item_str} to {_item_str}
+    if {_item_str} contains "block":
+        set {_multiplier} to 9
+        replace " block" with " ingot" in {_base_item_str}
+        replace "block of " with "" in {_base_item_str}
+        if {_base_item_str} is "diamond":
+            set {_base_item_str} to "diamond"
+        else if {_base_item_str} is "emerald":
+            set {_base_item_str} to "emerald"
+        else if {_base_item_str} is "lapis":
+            set {_base_item_str} to "lapis lazuli"
+        else if {_base_item_str} is "coal":
+            set {_base_item_str} to "coal"
+        else if {_base_item_str} is "redstone":
+            set {_base_item_str} to "redstone"
+
+    # Intentar obtener precio del AMM (Indice de Variación Promedio)
+    set {_base_item} to {_base_item_str} parsed as item
+    if {_base_item} is set:
+        set {_price} to getAMMPrice({_base_item})
+        return {_price} * {_multiplier}
+
+    # Fallback si no hay AMM price (Precios estáticos de seguridad)
+    if {_item_str} contains "iron":
+        return 30 * {_multiplier}
+    else if {_item_str} contains "gold":
+        return 60 * {_multiplier}
+    else if {_item_str} contains "copper":
+        return 10 * {_multiplier}
+    else if {_item_str} contains "netherite":
+        return 8000 * {_multiplier}
+    else if {_item_str} contains "diamond":
+        return 600 * {_multiplier}
+    else if {_item_str} contains "emerald":
+        return 200 * {_multiplier}
+    else if {_item_str} contains "coal":
+        return 5 * {_multiplier}
+    else if {_item_str} contains "redstone":
+        return 5 * {_multiplier}
+    else if {_item_str} contains "lapis":
+        return 10 * {_multiplier}
+
+    return 0
+# --- FUNCIÓN PARA SOLTAR CONTENIDO ---
+function dropArmarioStorage(loc: location):
+    loop 54 times:
+        set {_slot} to loop-number - 1
+        set {_i} to {armario::storage::%{_loc}%::%{_slot}%}
+        if {_i} is set:
+            drop {_i} at {_loc} without velocity
+            delete {armario::storage::%{_loc}%::%{_slot}%}
+
+# --- FUNCIÓN PARA CALCULAR TEXTO DE TIEMPO ---
+function getArmarioTimeText(val: number) :: text:
+    if {_val} <= 0:
+        return "&c1 hora (Sin Chatarra)"
+
+    # Consumo: 30 unidades = 1 hora (1 Iron Ingot = 1 Hora)
+    set {_hours} to floor({_val} / 30)
+    set {_consumed_by_hours} to {_hours} * 30
+    set {_remaining_units} to {_val} - {_consumed_by_hours}
+    set {_minutes} to floor({_remaining_units} * 2) # Simplificación: 30u=60m -> 1u=2m
+
+    return "&a%{_hours}%h %{_minutes}%m"
+
+# --- ACTUALIZAR ITEM DE TIMER ---
+function updateArmarioTimer(p: player, loc: location, inv: inventory):
+    set {_total_value} to 0
+    loop all items in {_inv}:
+        # No contar el propio reloj en el cálculo
+        set {_id} to oraxen id of loop-item
+        if {_id} is not "reloj_verde" or "reloj_rojo":
+            set {_val} to getScrapValue(loop-item)
+            add ({_val} * item amount of loop-item) to {_total_value}
+
+    # --- CALCULO DE TIEMPO REAL ---
+    set {_time_text} to getArmarioTimeText({_total_value})
+
+    if {armario::last_decay_tick} is set:
+        set {_elapsed} to difference between {armario::last_decay_tick} and now
+        set {_elapsed_minutes} to (floor(seconds of {_elapsed} / 60))
+
+        # CASO A: Hay chatarra (1 unidad = 2 min)
+        if {_total_value} > 0:
+            set {_total_minutes} to {_total_value} * 2
+            remove {_elapsed_minutes} from {_total_minutes}
+
+            if {_total_minutes} < 0:
+                set {_total_minutes} to 0
+
+            set {_h} to floor({_total_minutes} / 60)
+            set {_m} to {_total_minutes} - ({_h} * 60)
+            set {_time_text} to "&a%{_h}%h %{_m}%m"
+
+        # CASO B: No hay chatarra (Usa HP, 1 HP = 2 min)
+        else:
+            set {_hp} to {armario::hp::%{_loc}%}
+            set {_total_minutes} to {_hp} * 2
+            remove {_elapsed_minutes} from {_total_minutes}
+
+            if {_total_minutes} < 0:
+                set {_total_minutes} to 0
+
+            set {_h} to floor({_total_minutes} / 60)
+            set {_m} to {_total_minutes} - ({_h} * 60)
+            set {_time_text} to "&c%{_h}%h %{_m}%m"
+
+    if {_total_value} > 0:
+
+        set {_timer_item} to oraxen item "reloj_verde"
+        set name of {_timer_item} to "<green>Tiempo de Vida (Con Chatarra)"
+        set {_lore::*} to "&7Este armario tiene suficiente chatarra."
+        add "&7Tiempo restante: %{_time_text}%" to {_lore::*}
+        set lore of {_timer_item} to {_lore::*}
+    else:
+        set {_timer_item} to oraxen item "reloj_rojo"
+        set name of {_timer_item} to "<red>Tiempo de Vida (Sin Chatarra)"
+        set {_lore::*} to "&7¡No hay chatarra! El armario se"
+        add "&7destruirá en 1 hora si no añades material." to {_lore::*}
+        add "&7Tiempo restante: %{_time_text}%" to {_lore::*}
+        set lore of {_timer_item} to {_lore::*}
+
+    set slot 49 of {_inv} to {_timer_item}
+
+# --- EVENTO DE CLICK DERECHO (SISTEMA INTEGRADO) ---
+on right click:
+    set {_id} to oraxen furniture id at clicked block
+
+    # CASO 1: CLICK EN EL ARMARIO (ABRIR GUI)
+    if {_id} is "{@oraxen_id}":
+        cancel event
+        set {_block_loc} to location of clicked block
+        set x-coordinate of {_block_loc} to floor(x-coordinate of {_block_loc}) + 0.5
+        set y-coordinate of {_block_loc} to floor(y-coordinate of {_block_loc}) + 0.5
+        set z-coordinate of {_block_loc} to floor(z-coordinate of {_block_loc}) + 0.5
+
+        loop {armario::locations::*}:
+            if distance between loop-value and {_block_loc} < 2:
+                set {_loc} to loop-value
+                exit loop
+
+        if {_loc} is not set:
+            stop
+
+        # Verificar si es el dueño o admin
+        if {armario::owner::%{_loc}%} is not player's uuid:
+            if player doesn't have permission "{@permiso_admin}":
+                send "&c&l[!] &cNo tienes acceso a este armario." to player
+                stop
+
+        # Abrir GUI (54 slots con textura gui_default)
+        open chest inventory with 6 rows named "§f<shift:-8>ꐖ" to player
+        set {armario::current_gui::%player's uuid%} to {_loc}
+
+        set {_inv} to player's current inventory
+        # Cargar items
+        loop 54 times:
+            if loop-number - 1 is not 49:
+                set slot (loop-number - 1) of {_inv} to {armario::storage::%{_loc}%::%loop-number - 1%}
+
+        wait 1 tick
+        updateArmarioTimer(player, {_loc}, player's current inventory)
+        stop
+
+    # CASO 2: CLICK EN OTROS BLOQUES (PROTECCIÓN DE ZONA)
+    if player doesn't have permission "{@permiso_admin}":
+        if clicked block is set:
+            # Bypass para la tienda (Permitir que todos interactúen)
+            if {_id} is "tienda":
+                stop
+
+            set {_block_world} to world of clicked block
+            set {_block_loc} to location of clicked block
+
+            loop {armario::locations::*}:
+                set {_loc} to loop-value
+                if world of {_loc} is {_block_world}:
+                    # Comprobación de click derecho en rango cuadrado (16 bloques)
+                    set {_x_diff} to abs(x-coord of {_block_loc} - x-coord of {_loc})
+                    set {_z_diff} to abs(z-coord of {_block_loc} - z-coord of {_loc})
+                    if {_x_diff} <= 16:
+                        if {_z_diff} <= 16:
+                            if {armario::owner::%{_loc}%} is set:
+                                if {armario::owner::%{_loc}%} is not player's uuid:
+                                    cancel event
+                                    send "&c&l[!] &cEstructuras bloqueadas." to player
                                     stop
+# --- MANEJO DE INVENTARIO ---
+on inventory click:
+    if {armario::current_gui::%player's uuid%} is set:
+        if name of player's current inventory contains "ꐖ":
+            # Si el clic es en el slot 49 (el reloj), cancelar
+            if index of event-slot is 49:
+                cancel event
+                stop
+
+            # Esperar a que el shift-click o clic normal se procese
+            wait 2 ticks
+            updateArmarioTimer(player, {armario::current_gui::%player's uuid%}, player's current inventory)
+
+on inventory drag:
+    if {armario::current_gui::%player's uuid%} is set:
+        if name of player's current inventory contains "ꐖ":
+            # Bloquear drag en el slot 49
+            loop event-slots:
+                if index of loop-value is 49:
+                    cancel event
+                    stop
+
+            wait 2 ticks
+            updateArmarioTimer(player, {armario::current_gui::%player's uuid%}, player's current inventory)
+on inventory close:
+    if name of event-inventory contains "ꐖ":
+        set {_loc} to {armario::current_gui::%player's uuid%}
+        if {_loc} is set:
+            # Guardar items
+            loop 54 times:
+                if loop-number - 1 is not 49:
+                    set {armario::storage::%{_loc}%::%loop-number - 1%} to slot (loop-number - 1) of event-inventory
+            delete {armario::current_gui::%player's uuid%}
+
+# --- SISTEMA DE CONSUMO Y DEGRADACIÓN ---
+every 10 minutes:
+    set {armario::last_decay_tick} to now
+    loop {armario::locations::*}:
+        set {_loc} to loop-value
+        set {_total_value} to 0
+        loop 54 times:
+            set {_i} to {armario::storage::%{_loc}%::%loop-number - 1%}
+            if {_i} is set:
+                set {_val} to getScrapValue({_i})
+                add ({_val} * item amount of {_i}) to {_total_value}
+
+        if {_total_value} > 0:
+            # Consumo: 30 unidades por hora = 5 unidades cada 10 minutos
+            set {_to_remove} to 5
+            loop 54 times:
+                if {_to_remove} <= 0:
+                    exit loop
+                set {_slot} to loop-number-2 - 1
+                set {_i} to {armario::storage::%{_loc}%::%{_slot}%}
+                if {_i} is set:
+                    set {_val} to getScrapValue({_i})
+                    if {_val} > 0:
+                        set {_amount} to item amount of {_i}
+                        # Cuanto valor aporta este stack
+                        set {_stack_val} to {_val} * {_amount}
+
+                        if {_stack_val} <= {_to_remove}:
+                            remove {_stack_val} from {_to_remove}
+                            delete {armario::storage::%{_loc}%::%{_slot}%}
+                        else:
+                            # Cuantos items necesitamos quitar
+                            set {_items_to_remove} to ceil({_to_remove} / {_val})
+                            set {_new_amount} to {_amount} - {_items_to_remove}
+                            if {_new_amount} <= 0:
+                                delete {armario::storage::%{_loc}%::%{_slot}%}
+                            else:
+                                set item amount of {armario::storage::%{_loc}%::%{_slot}%} to {_new_amount}
+                            set {_to_remove} to 0
+        else:
+            # Si no hay chatarra, degradación de "1 hora" (30 HP / 6 ticks de 10 min = 5 HP)
+            remove 5 from {armario::hp::%{_loc}%}
+
+            if {armario::hp::%{_loc}%} <= 0:
+                dropArmarioStorage({_loc})
+                set {_owner} to {armario::owner::%{_loc}%}
+                # Limpieza de base de datos
+                delete {armario::locations::%loop-index%}
+                delete {armario::owner::%{_loc}%}
+                delete {armario::hp::%{_loc}%}
+
+                # Eliminar mueble físico (Seguridad: Eliminar entidades cercanas)
+                loop entities in radius 3 of {_loc}:
+                    set {_type} to "%type of loop-entity%"
+                    if {_type} contains "display" or "interaction":
+                        delete loop-entity
+
+                # Notificación
+                loop all players:
+                    if loop-player's uuid is {_owner}:
+                        send "&4&l[!] &c¡Tu armario se ha destruido por falta de mantenimiento!" to loop-player
+
+                send "[Armario-Log] Armario en %{_loc}% DESTRUIDO por falta de mantenimiento." to console
+# --- RESTO DEL SCRIPT ORIGINAL ---

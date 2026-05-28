@@ -1,0 +1,83 @@
+# Ballesta Zhuge - Versión con Consumo de Inventario y Limpieza de Proyectiles
+options:
+    max_magazine: 30
+
+on shoot:
+    shooter is a player
+    set {_i} to shooter's tool
+
+    set {_full_lore} to "%uncolored lore of {_i}%"
+    if {_full_lore} contains "Cargador":
+
+        loop 5 times:
+            set {_line} to uncolored line (loop-number) of lore of {_i}
+            if {_line} contains "Flechas":
+
+                set {_n_text} to {_line}
+                replace all "- Flechas: " with "" in {_n_text}
+                replace all " " with "" in {_n_text}
+                set {_n} to {_n_text} parsed as integer
+
+                if {_n} is not set:
+                    set {_n} to 0
+
+                if {_n} > 0:
+                    remove 1 from {_n}
+                    set line (loop-number) of lore of {_i} to "&7&o- Flechas: %{_n}%"
+                    set shooter's tool to {_i}
+
+                    # Marcamos el proyectil para saber que es de una Zhuge y debe limpiarse
+                    set metadata value "zhuge_arrow" of projectile to "true"
+
+                    if {_n} > 0:
+                        wait 2 ticks
+                        if shooter's tool is {_i}:
+                            set charged projectiles of shooter's tool to arrow
+                            play sound "block.piston.extend" with volume 0.3 and pitch 2 at shooter
+
+                    send action bar "&fMunición: &b%{_n}%&f/30" to shooter
+                    stop
+                else:
+                    cancel event
+                    send action bar "&c&l¡SIN MUNICIÓN EN EL CARGADOR!" to shooter
+
+# Limpieza de proyectiles al impactar (Performance)
+on projectile hit:
+    if metadata value "zhuge_arrow" of projectile is "true":
+        wait 1 tick
+        delete projectile
+
+# Recarga basada en Inventario
+on right click:
+    player's tool is a crossbow
+    set {_i} to player's tool
+    set {_full_lore} to "%uncolored lore of {_i}%"
+
+    if {_full_lore} contains "Cargador":
+        if {_full_lore} contains "Flechas: 0":
+
+            set {_need} to {@max_magazine}
+
+            if player's gamemode is survival:
+                if player does not have arrow:
+                    send action bar "&c&lNo tienes flechas en el inventario" to player
+                    stop
+
+                set {_has} to amount of arrow in player's inventory
+                if {_has} < {_need}:
+                    set {_to_load} to {_has}
+                else:
+                    set {_to_load} to {_need}
+
+                remove {_to_load} of arrow from player's inventory
+            else:
+                set {_to_load} to {@max_magazine}
+
+            loop 5 times:
+                set {_line} to uncolored line (loop-number) of lore of {_i}
+                if {_line} contains "Flechas":
+                    set line (loop-number) of lore of {_i} to "&7&o- Flechas: %{_to_load}%"
+                    set player's tool to {_i}
+                    send action bar "&b&lCargador: &f%{_to_load}%/{@max_magazine} flechas insertadas" to player
+                    play sound "block.iron_door.open" with volume 0.5 and pitch 2 at player
+                    stop

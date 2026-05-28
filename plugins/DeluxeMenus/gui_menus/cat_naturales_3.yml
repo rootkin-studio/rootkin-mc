@@ -1,0 +1,310 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_naturales_3
+size: 54
+items:
+  nether_wart:
+    material: NETHER_WART
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_nether_wart%"
+    - "&7Stock: &f%pool_stock_nether_wart%"
+    left_click_commands:
+    - '[player] setbuyingitem nether_wart cat_naturales_3'
+  crimson_hyphae:
+    material: CRIMSON_HYPHAE
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_crimson_hyphae%"
+    - "&7Stock: &f%pool_stock_crimson_hyphae%"
+    left_click_commands:
+    - '[player] setbuyingitem crimson_hyphae cat_naturales_3'
+  warped_hyphae:
+    material: WARPED_HYPHAE
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_warped_hyphae%"
+    - "&7Stock: &f%pool_stock_warped_hyphae%"
+    left_click_commands:
+    - '[player] setbuyingitem warped_hyphae cat_naturales_3'
+  mycelium:
+    material: MYCELIUM
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_mycelium%"
+    - "&7Stock: &f%pool_stock_mycelium%"
+    left_click_commands:
+    - '[player] setbuyingitem mycelium cat_naturales_3'
+  tube_coral_block:
+    material: TUBE_CORAL_BLOCK
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_tube_coral_block%"
+    - "&7Stock: &f%pool_stock_tube_coral_block%"
+    left_click_commands:
+    - '[player] setbuyingitem tube_coral_block cat_naturales_3'
+  brain_coral_block:
+    material: BRAIN_CORAL_BLOCK
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_brain_coral_block%"
+    - "&7Stock: &f%pool_stock_brain_coral_block%"
+    left_click_commands:
+    - '[player] setbuyingitem brain_coral_block cat_naturales_3'
+  bubble_coral_block:
+    material: BUBBLE_CORAL_BLOCK
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_bubble_coral_block%"
+    - "&7Stock: &f%pool_stock_bubble_coral_block%"
+    left_click_commands:
+    - '[player] setbuyingitem bubble_coral_block cat_naturales_3'
+  fire_coral_block:
+    material: FIRE_CORAL_BLOCK
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_fire_coral_block%"
+    - "&7Stock: &f%pool_stock_fire_coral_block%"
+    left_click_commands:
+    - '[player] setbuyingitem fire_coral_block cat_naturales_3'
+  horn_coral_block:
+    material: HORN_CORAL_BLOCK
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_horn_coral_block%"
+    - "&7Stock: &f%pool_stock_horn_coral_block%"
+    left_click_commands:
+    - '[player] setbuyingitem horn_coral_block cat_naturales_3'
+  coal_ore:
+    material: COAL_ORE
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_coal_ore%"
+    - "&7Stock: &f%pool_stock_coal_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem coal_ore cat_naturales_3'
+  iron_ore:
+    material: IRON_ORE
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_iron_ore%"
+    - "&7Stock: &f%pool_stock_iron_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_ore cat_naturales_3'
+  copper_ore:
+    material: COPPER_ORE
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_copper_ore%"
+    - "&7Stock: &f%pool_stock_copper_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem copper_ore cat_naturales_3'
+  gold_ore:
+    material: GOLD_ORE
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_gold_ore%"
+    - "&7Stock: &f%pool_stock_gold_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem gold_ore cat_naturales_3'
+  redstone_ore:
+    material: REDSTONE_ORE
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_redstone_ore%"
+    - "&7Stock: &f%pool_stock_redstone_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem redstone_ore cat_naturales_3'
+  lapis_ore:
+    material: LAPIS_ORE
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_lapis_ore%"
+    - "&7Stock: &f%pool_stock_lapis_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem lapis_ore cat_naturales_3'
+  diamond_ore:
+    material: DIAMOND_ORE
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_diamond_ore%"
+    - "&7Stock: &f%pool_stock_diamond_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond_ore cat_naturales_3'
+  emerald_ore:
+    material: EMERALD_ORE
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_emerald_ore%"
+    - "&7Stock: &f%pool_stock_emerald_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem emerald_ore cat_naturales_3'
+  deepslate_coal_ore:
+    material: DEEPSLATE_COAL_ORE
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_coal_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_coal_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_coal_ore cat_naturales_3'
+  deepslate_iron_ore:
+    material: DEEPSLATE_IRON_ORE
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_iron_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_iron_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_iron_ore cat_naturales_3'
+  deepslate_copper_ore:
+    material: DEEPSLATE_COPPER_ORE
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_copper_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_copper_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_copper_ore cat_naturales_3'
+  deepslate_gold_ore:
+    material: DEEPSLATE_GOLD_ORE
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_gold_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_gold_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_gold_ore cat_naturales_3'
+  deepslate_redstone_ore:
+    material: DEEPSLATE_REDSTONE_ORE
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_redstone_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_redstone_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_redstone_ore cat_naturales_3'
+  deepslate_lapis_ore:
+    material: DEEPSLATE_LAPIS_ORE
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_lapis_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_lapis_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_lapis_ore cat_naturales_3'
+  deepslate_diamond_ore:
+    material: DEEPSLATE_DIAMOND_ORE
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_diamond_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_diamond_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_diamond_ore cat_naturales_3'
+  deepslate_emerald_ore:
+    material: DEEPSLATE_EMERALD_ORE
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_deepslate_emerald_ore%"
+    - "&7Stock: &f%pool_stock_deepslate_emerald_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem deepslate_emerald_ore cat_naturales_3'
+  nether_quartz_ore:
+    material: NETHER_QUARTZ_ORE
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_nether_quartz_ore%"
+    - "&7Stock: &f%pool_stock_nether_quartz_ore%"
+    left_click_commands:
+    - '[player] setbuyingitem nether_quartz_ore cat_naturales_3'
+  ancient_debris:
+    material: ANCIENT_DEBRIS
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_ancient_debris%"
+    - "&7Stock: &f%pool_stock_ancient_debris%"
+    left_click_commands:
+    - '[player] setbuyingitem ancient_debris cat_naturales_3'
+  coal_block:
+    material: COAL_BLOCK
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_coal_block%"
+    - "&7Stock: &f%pool_stock_coal_block%"
+    left_click_commands:
+    - '[player] setbuyingitem coal_block cat_naturales_3'
+  iron_block:
+    material: IRON_BLOCK
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_iron_block%"
+    - "&7Stock: &f%pool_stock_iron_block%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_block cat_naturales_3'
+  copper_block:
+    material: COPPER_BLOCK
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_copper_block%"
+    - "&7Stock: &f%pool_stock_copper_block%"
+    left_click_commands:
+    - '[player] setbuyingitem copper_block cat_naturales_3'
+  gold_block:
+    material: GOLD_BLOCK
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_gold_block%"
+    - "&7Stock: &f%pool_stock_gold_block%"
+    left_click_commands:
+    - '[player] setbuyingitem gold_block cat_naturales_3'
+  redstone_block:
+    material: REDSTONE_BLOCK
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_redstone_block%"
+    - "&7Stock: &f%pool_stock_redstone_block%"
+    left_click_commands:
+    - '[player] setbuyingitem redstone_block cat_naturales_3'
+  lapis_block:
+    material: LAPIS_BLOCK
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_lapis_block%"
+    - "&7Stock: &f%pool_stock_lapis_block%"
+    left_click_commands:
+    - '[player] setbuyingitem lapis_block cat_naturales_3'
+  diamond_block:
+    material: DIAMOND_BLOCK
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_diamond_block%"
+    - "&7Stock: &f%pool_stock_diamond_block%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond_block cat_naturales_3'
+  emerald_block:
+    material: EMERALD_BLOCK
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_emerald_block%"
+    - "&7Stock: &f%pool_stock_emerald_block%"
+    left_click_commands:
+    - '[player] setbuyingitem emerald_block cat_naturales_3'
+  netherite_block:
+    material: NETHERITE_BLOCK
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_block%"
+    - "&7Stock: &f%pool_stock_netherite_block%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_block cat_naturales_3'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  prev_page:
+    material: PAPER
+    slots:
+    - 46
+    - 47
+    - 48
+    - 49
+    model_data: 500
+    display_name: '&cAnterior'
+    left_click_commands:
+    - '[player] cat_naturales_2'

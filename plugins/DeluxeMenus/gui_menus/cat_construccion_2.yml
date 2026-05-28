@@ -1,0 +1,238 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_construccion_2
+size: 54
+items:
+  cut_red_sandstone:
+    material: CUT_RED_SANDSTONE
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_cut_red_sandstone%"
+    - "&7Stock: &f%pool_stock_cut_red_sandstone%"
+    left_click_commands:
+    - '[player] setbuyingitem cut_red_sandstone cat_construccion_2'
+  bricks:
+    material: BRICKS
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_bricks%"
+    - "&7Stock: &f%pool_stock_bricks%"
+    left_click_commands:
+    - '[player] setbuyingitem bricks cat_construccion_2'
+  mud_bricks:
+    material: MUD_BRICKS
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_mud_bricks%"
+    - "&7Stock: &f%pool_stock_mud_bricks%"
+    left_click_commands:
+    - '[player] setbuyingitem mud_bricks cat_construccion_2'
+  quartz_block:
+    material: QUARTZ_BLOCK
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_quartz_block%"
+    - "&7Stock: &f%pool_stock_quartz_block%"
+    left_click_commands:
+    - '[player] setbuyingitem quartz_block cat_construccion_2'
+  smooth_quartz:
+    material: SMOOTH_QUARTZ
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_smooth_quartz%"
+    - "&7Stock: &f%pool_stock_smooth_quartz%"
+    left_click_commands:
+    - '[player] setbuyingitem smooth_quartz cat_construccion_2'
+  quartz_pillar:
+    material: QUARTZ_PILLAR
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_quartz_pillar%"
+    - "&7Stock: &f%pool_stock_quartz_pillar%"
+    left_click_commands:
+    - '[player] setbuyingitem quartz_pillar cat_construccion_2'
+  chiseled_quartz_block:
+    material: CHISELED_QUARTZ_BLOCK
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_chiseled_quartz_block%"
+    - "&7Stock: &f%pool_stock_chiseled_quartz_block%"
+    left_click_commands:
+    - '[player] setbuyingitem chiseled_quartz_block cat_construccion_2'
+  purpur_block:
+    material: PURPUR_BLOCK
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_purpur_block%"
+    - "&7Stock: &f%pool_stock_purpur_block%"
+    left_click_commands:
+    - '[player] setbuyingitem purpur_block cat_construccion_2'
+  copper_block:
+    material: COPPER_BLOCK
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_copper_block%"
+    - "&7Stock: &f%pool_stock_copper_block%"
+    left_click_commands:
+    - '[player] setbuyingitem copper_block cat_construccion_2'
+  exposed_copper:
+    material: EXPOSED_COPPER
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_exposed_copper%"
+    - "&7Stock: &f%pool_stock_exposed_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem exposed_copper cat_construccion_2'
+  weathered_copper:
+    material: WEATHERED_COPPER
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_weathered_copper%"
+    - "&7Stock: &f%pool_stock_weathered_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem weathered_copper cat_construccion_2'
+  oxidized_copper:
+    material: OXIDIZED_COPPER
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_oxidized_copper%"
+    - "&7Stock: &f%pool_stock_oxidized_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem oxidized_copper cat_construccion_2'
+  cut_copper:
+    material: CUT_COPPER
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_cut_copper%"
+    - "&7Stock: &f%pool_stock_cut_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem cut_copper cat_construccion_2'
+  exposed_cut_copper:
+    material: EXPOSED_CUT_COPPER
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_exposed_cut_copper%"
+    - "&7Stock: &f%pool_stock_exposed_cut_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem exposed_cut_copper cat_construccion_2'
+  weathered_cut_copper:
+    material: WEATHERED_CUT_COPPER
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_weathered_cut_copper%"
+    - "&7Stock: &f%pool_stock_weathered_cut_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem weathered_cut_copper cat_construccion_2'
+  oxidized_cut_copper:
+    material: OXIDIZED_CUT_COPPER
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_oxidized_cut_copper%"
+    - "&7Stock: &f%pool_stock_oxidized_cut_copper%"
+    left_click_commands:
+    - '[player] setbuyingitem oxidized_cut_copper cat_construccion_2'
+  copper_grate:
+    material: COPPER_GRATE
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_copper_grate%"
+    - "&7Stock: &f%pool_stock_copper_grate%"
+    left_click_commands:
+    - '[player] setbuyingitem copper_grate cat_construccion_2'
+  exposed_copper_grate:
+    material: EXPOSED_COPPER_GRATE
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_exposed_copper_grate%"
+    - "&7Stock: &f%pool_stock_exposed_copper_grate%"
+    left_click_commands:
+    - '[player] setbuyingitem exposed_copper_grate cat_construccion_2'
+  weathered_copper_grate:
+    material: WEATHERED_COPPER_GRATE
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_weathered_copper_grate%"
+    - "&7Stock: &f%pool_stock_weathered_copper_grate%"
+    left_click_commands:
+    - '[player] setbuyingitem weathered_copper_grate cat_construccion_2'
+  oxidized_copper_grate:
+    material: OXIDIZED_COPPER_GRATE
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_oxidized_copper_grate%"
+    - "&7Stock: &f%pool_stock_oxidized_copper_grate%"
+    left_click_commands:
+    - '[player] setbuyingitem oxidized_copper_grate cat_construccion_2'
+  copper_bulb:
+    material: COPPER_BULB
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_copper_bulb%"
+    - "&7Stock: &f%pool_stock_copper_bulb%"
+    left_click_commands:
+    - '[player] setbuyingitem copper_bulb cat_construccion_2'
+  exposed_copper_bulb:
+    material: EXPOSED_COPPER_BULB
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_exposed_copper_bulb%"
+    - "&7Stock: &f%pool_stock_exposed_copper_bulb%"
+    left_click_commands:
+    - '[player] setbuyingitem exposed_copper_bulb cat_construccion_2'
+  weathered_copper_bulb:
+    material: WEATHERED_COPPER_BULB
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_weathered_copper_bulb%"
+    - "&7Stock: &f%pool_stock_weathered_copper_bulb%"
+    left_click_commands:
+    - '[player] setbuyingitem weathered_copper_bulb cat_construccion_2'
+  oxidized_copper_bulb:
+    material: OXIDIZED_COPPER_BULB
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_oxidized_copper_bulb%"
+    - "&7Stock: &f%pool_stock_oxidized_copper_bulb%"
+    left_click_commands:
+    - '[player] setbuyingitem oxidized_copper_bulb cat_construccion_2'
+  prismarine:
+    material: PRISMARINE
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_prismarine%"
+    - "&7Stock: &f%pool_stock_prismarine%"
+    left_click_commands:
+    - '[player] setbuyingitem prismarine cat_construccion_2'
+  prismarine_bricks:
+    material: PRISMARINE_BRICKS
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_prismarine_bricks%"
+    - "&7Stock: &f%pool_stock_prismarine_bricks%"
+    left_click_commands:
+    - '[player] setbuyingitem prismarine_bricks cat_construccion_2'
+  dark_prismarine:
+    material: DARK_PRISMARINE
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_dark_prismarine%"
+    - "&7Stock: &f%pool_stock_dark_prismarine%"
+    left_click_commands:
+    - '[player] setbuyingitem dark_prismarine cat_construccion_2'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  prev_page:
+    material: PAPER
+    slots:
+    - 46
+    - 47
+    - 48
+    - 49
+    model_data: 500
+    display_name: '&cAnterior'
+    left_click_commands:
+    - '[player] cat_construccion'

@@ -17,5 +17,48 @@ gui_menus:
     file: requirements_menu.yml
   gui_tienda:
     file: gui_tienda.yml
+  gui_categorias:
+    file: gui_categorias.yml
+  gui_lista_items:
+    file: gui_lista-items.yml
+  gui_comprar:
+    file: gui_comprar.yml
   gui_vender:
     file: gui_vender.yml
+    register_command: true
+  cat_construccion:
+    file: cat_construccion.yml
+  cat_construccion_2:
+    file: cat_construccion_2.yml
+  cat_tenidos:
+    file: cat_tenidos.yml
+  cat_tenidos_2:
+    file: cat_tenidos_2.yml
+  cat_tenidos_3:
+    file: cat_tenidos_3.yml
+  cat_tenidos_4:
+    file: cat_tenidos_4.yml
+  cat_naturales:
+    file: cat_naturales.yml
+  cat_naturales_2:
+    file: cat_naturales_2.yml
+  cat_naturales_3:
+    file: cat_naturales_3.yml
+  cat_funcionales:
+    file: cat_funcionales.yml
+  cat_funcionales_2:
+    file: cat_funcionales_2.yml
+  cat_funcionales_3:
+    file: cat_funcionales_3.yml
+  cat_herramientas:
+    file: cat_herramientas.yml
+  cat_combate:
+    file: cat_combate.yml
+  cat_alimentos:
+    file: cat_alimentos.yml
+  cat_ingredientes:
+    file: cat_ingredientes.yml
+  cat_ingredientes_2:
+    file: cat_ingredientes_2.yml
+  gui_armario:
+    file: gui_armario.yml

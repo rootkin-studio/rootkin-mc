@@ -1,0 +1,382 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_naturales
+size: 54
+items:
+  grass_block:
+    material: GRASS_BLOCK
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_grass_block%"
+    - "&7Stock: &f%pool_stock_grass_block%"
+    left_click_commands:
+    - '[player] setbuyingitem grass_block cat_naturales'
+  dirt:
+    material: DIRT
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_dirt%"
+    - "&7Stock: &f%pool_stock_dirt%"
+    left_click_commands:
+    - '[player] setbuyingitem dirt cat_naturales'
+  podzol:
+    material: PODZOL
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_podzol%"
+    - "&7Stock: &f%pool_stock_podzol%"
+    left_click_commands:
+    - '[player] setbuyingitem podzol cat_naturales'
+  coarse_dirt:
+    material: COARSE_DIRT
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_coarse_dirt%"
+    - "&7Stock: &f%pool_stock_coarse_dirt%"
+    left_click_commands:
+    - '[player] setbuyingitem coarse_dirt cat_naturales'
+  rooted_dirt:
+    material: ROOTED_DIRT
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_rooted_dirt%"
+    - "&7Stock: &f%pool_stock_rooted_dirt%"
+    left_click_commands:
+    - '[player] setbuyingitem rooted_dirt cat_naturales'
+  mud:
+    material: MUD
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_mud%"
+    - "&7Stock: &f%pool_stock_mud%"
+    left_click_commands:
+    - '[player] setbuyingitem mud cat_naturales'
+  clay:
+    material: CLAY
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_clay%"
+    - "&7Stock: &f%pool_stock_clay%"
+    left_click_commands:
+    - '[player] setbuyingitem clay cat_naturales'
+  sand:
+    material: SAND
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_sand%"
+    - "&7Stock: &f%pool_stock_sand%"
+    left_click_commands:
+    - '[player] setbuyingitem sand cat_naturales'
+  red_sand:
+    material: RED_SAND
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_red_sand%"
+    - "&7Stock: &f%pool_stock_red_sand%"
+    left_click_commands:
+    - '[player] setbuyingitem red_sand cat_naturales'
+  gravel:
+    material: GRAVEL
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_gravel%"
+    - "&7Stock: &f%pool_stock_gravel%"
+    left_click_commands:
+    - '[player] setbuyingitem gravel cat_naturales'
+  soul_sand:
+    material: SOUL_SAND
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_soul_sand%"
+    - "&7Stock: &f%pool_stock_soul_sand%"
+    left_click_commands:
+    - '[player] setbuyingitem soul_sand cat_naturales'
+  soul_soil:
+    material: SOUL_SOIL
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_soul_soil%"
+    - "&7Stock: &f%pool_stock_soul_soil%"
+    left_click_commands:
+    - '[player] setbuyingitem soul_soil cat_naturales'
+  netherrack:
+    material: NETHERRACK
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_netherrack%"
+    - "&7Stock: &f%pool_stock_netherrack%"
+    left_click_commands:
+    - '[player] setbuyingitem netherrack cat_naturales'
+  end_stone:
+    material: END_STONE
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_end_stone%"
+    - "&7Stock: &f%pool_stock_end_stone%"
+    left_click_commands:
+    - '[player] setbuyingitem end_stone cat_naturales'
+  obsidian:
+    material: OBSIDIAN
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_obsidian%"
+    - "&7Stock: &f%pool_stock_obsidian%"
+    left_click_commands:
+    - '[player] setbuyingitem obsidian cat_naturales'
+  crying_obsidian:
+    material: CRYING_OBSIDIAN
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_crying_obsidian%"
+    - "&7Stock: &f%pool_stock_crying_obsidian%"
+    left_click_commands:
+    - '[player] setbuyingitem crying_obsidian cat_naturales'
+  magma_block:
+    material: MAGMA_BLOCK
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_magma_block%"
+    - "&7Stock: &f%pool_stock_magma_block%"
+    left_click_commands:
+    - '[player] setbuyingitem magma_block cat_naturales'
+  ice:
+    material: ICE
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_ice%"
+    - "&7Stock: &f%pool_stock_ice%"
+    left_click_commands:
+    - '[player] setbuyingitem ice cat_naturales'
+  packed_ice:
+    material: PACKED_ICE
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_packed_ice%"
+    - "&7Stock: &f%pool_stock_packed_ice%"
+    left_click_commands:
+    - '[player] setbuyingitem packed_ice cat_naturales'
+  blue_ice:
+    material: BLUE_ICE
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_blue_ice%"
+    - "&7Stock: &f%pool_stock_blue_ice%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_ice cat_naturales'
+  snow:
+    material: SNOW
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_snow%"
+    - "&7Stock: &f%pool_stock_snow%"
+    left_click_commands:
+    - '[player] setbuyingitem snow cat_naturales'
+  snow_block:
+    material: SNOW_BLOCK
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_snow_block%"
+    - "&7Stock: &f%pool_stock_snow_block%"
+    left_click_commands:
+    - '[player] setbuyingitem snow_block cat_naturales'
+  oak_log:
+    material: OAK_LOG
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_oak_log%"
+    - "&7Stock: &f%pool_stock_oak_log%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_log cat_naturales'
+  spruce_log:
+    material: SPRUCE_LOG
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_spruce_log%"
+    - "&7Stock: &f%pool_stock_spruce_log%"
+    left_click_commands:
+    - '[player] setbuyingitem spruce_log cat_naturales'
+  birch_log:
+    material: BIRCH_LOG
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_birch_log%"
+    - "&7Stock: &f%pool_stock_birch_log%"
+    left_click_commands:
+    - '[player] setbuyingitem birch_log cat_naturales'
+  jungle_log:
+    material: JUNGLE_LOG
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_jungle_log%"
+    - "&7Stock: &f%pool_stock_jungle_log%"
+    left_click_commands:
+    - '[player] setbuyingitem jungle_log cat_naturales'
+  acacia_log:
+    material: ACACIA_LOG
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_acacia_log%"
+    - "&7Stock: &f%pool_stock_acacia_log%"
+    left_click_commands:
+    - '[player] setbuyingitem acacia_log cat_naturales'
+  dark_oak_log:
+    material: DARK_OAK_LOG
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_dark_oak_log%"
+    - "&7Stock: &f%pool_stock_dark_oak_log%"
+    left_click_commands:
+    - '[player] setbuyingitem dark_oak_log cat_naturales'
+  mangrove_log:
+    material: MANGROVE_LOG
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_mangrove_log%"
+    - "&7Stock: &f%pool_stock_mangrove_log%"
+    left_click_commands:
+    - '[player] setbuyingitem mangrove_log cat_naturales'
+  cherry_log:
+    material: CHERRY_LOG
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_cherry_log%"
+    - "&7Stock: &f%pool_stock_cherry_log%"
+    left_click_commands:
+    - '[player] setbuyingitem cherry_log cat_naturales'
+  stripped_oak_log:
+    material: STRIPPED_OAK_LOG
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_oak_log%"
+    - "&7Stock: &f%pool_stock_stripped_oak_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_oak_log cat_naturales'
+  stripped_spruce_log:
+    material: STRIPPED_SPRUCE_LOG
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_spruce_log%"
+    - "&7Stock: &f%pool_stock_stripped_spruce_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_spruce_log cat_naturales'
+  stripped_birch_log:
+    material: STRIPPED_BIRCH_LOG
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_birch_log%"
+    - "&7Stock: &f%pool_stock_stripped_birch_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_birch_log cat_naturales'
+  stripped_jungle_log:
+    material: STRIPPED_JUNGLE_LOG
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_jungle_log%"
+    - "&7Stock: &f%pool_stock_stripped_jungle_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_jungle_log cat_naturales'
+  stripped_acacia_log:
+    material: STRIPPED_ACACIA_LOG
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_acacia_log%"
+    - "&7Stock: &f%pool_stock_stripped_acacia_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_acacia_log cat_naturales'
+  stripped_dark_oak_log:
+    material: STRIPPED_DARK_OAK_LOG
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_dark_oak_log%"
+    - "&7Stock: &f%pool_stock_stripped_dark_oak_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_dark_oak_log cat_naturales'
+  stripped_mangrove_log:
+    material: STRIPPED_MANGROVE_LOG
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_mangrove_log%"
+    - "&7Stock: &f%pool_stock_stripped_mangrove_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_mangrove_log cat_naturales'
+  stripped_cherry_log:
+    material: STRIPPED_CHERRY_LOG
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_stripped_cherry_log%"
+    - "&7Stock: &f%pool_stock_stripped_cherry_log%"
+    left_click_commands:
+    - '[player] setbuyingitem stripped_cherry_log cat_naturales'
+  crimson_stem:
+    material: CRIMSON_STEM
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_crimson_stem%"
+    - "&7Stock: &f%pool_stock_crimson_stem%"
+    left_click_commands:
+    - '[player] setbuyingitem crimson_stem cat_naturales'
+  warped_stem:
+    material: WARPED_STEM
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_warped_stem%"
+    - "&7Stock: &f%pool_stock_warped_stem%"
+    left_click_commands:
+    - '[player] setbuyingitem warped_stem cat_naturales'
+  oak_leaves:
+    material: OAK_LEAVES
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_oak_leaves%"
+    - "&7Stock: &f%pool_stock_oak_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_leaves cat_naturales'
+  spruce_leaves:
+    material: SPRUCE_LEAVES
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_spruce_leaves%"
+    - "&7Stock: &f%pool_stock_spruce_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem spruce_leaves cat_naturales'
+  birch_leaves:
+    material: BIRCH_LEAVES
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_birch_leaves%"
+    - "&7Stock: &f%pool_stock_birch_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem birch_leaves cat_naturales'
+  jungle_leaves:
+    material: JUNGLE_LEAVES
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_jungle_leaves%"
+    - "&7Stock: &f%pool_stock_jungle_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem jungle_leaves cat_naturales'
+  acacia_leaves:
+    material: ACACIA_LEAVES
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_acacia_leaves%"
+    - "&7Stock: &f%pool_stock_acacia_leaves%"
+    left_click_commands:
+    - '[player] setbuyingitem acacia_leaves cat_naturales'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  next_page:
+    material: PAPER
+    slots:
+    - 50
+    - 51
+    - 52
+    - 53
+    model_data: 500
+    display_name: '&aSiguiente'
+    left_click_commands:
+    - '[player] cat_naturales_2'

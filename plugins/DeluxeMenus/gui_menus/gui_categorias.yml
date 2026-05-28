@@ -1,0 +1,58 @@
+menu_title: "§f<shift:-8>ꐓ"
+open_command: categorias
+size: 54
+items:
+    "cat_construccion":
+        material: PAPER
+        slots: [0, 1, 2, 9, 10, 11]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_construccion"]
+    "cat_herramientas":
+        material: PAPER
+        slots: [3, 4, 5, 12, 13, 14, 21, 22, 23]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_herramientas"]
+    "cat_funcionales":
+        material: PAPER
+        slots: [6, 7, 8, 15, 16, 17]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_funcionales"]
+    "cat_alimentos":
+        material: PAPER
+        slots: [24, 25, 26, 33, 34, 35]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_alimentos"]
+    "cat_ingredientes":
+        material: PAPER
+        slots: [42, 43, 44, 51, 52, 53]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_ingredientes"]
+    "cat_tenidos":
+        material: PAPER
+        slots: [18, 19, 20, 27, 28, 29]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_tenidos"]
+    "cat_naturales":
+        material: PAPER
+        slots: [36, 37, 38, 45, 46, 47]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_naturales"]
+    "cat_combate":
+        material: PAPER
+        slots: [30, 31, 32, 39, 40, 41, 48, 49, 50]
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] cat_combate"]
+    "back":
+        material: PAPER
+        slot: 26 # Using a slot that is visually appropriate or requested if available.
+        model_data: 500
+        display_name: " "
+        left_click_commands: ["[player] tienda"]

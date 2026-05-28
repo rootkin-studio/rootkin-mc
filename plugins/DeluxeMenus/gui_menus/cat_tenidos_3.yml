@@ -1,0 +1,393 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_tenidos_3
+size: 54
+items:
+    cyan_glazed_terracotta:
+        material: CYAN_GLAZED_TERRACOTTA
+        slot: 0
+        lore:
+            - "&7Precio: &a€%pool_price_cyan_glazed_terracotta%"
+            - "&7Stock: &f%pool_stock_cyan_glazed_terracotta%"
+        left_click_commands:
+            - "[player] setbuyingitem cyan_glazed_terracotta cat_tenidos_3"
+    light_blue_glazed_terracotta:
+        material: LIGHT_BLUE_GLAZED_TERRACOTTA
+        slot: 1
+        lore:
+            - "&7Precio: &a€%pool_price_light_blue_glazed_terracotta%"
+            - "&7Stock: &f%pool_stock_light_blue_glazed_terracotta%"
+        left_click_commands:
+            - "[player] setbuyingitem light_blue_glazed_terracotta cat_tenidos_3"
+    blue_glazed_terracotta:
+        material: BLUE_GLAZED_TERRACOTTA
+        slot: 2
+        lore:
+            - "&7Precio: &a€%pool_price_blue_glazed_terracotta%"
+            - "&7Stock: &f%pool_stock_blue_glazed_terracotta%"
+        left_click_commands:
+            - "[player] setbuyingitem blue_glazed_terracotta cat_tenidos_3"
+    purple_glazed_terracotta:
+        material: PURPLE_GLAZED_TERRACOTTA
+        slot: 3
+        lore:
+            - "&7Precio: &a€%pool_price_purple_glazed_terracotta%"
+            - "&7Stock: &f%pool_stock_purple_glazed_terracotta%"
+        left_click_commands:
+            - "[player] setbuyingitem purple_glazed_terracotta cat_tenidos_3"
+    magenta_glazed_terracotta:
+        material: MAGENTA_GLAZED_TERRACOTTA
+        slot: 4
+        lore:
+            - "&7Precio: &a€%pool_price_magenta_glazed_terracotta%"
+            - "&7Stock: &f%pool_stock_magenta_glazed_terracotta%"
+        left_click_commands:
+            - "[player] setbuyingitem magenta_glazed_terracotta cat_tenidos_3"
+    pink_glazed_terracotta:
+        material: PINK_GLAZED_TERRACOTTA
+        slot: 5
+        lore:
+            - "&7Precio: &a€%pool_price_pink_glazed_terracotta%"
+            - "&7Stock: &f%pool_stock_pink_glazed_terracotta%"
+        left_click_commands:
+            - "[player] setbuyingitem pink_glazed_terracotta cat_tenidos_3"
+    white_stained_glass:
+        material: WHITE_STAINED_GLASS
+        slot: 6
+        lore:
+            - "&7Precio: &a€%pool_price_white_stained_glass%"
+            - "&7Stock: &f%pool_stock_white_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem white_stained_glass cat_tenidos_3"
+    light_gray_stained_glass:
+        material: LIGHT_GRAY_STAINED_GLASS
+        slot: 7
+        lore:
+            - "&7Precio: &a€%pool_price_light_gray_stained_glass%"
+            - "&7Stock: &f%pool_stock_light_gray_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem light_gray_stained_glass cat_tenidos_3"
+    gray_stained_glass:
+        material: GRAY_STAINED_GLASS
+        slot: 8
+        lore:
+            - "&7Precio: &a€%pool_price_gray_stained_glass%"
+            - "&7Stock: &f%pool_stock_gray_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem gray_stained_glass cat_tenidos_3"
+    black_stained_glass:
+        material: BLACK_STAINED_GLASS
+        slot: 9
+        lore:
+            - "&7Precio: &a€%pool_price_black_stained_glass%"
+            - "&7Stock: &f%pool_stock_black_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem black_stained_glass cat_tenidos_3"
+    brown_stained_glass:
+        material: BROWN_STAINED_GLASS
+        slot: 10
+        lore:
+            - "&7Precio: &a€%pool_price_brown_stained_glass%"
+            - "&7Stock: &f%pool_stock_brown_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem brown_stained_glass cat_tenidos_3"
+    red_stained_glass:
+        material: RED_STAINED_GLASS
+        slot: 11
+        lore:
+            - "&7Precio: &a€%pool_price_red_stained_glass%"
+            - "&7Stock: &f%pool_stock_red_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem red_stained_glass cat_tenidos_3"
+    orange_stained_glass:
+        material: ORANGE_STAINED_GLASS
+        slot: 12
+        lore:
+            - "&7Precio: &a€%pool_price_orange_stained_glass%"
+            - "&7Stock: &f%pool_stock_orange_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem orange_stained_glass cat_tenidos_3"
+    yellow_stained_glass:
+        material: YELLOW_STAINED_GLASS
+        slot: 13
+        lore:
+            - "&7Precio: &a€%pool_price_yellow_stained_glass%"
+            - "&7Stock: &f%pool_stock_yellow_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem yellow_stained_glass cat_tenidos_3"
+    lime_stained_glass:
+        material: LIME_STAINED_GLASS
+        slot: 14
+        lore:
+            - "&7Precio: &a€%pool_price_lime_stained_glass%"
+            - "&7Stock: &f%pool_stock_lime_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem lime_stained_glass cat_tenidos_3"
+    green_stained_glass:
+        material: GREEN_STAINED_GLASS
+        slot: 15
+        lore:
+            - "&7Precio: &a€%pool_price_green_stained_glass%"
+            - "&7Stock: &f%pool_stock_green_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem green_stained_glass cat_tenidos_3"
+    cyan_stained_glass:
+        material: CYAN_STAINED_GLASS
+        slot: 16
+        lore:
+            - "&7Precio: &a€%pool_price_cyan_stained_glass%"
+            - "&7Stock: &f%pool_stock_cyan_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem cyan_stained_glass cat_tenidos_3"
+    light_blue_stained_glass:
+        material: LIGHT_BLUE_STAINED_GLASS
+        slot: 17
+        lore:
+            - "&7Precio: &a€%pool_price_light_blue_stained_glass%"
+            - "&7Stock: &f%pool_stock_light_blue_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem light_blue_stained_glass cat_tenidos_3"
+    blue_stained_glass:
+        material: BLUE_STAINED_GLASS
+        slot: 18
+        lore:
+            - "&7Precio: &a€%pool_price_blue_stained_glass%"
+            - "&7Stock: &f%pool_stock_blue_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem blue_stained_glass cat_tenidos_3"
+    purple_stained_glass:
+        material: PURPLE_STAINED_GLASS
+        slot: 19
+        lore:
+            - "&7Precio: &a€%pool_price_purple_stained_glass%"
+            - "&7Stock: &f%pool_stock_purple_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem purple_stained_glass cat_tenidos_3"
+    magenta_stained_glass:
+        material: MAGENTA_STAINED_GLASS
+        slot: 20
+        lore:
+            - "&7Precio: &a€%pool_price_magenta_stained_glass%"
+            - "&7Stock: &f%pool_stock_magenta_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem magenta_stained_glass cat_tenidos_3"
+    pink_stained_glass:
+        material: PINK_STAINED_GLASS
+        slot: 21
+        lore:
+            - "&7Precio: &a€%pool_price_pink_stained_glass%"
+            - "&7Stock: &f%pool_stock_pink_stained_glass%"
+        left_click_commands:
+            - "[player] setbuyingitem pink_stained_glass cat_tenidos_3"
+    white_stained_glass_pane:
+        material: WHITE_STAINED_GLASS_PANE
+        slot: 22
+        lore:
+            - "&7Precio: &a€%pool_price_white_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_white_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem white_stained_glass_pane cat_tenidos_3"
+    light_gray_stained_glass_pane:
+        material: LIGHT_GRAY_STAINED_GLASS_PANE
+        slot: 23
+        lore:
+            - "&7Precio: &a€%pool_price_light_gray_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_light_gray_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem light_gray_stained_glass_pane cat_tenidos_3"
+    gray_stained_glass_pane:
+        material: GRAY_STAINED_GLASS_PANE
+        slot: 24
+        lore:
+            - "&7Precio: &a€%pool_price_gray_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_gray_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem gray_stained_glass_pane cat_tenidos_3"
+    black_stained_glass_pane:
+        material: BLACK_STAINED_GLASS_PANE
+        slot: 25
+        lore:
+            - "&7Precio: &a€%pool_price_black_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_black_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem black_stained_glass_pane cat_tenidos_3"
+    brown_stained_glass_pane:
+        material: BROWN_STAINED_GLASS_PANE
+        slot: 26
+        lore:
+            - "&7Precio: &a€%pool_price_brown_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_brown_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem brown_stained_glass_pane cat_tenidos_3"
+    red_stained_glass_pane:
+        material: RED_STAINED_GLASS_PANE
+        slot: 27
+        lore:
+            - "&7Precio: &a€%pool_price_red_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_red_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem red_stained_glass_pane cat_tenidos_3"
+    orange_stained_glass_pane:
+        material: ORANGE_STAINED_GLASS_PANE
+        slot: 28
+        lore:
+            - "&7Precio: &a€%pool_price_orange_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_orange_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem orange_stained_glass_pane cat_tenidos_3"
+    yellow_stained_glass_pane:
+        material: YELLOW_STAINED_GLASS_PANE
+        slot: 29
+        lore:
+            - "&7Precio: &a€%pool_price_yellow_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_yellow_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem yellow_stained_glass_pane cat_tenidos_3"
+    lime_stained_glass_pane:
+        material: LIME_STAINED_GLASS_PANE
+        slot: 30
+        lore:
+            - "&7Precio: &a€%pool_price_lime_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_lime_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem lime_stained_glass_pane cat_tenidos_3"
+    green_stained_glass_pane:
+        material: GREEN_STAINED_GLASS_PANE
+        slot: 31
+        lore:
+            - "&7Precio: &a€%pool_price_green_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_green_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem green_stained_glass_pane cat_tenidos_3"
+    cyan_stained_glass_pane:
+        material: CYAN_STAINED_GLASS_PANE
+        slot: 32
+        lore:
+            - "&7Precio: &a€%pool_price_cyan_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_cyan_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem cyan_stained_glass_pane cat_tenidos_3"
+    light_blue_stained_glass_pane:
+        material: LIGHT_BLUE_STAINED_GLASS_PANE
+        slot: 33
+        lore:
+            - "&7Precio: &a€%pool_price_light_blue_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_light_blue_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem light_blue_stained_glass_pane cat_tenidos_3"
+    blue_stained_glass_pane:
+        material: BLUE_STAINED_GLASS_PANE
+        slot: 34
+        lore:
+            - "&7Precio: &a€%pool_price_blue_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_blue_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem blue_stained_glass_pane cat_tenidos_3"
+    purple_stained_glass_pane:
+        material: PURPLE_STAINED_GLASS_PANE
+        slot: 35
+        lore:
+            - "&7Precio: &a€%pool_price_purple_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_purple_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem purple_stained_glass_pane cat_tenidos_3"
+    magenta_stained_glass_pane:
+        material: MAGENTA_STAINED_GLASS_PANE
+        slot: 36
+        lore:
+            - "&7Precio: &a€%pool_price_magenta_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_magenta_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem magenta_stained_glass_pane cat_tenidos_3"
+    pink_stained_glass_pane:
+        material: PINK_STAINED_GLASS_PANE
+        slot: 37
+        lore:
+            - "&7Precio: &a€%pool_price_pink_stained_glass_pane%"
+            - "&7Stock: &f%pool_stock_pink_stained_glass_pane%"
+        left_click_commands:
+            - "[player] setbuyingitem pink_stained_glass_pane cat_tenidos_3"
+    white_shulker_box:
+        material: WHITE_SHULKER_BOX
+        slot: 38
+        lore:
+            - "&7Precio: &a€%pool_price_white_shulker_box%"
+            - "&7Stock: &f%pool_stock_white_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem white_shulker_box cat_tenidos_3"
+    light_gray_shulker_box:
+        material: LIGHT_GRAY_SHULKER_BOX
+        slot: 39
+        lore:
+            - "&7Precio: &a€%pool_price_light_gray_shulker_box%"
+            - "&7Stock: &f%pool_stock_light_gray_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem light_gray_shulker_box cat_tenidos_3"
+    gray_shulker_box:
+        material: GRAY_SHULKER_BOX
+        slot: 40
+        lore:
+            - "&7Precio: &a€%pool_price_gray_shulker_box%"
+            - "&7Stock: &f%pool_stock_gray_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem gray_shulker_box cat_tenidos_3"
+    black_shulker_box:
+        material: BLACK_SHULKER_BOX
+        slot: 41
+        lore:
+            - "&7Precio: &a€%pool_price_black_shulker_box%"
+            - "&7Stock: &f%pool_stock_black_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem black_shulker_box cat_tenidos_3"
+    brown_shulker_box:
+        material: BROWN_SHULKER_BOX
+        slot: 42
+        lore:
+            - "&7Precio: &a€%pool_price_brown_shulker_box%"
+            - "&7Stock: &f%pool_stock_brown_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem brown_shulker_box cat_tenidos_3"
+    red_shulker_box:
+        material: RED_SHULKER_BOX
+        slot: 43
+        lore:
+            - "&7Precio: &a€%pool_price_red_shulker_box%"
+            - "&7Stock: &f%pool_stock_red_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem red_shulker_box cat_tenidos_3"
+    orange_shulker_box:
+        material: ORANGE_SHULKER_BOX
+        slot: 44
+        lore:
+            - "&7Precio: &a€%pool_price_orange_shulker_box%"
+            - "&7Stock: &f%pool_stock_orange_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem orange_shulker_box cat_tenidos_3"
+    back:
+        material: PAPER
+        slot: 45
+        model_data: 500
+        display_name: "&7Volver a Categorías"
+        left_click_commands:
+            - "[player] categorias"
+    prev_page:
+        material: PAPER
+        slots:
+            - 46
+            - 47
+            - 48
+            - 49
+        model_data: 500
+        display_name: "&cAnterior"
+        left_click_commands:
+            - "[player] cat_tenidos_2"
+    next_page:
+        material: PAPER
+        slots:
+            - 50
+            - 51
+            - 52
+            - 53
+        model_data: 500
+        display_name: "&aSiguiente"
+        left_click_commands:
+            - "[player] cat_tenidos_4"

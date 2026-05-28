@@ -1,0 +1,302 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_funcionales_2
+size: 54
+items:
+  vault:
+    material: VAULT
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_vault%"
+    - "&7Stock: &f%pool_stock_vault%"
+    left_click_commands:
+    - '[player] setbuyingitem vault cat_funcionales_2'
+  redstone:
+    material: REDSTONE
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_redstone%"
+    - "&7Stock: &f%pool_stock_redstone%"
+    left_click_commands:
+    - '[player] setbuyingitem redstone cat_funcionales_2'
+  redstone_torch:
+    material: REDSTONE_TORCH
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_redstone_torch%"
+    - "&7Stock: &f%pool_stock_redstone_torch%"
+    left_click_commands:
+    - '[player] setbuyingitem redstone_torch cat_funcionales_2'
+  repeater:
+    material: REPEATER
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_repeater%"
+    - "&7Stock: &f%pool_stock_repeater%"
+    left_click_commands:
+    - '[player] setbuyingitem repeater cat_funcionales_2'
+  comparator:
+    material: COMPARATOR
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_comparator%"
+    - "&7Stock: &f%pool_stock_comparator%"
+    left_click_commands:
+    - '[player] setbuyingitem comparator cat_funcionales_2'
+  redstone_block:
+    material: REDSTONE_BLOCK
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_redstone_block%"
+    - "&7Stock: &f%pool_stock_redstone_block%"
+    left_click_commands:
+    - '[player] setbuyingitem redstone_block cat_funcionales_2'
+  lever:
+    material: LEVER
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_lever%"
+    - "&7Stock: &f%pool_stock_lever%"
+    left_click_commands:
+    - '[player] setbuyingitem lever cat_funcionales_2'
+  stone_button:
+    material: STONE_BUTTON
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_stone_button%"
+    - "&7Stock: &f%pool_stock_stone_button%"
+    left_click_commands:
+    - '[player] setbuyingitem stone_button cat_funcionales_2'
+  oak_button:
+    material: OAK_BUTTON
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_oak_button%"
+    - "&7Stock: &f%pool_stock_oak_button%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_button cat_funcionales_2'
+  stone_pressure_plate:
+    material: STONE_PRESSURE_PLATE
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_stone_pressure_plate%"
+    - "&7Stock: &f%pool_stock_stone_pressure_plate%"
+    left_click_commands:
+    - '[player] setbuyingitem stone_pressure_plate cat_funcionales_2'
+  oak_pressure_plate:
+    material: OAK_PRESSURE_PLATE
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_oak_pressure_plate%"
+    - "&7Stock: &f%pool_stock_oak_pressure_plate%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_pressure_plate cat_funcionales_2'
+  light_weighted_pressure_plate:
+    material: LIGHT_WEIGHTED_PRESSURE_PLATE
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_light_weighted_pressure_plate%"
+    - "&7Stock: &f%pool_stock_light_weighted_pressure_plate%"
+    left_click_commands:
+    - '[player] setbuyingitem light_weighted_pressure_plate cat_funcionales_2'
+  heavy_weighted_pressure_plate:
+    material: HEAVY_WEIGHTED_PRESSURE_PLATE
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_heavy_weighted_pressure_plate%"
+    - "&7Stock: &f%pool_stock_heavy_weighted_pressure_plate%"
+    left_click_commands:
+    - '[player] setbuyingitem heavy_weighted_pressure_plate cat_funcionales_2'
+  daylight_detector:
+    material: DAYLIGHT_DETECTOR
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_daylight_detector%"
+    - "&7Stock: &f%pool_stock_daylight_detector%"
+    left_click_commands:
+    - '[player] setbuyingitem daylight_detector cat_funcionales_2'
+  observer:
+    material: OBSERVER
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_observer%"
+    - "&7Stock: &f%pool_stock_observer%"
+    left_click_commands:
+    - '[player] setbuyingitem observer cat_funcionales_2'
+  sculk_sensor:
+    material: SCULK_SENSOR
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_sculk_sensor%"
+    - "&7Stock: &f%pool_stock_sculk_sensor%"
+    left_click_commands:
+    - '[player] setbuyingitem sculk_sensor cat_funcionales_2'
+  calibrated_sculk_sensor:
+    material: CALIBRATED_SCULK_SENSOR
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_calibrated_sculk_sensor%"
+    - "&7Stock: &f%pool_stock_calibrated_sculk_sensor%"
+    left_click_commands:
+    - '[player] setbuyingitem calibrated_sculk_sensor cat_funcionales_2'
+  piston:
+    material: PISTON
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_piston%"
+    - "&7Stock: &f%pool_stock_piston%"
+    left_click_commands:
+    - '[player] setbuyingitem piston cat_funcionales_2'
+  sticky_piston:
+    material: STICKY_PISTON
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_sticky_piston%"
+    - "&7Stock: &f%pool_stock_sticky_piston%"
+    left_click_commands:
+    - '[player] setbuyingitem sticky_piston cat_funcionales_2'
+  slime_block:
+    material: SLIME_BLOCK
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_slime_block%"
+    - "&7Stock: &f%pool_stock_slime_block%"
+    left_click_commands:
+    - '[player] setbuyingitem slime_block cat_funcionales_2'
+  honey_block:
+    material: HONEY_BLOCK
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_honey_block%"
+    - "&7Stock: &f%pool_stock_honey_block%"
+    left_click_commands:
+    - '[player] setbuyingitem honey_block cat_funcionales_2'
+  hopper:
+    material: HOPPER
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_hopper%"
+    - "&7Stock: &f%pool_stock_hopper%"
+    left_click_commands:
+    - '[player] setbuyingitem hopper cat_funcionales_2'
+  dispenser:
+    material: DISPENSER
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_dispenser%"
+    - "&7Stock: &f%pool_stock_dispenser%"
+    left_click_commands:
+    - '[player] setbuyingitem dispenser cat_funcionales_2'
+  dropper:
+    material: DROPPER
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_dropper%"
+    - "&7Stock: &f%pool_stock_dropper%"
+    left_click_commands:
+    - '[player] setbuyingitem dropper cat_funcionales_2'
+  redstone_lamp:
+    material: REDSTONE_LAMP
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_redstone_lamp%"
+    - "&7Stock: &f%pool_stock_redstone_lamp%"
+    left_click_commands:
+    - '[player] setbuyingitem redstone_lamp cat_funcionales_2'
+  target:
+    material: TARGET
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_target%"
+    - "&7Stock: &f%pool_stock_target%"
+    left_click_commands:
+    - '[player] setbuyingitem target cat_funcionales_2'
+  tripwire_hook:
+    material: TRIPWIRE_HOOK
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_tripwire_hook%"
+    - "&7Stock: &f%pool_stock_tripwire_hook%"
+    left_click_commands:
+    - '[player] setbuyingitem tripwire_hook cat_funcionales_2'
+  iron_door:
+    material: IRON_DOOR
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_iron_door%"
+    - "&7Stock: &f%pool_stock_iron_door%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_door cat_funcionales_2'
+  oak_door:
+    material: OAK_DOOR
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_oak_door%"
+    - "&7Stock: &f%pool_stock_oak_door%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_door cat_funcionales_2'
+  iron_trapdoor:
+    material: IRON_TRAPDOOR
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_iron_trapdoor%"
+    - "&7Stock: &f%pool_stock_iron_trapdoor%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_trapdoor cat_funcionales_2'
+  oak_trapdoor:
+    material: OAK_TRAPDOOR
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_oak_trapdoor%"
+    - "&7Stock: &f%pool_stock_oak_trapdoor%"
+    left_click_commands:
+    - '[player] setbuyingitem oak_trapdoor cat_funcionales_2'
+  rail:
+    material: RAIL
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_rail%"
+    - "&7Stock: &f%pool_stock_rail%"
+    left_click_commands:
+    - '[player] setbuyingitem rail cat_funcionales_2'
+  powered_rail:
+    material: POWERED_RAIL
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_powered_rail%"
+    - "&7Stock: &f%pool_stock_powered_rail%"
+    left_click_commands:
+    - '[player] setbuyingitem powered_rail cat_funcionales_2'
+  detector_rail:
+    material: DETECTOR_RAIL
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_detector_rail%"
+    - "&7Stock: &f%pool_stock_detector_rail%"
+    left_click_commands:
+    - '[player] setbuyingitem detector_rail cat_funcionales_2'
+  activator_rail:
+    material: ACTIVATOR_RAIL
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_activator_rail%"
+    - "&7Stock: &f%pool_stock_activator_rail%"
+    left_click_commands:
+    - '[player] setbuyingitem activator_rail cat_funcionales_2'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  prev_page:
+    material: PAPER
+    slots:
+    - 46
+    - 47
+    - 48
+    - 49
+    model_data: 500
+    display_name: '&cAnterior'
+    left_click_commands:
+    - '[player] cat_funcionales'

@@ -1,0 +1,17 @@
+# --------------------------------------------------------
+# SISTEMA DE INTERACCIÓN CON TIENDA (Vending Machine)
+# --------------------------------------------------------
+
+on oraxen furniture interact:
+    set {_id} to event-string
+    if {_id} is "tienda":
+        cancel event
+        make player execute command "tienda"
+
+# Fallback en caso de que el evento de Oraxen no se dispare correctamente en algunas condiciones
+on rightclick:
+    if clicked block is barrier:
+        set {_id} to oraxen furniture id at clicked block
+        if {_id} is "tienda":
+            cancel event
+            make player execute command "tienda"

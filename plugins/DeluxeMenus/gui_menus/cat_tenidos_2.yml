@@ -1,0 +1,393 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_tenidos_2
+size: 54
+items:
+  purple_concrete:
+    material: PURPLE_CONCRETE
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_purple_concrete%"
+    - "&7Stock: &f%pool_stock_purple_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem purple_concrete cat_tenidos_2'
+  magenta_concrete:
+    material: MAGENTA_CONCRETE
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_magenta_concrete%"
+    - "&7Stock: &f%pool_stock_magenta_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem magenta_concrete cat_tenidos_2'
+  pink_concrete:
+    material: PINK_CONCRETE
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_pink_concrete%"
+    - "&7Stock: &f%pool_stock_pink_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem pink_concrete cat_tenidos_2'
+  white_concrete_powder:
+    material: WHITE_CONCRETE_POWDER
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_white_concrete_powder%"
+    - "&7Stock: &f%pool_stock_white_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem white_concrete_powder cat_tenidos_2'
+  light_gray_concrete_powder:
+    material: LIGHT_GRAY_CONCRETE_POWDER
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_light_gray_concrete_powder%"
+    - "&7Stock: &f%pool_stock_light_gray_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem light_gray_concrete_powder cat_tenidos_2'
+  gray_concrete_powder:
+    material: GRAY_CONCRETE_POWDER
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_gray_concrete_powder%"
+    - "&7Stock: &f%pool_stock_gray_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem gray_concrete_powder cat_tenidos_2'
+  black_concrete_powder:
+    material: BLACK_CONCRETE_POWDER
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_black_concrete_powder%"
+    - "&7Stock: &f%pool_stock_black_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem black_concrete_powder cat_tenidos_2'
+  brown_concrete_powder:
+    material: BROWN_CONCRETE_POWDER
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_brown_concrete_powder%"
+    - "&7Stock: &f%pool_stock_brown_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_concrete_powder cat_tenidos_2'
+  red_concrete_powder:
+    material: RED_CONCRETE_POWDER
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_red_concrete_powder%"
+    - "&7Stock: &f%pool_stock_red_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem red_concrete_powder cat_tenidos_2'
+  orange_concrete_powder:
+    material: ORANGE_CONCRETE_POWDER
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_orange_concrete_powder%"
+    - "&7Stock: &f%pool_stock_orange_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_concrete_powder cat_tenidos_2'
+  yellow_concrete_powder:
+    material: YELLOW_CONCRETE_POWDER
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_yellow_concrete_powder%"
+    - "&7Stock: &f%pool_stock_yellow_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem yellow_concrete_powder cat_tenidos_2'
+  lime_concrete_powder:
+    material: LIME_CONCRETE_POWDER
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_lime_concrete_powder%"
+    - "&7Stock: &f%pool_stock_lime_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem lime_concrete_powder cat_tenidos_2'
+  green_concrete_powder:
+    material: GREEN_CONCRETE_POWDER
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_green_concrete_powder%"
+    - "&7Stock: &f%pool_stock_green_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem green_concrete_powder cat_tenidos_2'
+  cyan_concrete_powder:
+    material: CYAN_CONCRETE_POWDER
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_cyan_concrete_powder%"
+    - "&7Stock: &f%pool_stock_cyan_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem cyan_concrete_powder cat_tenidos_2'
+  light_blue_concrete_powder:
+    material: LIGHT_BLUE_CONCRETE_POWDER
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_light_blue_concrete_powder%"
+    - "&7Stock: &f%pool_stock_light_blue_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem light_blue_concrete_powder cat_tenidos_2'
+  blue_concrete_powder:
+    material: BLUE_CONCRETE_POWDER
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_blue_concrete_powder%"
+    - "&7Stock: &f%pool_stock_blue_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_concrete_powder cat_tenidos_2'
+  purple_concrete_powder:
+    material: PURPLE_CONCRETE_POWDER
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_purple_concrete_powder%"
+    - "&7Stock: &f%pool_stock_purple_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem purple_concrete_powder cat_tenidos_2'
+  magenta_concrete_powder:
+    material: MAGENTA_CONCRETE_POWDER
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_magenta_concrete_powder%"
+    - "&7Stock: &f%pool_stock_magenta_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem magenta_concrete_powder cat_tenidos_2'
+  pink_concrete_powder:
+    material: PINK_CONCRETE_POWDER
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_pink_concrete_powder%"
+    - "&7Stock: &f%pool_stock_pink_concrete_powder%"
+    left_click_commands:
+    - '[player] setbuyingitem pink_concrete_powder cat_tenidos_2'
+  white_terracotta:
+    material: WHITE_TERRACOTTA
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_white_terracotta%"
+    - "&7Stock: &f%pool_stock_white_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem white_terracotta cat_tenidos_2'
+  light_gray_terracotta:
+    material: LIGHT_GRAY_TERRACOTTA
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_light_gray_terracotta%"
+    - "&7Stock: &f%pool_stock_light_gray_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem light_gray_terracotta cat_tenidos_2'
+  gray_terracotta:
+    material: GRAY_TERRACOTTA
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_gray_terracotta%"
+    - "&7Stock: &f%pool_stock_gray_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem gray_terracotta cat_tenidos_2'
+  black_terracotta:
+    material: BLACK_TERRACOTTA
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_black_terracotta%"
+    - "&7Stock: &f%pool_stock_black_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem black_terracotta cat_tenidos_2'
+  brown_terracotta:
+    material: BROWN_TERRACOTTA
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_brown_terracotta%"
+    - "&7Stock: &f%pool_stock_brown_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_terracotta cat_tenidos_2'
+  red_terracotta:
+    material: RED_TERRACOTTA
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_red_terracotta%"
+    - "&7Stock: &f%pool_stock_red_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem red_terracotta cat_tenidos_2'
+  orange_terracotta:
+    material: ORANGE_TERRACOTTA
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_orange_terracotta%"
+    - "&7Stock: &f%pool_stock_orange_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_terracotta cat_tenidos_2'
+  yellow_terracotta:
+    material: YELLOW_TERRACOTTA
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_yellow_terracotta%"
+    - "&7Stock: &f%pool_stock_yellow_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem yellow_terracotta cat_tenidos_2'
+  lime_terracotta:
+    material: LIME_TERRACOTTA
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_lime_terracotta%"
+    - "&7Stock: &f%pool_stock_lime_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem lime_terracotta cat_tenidos_2'
+  green_terracotta:
+    material: GREEN_TERRACOTTA
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_green_terracotta%"
+    - "&7Stock: &f%pool_stock_green_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem green_terracotta cat_tenidos_2'
+  cyan_terracotta:
+    material: CYAN_TERRACOTTA
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_cyan_terracotta%"
+    - "&7Stock: &f%pool_stock_cyan_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem cyan_terracotta cat_tenidos_2'
+  light_blue_terracotta:
+    material: LIGHT_BLUE_TERRACOTTA
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_light_blue_terracotta%"
+    - "&7Stock: &f%pool_stock_light_blue_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem light_blue_terracotta cat_tenidos_2'
+  blue_terracotta:
+    material: BLUE_TERRACOTTA
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_blue_terracotta%"
+    - "&7Stock: &f%pool_stock_blue_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_terracotta cat_tenidos_2'
+  purple_terracotta:
+    material: PURPLE_TERRACOTTA
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_purple_terracotta%"
+    - "&7Stock: &f%pool_stock_purple_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem purple_terracotta cat_tenidos_2'
+  magenta_terracotta:
+    material: MAGENTA_TERRACOTTA
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_magenta_terracotta%"
+    - "&7Stock: &f%pool_stock_magenta_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem magenta_terracotta cat_tenidos_2'
+  pink_terracotta:
+    material: PINK_TERRACOTTA
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_pink_terracotta%"
+    - "&7Stock: &f%pool_stock_pink_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem pink_terracotta cat_tenidos_2'
+  white_glazed_terracotta:
+    material: WHITE_GLAZED_TERRACOTTA
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_white_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_white_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem white_glazed_terracotta cat_tenidos_2'
+  light_gray_glazed_terracotta:
+    material: LIGHT_GRAY_GLAZED_TERRACOTTA
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_light_gray_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_light_gray_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem light_gray_glazed_terracotta cat_tenidos_2'
+  gray_glazed_terracotta:
+    material: GRAY_GLAZED_TERRACOTTA
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_gray_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_gray_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem gray_glazed_terracotta cat_tenidos_2'
+  black_glazed_terracotta:
+    material: BLACK_GLAZED_TERRACOTTA
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_black_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_black_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem black_glazed_terracotta cat_tenidos_2'
+  brown_glazed_terracotta:
+    material: BROWN_GLAZED_TERRACOTTA
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_brown_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_brown_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_glazed_terracotta cat_tenidos_2'
+  red_glazed_terracotta:
+    material: RED_GLAZED_TERRACOTTA
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_red_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_red_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem red_glazed_terracotta cat_tenidos_2'
+  orange_glazed_terracotta:
+    material: ORANGE_GLAZED_TERRACOTTA
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_orange_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_orange_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_glazed_terracotta cat_tenidos_2'
+  yellow_glazed_terracotta:
+    material: YELLOW_GLAZED_TERRACOTTA
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_yellow_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_yellow_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem yellow_glazed_terracotta cat_tenidos_2'
+  lime_glazed_terracotta:
+    material: LIME_GLAZED_TERRACOTTA
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_lime_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_lime_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem lime_glazed_terracotta cat_tenidos_2'
+  green_glazed_terracotta:
+    material: GREEN_GLAZED_TERRACOTTA
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_green_glazed_terracotta%"
+    - "&7Stock: &f%pool_stock_green_glazed_terracotta%"
+    left_click_commands:
+    - '[player] setbuyingitem green_glazed_terracotta cat_tenidos_2'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  prev_page:
+    material: PAPER
+    slots:
+    - 46
+    - 47
+    - 48
+    - 49
+    model_data: 500
+    display_name: '&cAnterior'
+    left_click_commands:
+    - '[player] cat_tenidos'
+  next_page:
+    material: PAPER
+    slots:
+    - 50
+    - 51
+    - 52
+    - 53
+    model_data: 500
+    display_name: '&aSiguiente'
+    left_click_commands:
+    - '[player] cat_tenidos_3'

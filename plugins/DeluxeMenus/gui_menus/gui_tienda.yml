@@ -1,9 +1,63 @@
-menu_title: '<shift:8>%oraxen_gui_tienda%'
+menu_title: "§f<shift:-8>ꐑ"
 open_command: tienda
 size: 54
 items:
-  'filler_paper':
-    material: PAPER
-    slots:
-      - 0-53
-    display_name: ' '
+    "tienda_ah":
+        material: PAPER
+        slots:
+            [
+                0,
+                1,
+                2,
+                3,
+                4,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18,
+                19,
+                20,
+                21,
+                22,
+                27,
+                28,
+                29,
+                30,
+                31,
+                36,
+                37,
+                38,
+                39,
+                40,
+                45,
+                46,
+                47,
+                48,
+                49,
+            ]
+        model_data: 500
+        display_name: "&eSubastas"
+        left_click_commands:
+            - "[player] ah"
+        right_click_commands:
+            - "[player] ah"
+    "tienda_vender":
+        material: PAPER
+        slots: [32, 33, 34, 35, 41, 42, 43, 44, 50, 51, 52, 53]
+        model_data: 500
+        display_name: "&cVender"
+        left_click_commands:
+            - "[player] venderpool"
+        right_click_commands:
+            - "[player] venderpool"
+    "tienda_categorias":
+        material: PAPER
+        slots: [5, 6, 7, 8, 14, 15, 16, 17, 23, 24, 25, 26]
+        model_data: 500
+        display_name: "&aComprar"
+        left_click_commands:
+            - "[player] categorias"
+        right_click_commands:
+            - "[player] categorias"

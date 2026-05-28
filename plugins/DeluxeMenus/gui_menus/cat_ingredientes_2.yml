@@ -1,0 +1,38 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_ingredientes_2
+size: 54
+items:
+  breeze_rod:
+    material: BREEZE_ROD
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_breeze_rod%"
+    - "&7Stock: &f%pool_stock_breeze_rod%"
+    left_click_commands:
+    - '[player] setbuyingitem breeze_rod cat_ingredientes_2'
+  heavy_core:
+    material: HEAVY_CORE
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_heavy_core%"
+    - "&7Stock: &f%pool_stock_heavy_core%"
+    left_click_commands:
+    - '[player] setbuyingitem heavy_core cat_ingredientes_2'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  prev_page:
+    material: PAPER
+    slots:
+    - 46
+    - 47
+    - 48
+    - 49
+    model_data: 500
+    display_name: '&cAnterior'
+    left_click_commands:
+    - '[player] cat_ingredientes'

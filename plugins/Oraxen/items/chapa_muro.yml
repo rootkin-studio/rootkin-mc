@@ -1,0 +1,13 @@
+chapa_muro:
+    itemname: <white>Chapa de Muro
+    material: PAPER
+    pack:
+        model: furniture/chapa_muro
+        custom_model_data: 602
+    Mechanics:
+        furniture:
+            type: DISPLAY_ENTITY
+            properties:
+                display_transform: NONE
+            barriers:
+                - origin

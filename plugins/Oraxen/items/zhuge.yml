@@ -1,0 +1,8 @@
+zhuge_crossbow:
+  display_name: "<blue>Ballesta Automática"
+  material: CROSSBOW
+  lore:
+    - "<gold>Cargador:"
+    - "<gray><italic>- Flechas: 0"
+  components:
+    custom_data: "{isZhuge:1b,zhuge_Charged:0b,zhuge_Magazine:0,zhuge_PType:0b}"

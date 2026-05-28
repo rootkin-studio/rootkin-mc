@@ -1,0 +1,382 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_construccion
+size: 54
+items:
+    oak_planks:
+        material: OAK_PLANKS
+        slot: 0
+        lore:
+            - "&7Precio: &a€%pool_price_oak_planks%"
+            - "&7Stock: &f%pool_stock_oak_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem oak_planks cat_construccion"
+    spruce_planks:
+        material: SPRUCE_PLANKS
+        slot: 1
+        lore:
+            - "&7Precio: &a€%pool_price_spruce_planks%"
+            - "&7Stock: &f%pool_stock_spruce_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem spruce_planks cat_construccion"
+    birch_planks:
+        material: BIRCH_PLANKS
+        slot: 2
+        lore:
+            - "&7Precio: &a€%pool_price_birch_planks%"
+            - "&7Stock: &f%pool_stock_birch_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem birch_planks cat_construccion"
+    jungle_planks:
+        material: JUNGLE_PLANKS
+        slot: 3
+        lore:
+            - "&7Precio: &a€%pool_price_jungle_planks%"
+            - "&7Stock: &f%pool_stock_jungle_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem jungle_planks cat_construccion"
+    acacia_planks:
+        material: ACACIA_PLANKS
+        slot: 4
+        lore:
+            - "&7Precio: &a€%pool_price_acacia_planks%"
+            - "&7Stock: &f%pool_stock_acacia_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem acacia_planks cat_construccion"
+    dark_oak_planks:
+        material: DARK_OAK_PLANKS
+        slot: 5
+        lore:
+            - "&7Precio: &a€%pool_price_dark_oak_planks%"
+            - "&7Stock: &f%pool_stock_dark_oak_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem dark_oak_planks cat_construccion"
+    mangrove_planks:
+        material: MANGROVE_PLANKS
+        slot: 6
+        lore:
+            - "&7Precio: &a€%pool_price_mangrove_planks%"
+            - "&7Stock: &f%pool_stock_mangrove_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem mangrove_planks cat_construccion"
+    cherry_planks:
+        material: CHERRY_PLANKS
+        slot: 7
+        lore:
+            - "&7Precio: &a€%pool_price_cherry_planks%"
+            - "&7Stock: &f%pool_stock_cherry_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem cherry_planks cat_construccion"
+    bamboo_block:
+        material: BAMBOO_BLOCK
+        slot: 8
+        lore:
+            - "&7Precio: &a€%pool_price_bamboo_block%"
+            - "&7Stock: &f%pool_stock_bamboo_block%"
+        left_click_commands:
+            - "[player] setbuyingitem bamboo_block cat_construccion"
+    bamboo_mosaic:
+        material: BAMBOO_MOSAIC
+        slot: 9
+        lore:
+            - "&7Precio: &a€%pool_price_bamboo_mosaic%"
+            - "&7Stock: &f%pool_stock_bamboo_mosaic%"
+        left_click_commands:
+            - "[player] setbuyingitem bamboo_mosaic cat_construccion"
+    crimson_planks:
+        material: CRIMSON_PLANKS
+        slot: 10
+        lore:
+            - "&7Precio: &a€%pool_price_crimson_planks%"
+            - "&7Stock: &f%pool_stock_crimson_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem crimson_planks cat_construccion"
+    warped_planks:
+        material: WARPED_PLANKS
+        slot: 11
+        lore:
+            - "&7Precio: &a€%pool_price_warped_planks%"
+            - "&7Stock: &f%pool_stock_warped_planks%"
+        left_click_commands:
+            - "[player] setbuyingitem warped_planks cat_construccion"
+    stone:
+        material: STONE
+        slot: 12
+        lore:
+            - "&7Precio: &a€%pool_price_stone%"
+            - "&7Stock: &f%pool_stock_stone%"
+        left_click_commands:
+            - "[player] setbuyingitem stone cat_construccion"
+    cobblestone:
+        material: COBBLESTONE
+        slot: 13
+        lore:
+            - "&7Precio: &a€%pool_price_cobblestone%"
+            - "&7Stock: &f%pool_stock_cobblestone%"
+        left_click_commands:
+            - "[player] setbuyingitem cobblestone cat_construccion"
+    mossy_cobblestone:
+        material: MOSSY_COBBLESTONE
+        slot: 14
+        lore:
+            - "&7Precio: &a€%pool_price_mossy_cobblestone%"
+            - "&7Stock: &f%pool_stock_mossy_cobblestone%"
+        left_click_commands:
+            - "[player] setbuyingitem mossy_cobblestone cat_construccion"
+    stone_bricks:
+        material: STONE_BRICKS
+        slot: 15
+        lore:
+            - "&7Precio: &a€%pool_price_stone_bricks%"
+            - "&7Stock: &f%pool_stock_stone_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem stone_bricks cat_construccion"
+    mossy_stone_bricks:
+        material: MOSSY_STONE_BRICKS
+        slot: 16
+        lore:
+            - "&7Precio: &a€%pool_price_mossy_stone_bricks%"
+            - "&7Stock: &f%pool_stock_mossy_stone_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem mossy_stone_bricks cat_construccion"
+    chiseled_stone_bricks:
+        material: CHISELED_STONE_BRICKS
+        slot: 17
+        lore:
+            - "&7Precio: &a€%pool_price_chiseled_stone_bricks%"
+            - "&7Stock: &f%pool_stock_chiseled_stone_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem chiseled_stone_bricks cat_construccion"
+    granite:
+        material: GRANITE
+        slot: 18
+        lore:
+            - "&7Precio: &a€%pool_price_granite%"
+            - "&7Stock: &f%pool_stock_granite%"
+        left_click_commands:
+            - "[player] setbuyingitem granite cat_construccion"
+    polished_granite:
+        material: POLISHED_GRANITE
+        slot: 19
+        lore:
+            - "&7Precio: &a€%pool_price_polished_granite%"
+            - "&7Stock: &f%pool_stock_polished_granite%"
+        left_click_commands:
+            - "[player] setbuyingitem polished_granite cat_construccion"
+    diorite:
+        material: DIORITE
+        slot: 20
+        lore:
+            - "&7Precio: &a€%pool_price_diorite%"
+            - "&7Stock: &f%pool_stock_diorite%"
+        left_click_commands:
+            - "[player] setbuyingitem diorite cat_construccion"
+    polished_diorite:
+        material: POLISHED_DIORITE
+        slot: 21
+        lore:
+            - "&7Precio: &a€%pool_price_polished_diorite%"
+            - "&7Stock: &f%pool_stock_polished_diorite%"
+        left_click_commands:
+            - "[player] setbuyingitem polished_diorite cat_construccion"
+    andesite:
+        material: ANDESITE
+        slot: 22
+        lore:
+            - "&7Precio: &a€%pool_price_andesite%"
+            - "&7Stock: &f%pool_stock_andesite%"
+        left_click_commands:
+            - "[player] setbuyingitem andesite cat_construccion"
+    polished_andesite:
+        material: POLISHED_ANDESITE
+        slot: 23
+        lore:
+            - "&7Precio: &a€%pool_price_polished_andesite%"
+            - "&7Stock: &f%pool_stock_polished_andesite%"
+        left_click_commands:
+            - "[player] setbuyingitem polished_andesite cat_construccion"
+    calcite:
+        material: CALCITE
+        slot: 24
+        lore:
+            - "&7Precio: &a€%pool_price_calcite%"
+            - "&7Stock: &f%pool_stock_calcite%"
+        left_click_commands:
+            - "[player] setbuyingitem calcite cat_construccion"
+    tuff:
+        material: TUFF
+        slot: 25
+        lore:
+            - "&7Precio: &a€%pool_price_tuff%"
+            - "&7Stock: &f%pool_stock_tuff%"
+        left_click_commands:
+            - "[player] setbuyingitem tuff cat_construccion"
+    polished_tuff:
+        material: POLISHED_TUFF
+        slot: 26
+        lore:
+            - "&7Precio: &a€%pool_price_polished_tuff%"
+            - "&7Stock: &f%pool_stock_polished_tuff%"
+        left_click_commands:
+            - "[player] setbuyingitem polished_tuff cat_construccion"
+    tuff_bricks:
+        material: TUFF_BRICKS
+        slot: 27
+        lore:
+            - "&7Precio: &a€%pool_price_tuff_bricks%"
+            - "&7Stock: &f%pool_stock_tuff_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem tuff_bricks cat_construccion"
+    chiseled_tuff_bricks:
+        material: CHISELED_TUFF_BRICKS
+        slot: 28
+        lore:
+            - "&7Precio: &a€%pool_price_chiseled_tuff_bricks%"
+            - "&7Stock: &f%pool_stock_chiseled_tuff_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem chiseled_tuff_bricks cat_construccion"
+    chiseled_deepslate:
+        material: CHISELED_DEEPSLATE
+        slot: 29
+        lore:
+            - "&7Precio: &a€%pool_price_chiseled_deepslate%"
+            - "&7Stock: &f%pool_stock_chiseled_deepslate%"
+        left_click_commands:
+            - "[player] setbuyingitem chiseled_deepslate cat_construccion"
+    cobbled_deepslate:
+        material: COBBLED_DEEPSLATE
+        slot: 30
+        lore:
+            - "&7Precio: &a€%pool_price_cobbled_deepslate%"
+            - "&7Stock: &f%pool_stock_cobbled_deepslate%"
+        left_click_commands:
+            - "[player] setbuyingitem cobbled_deepslate cat_construccion"
+    deepslate_tiles:
+        material: DEEPSLATE_TILES
+        slot: 31
+        lore:
+            - "&7Precio: &a€%pool_price_deepslate_tiles%"
+            - "&7Stock: &f%pool_stock_deepslate_tiles%"
+        left_click_commands:
+            - "[player] setbuyingitem deepslate_tiles cat_construccion"
+    deepslate_bricks:
+        material: DEEPSLATE_BRICKS
+        slot: 32
+        lore:
+            - "&7Precio: &a€%pool_price_deepslate_bricks%"
+            - "&7Stock: &f%pool_stock_deepslate_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem deepslate_bricks cat_construccion"
+    netherrack:
+        material: NETHERRACK
+        slot: 33
+        lore:
+            - "&7Precio: &a€%pool_price_netherrack%"
+            - "&7Stock: &f%pool_stock_netherrack%"
+        left_click_commands:
+            - "[player] setbuyingitem netherrack cat_construccion"
+    nether_bricks:
+        material: NETHER_BRICKS
+        slot: 34
+        lore:
+            - "&7Precio: &a€%pool_price_nether_bricks%"
+            - "&7Stock: &f%pool_stock_nether_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem nether_bricks cat_construccion"
+    red_nether_bricks:
+        material: RED_NETHER_BRICKS
+        slot: 35
+        lore:
+            - "&7Precio: &a€%pool_price_red_nether_bricks%"
+            - "&7Stock: &f%pool_stock_red_nether_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem red_nether_bricks cat_construccion"
+    end_stone:
+        material: END_STONE
+        slot: 36
+        lore:
+            - "&7Precio: &a€%pool_price_end_stone%"
+            - "&7Stock: &f%pool_stock_end_stone%"
+        left_click_commands:
+            - "[player] setbuyingitem end_stone cat_construccion"
+    end_stone_bricks:
+        material: END_STONE_BRICKS
+        slot: 37
+        lore:
+            - "&7Precio: &a€%pool_price_end_stone_bricks%"
+            - "&7Stock: &f%pool_stock_end_stone_bricks%"
+        left_click_commands:
+            - "[player] setbuyingitem end_stone_bricks cat_construccion"
+    sandstone:
+        material: SANDSTONE
+        slot: 38
+        lore:
+            - "&7Precio: &a€%pool_price_sandstone%"
+            - "&7Stock: &f%pool_stock_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem sandstone cat_construccion"
+    smooth_sandstone:
+        material: SMOOTH_SANDSTONE
+        slot: 39
+        lore:
+            - "&7Precio: &a€%pool_price_smooth_sandstone%"
+            - "&7Stock: &f%pool_stock_smooth_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem smooth_sandstone cat_construccion"
+    chiseled_sandstone:
+        material: CHISELED_SANDSTONE
+        slot: 40
+        lore:
+            - "&7Precio: &a€%pool_price_chiseled_sandstone%"
+            - "&7Stock: &f%pool_stock_chiseled_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem chiseled_sandstone cat_construccion"
+    cut_sandstone:
+        material: CUT_SANDSTONE
+        slot: 41
+        lore:
+            - "&7Precio: &a€%pool_price_cut_sandstone%"
+            - "&7Stock: &f%pool_stock_cut_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem cut_sandstone cat_construccion"
+    red_sandstone:
+        material: RED_SANDSTONE
+        slot: 42
+        lore:
+            - "&7Precio: &a€%pool_price_red_sandstone%"
+            - "&7Stock: &f%pool_stock_red_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem red_sandstone cat_construccion"
+    smooth_red_sandstone:
+        material: SMOOTH_RED_SANDSTONE
+        slot: 43
+        lore:
+            - "&7Precio: &a€%pool_price_smooth_red_sandstone%"
+            - "&7Stock: &f%pool_stock_smooth_red_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem smooth_red_sandstone cat_construccion"
+    chiseled_red_sandstone:
+        material: CHISELED_RED_SANDSTONE
+        slot: 44
+        lore:
+            - "&7Precio: &a€%pool_price_chiseled_red_sandstone%"
+            - "&7Stock: &f%pool_stock_chiseled_red_sandstone%"
+        left_click_commands:
+            - "[player] setbuyingitem chiseled_red_sandstone cat_construccion"
+    back:
+        material: PAPER
+        slot: 45
+        model_data: 500
+        display_name: "&7Volver a Categorías"
+        left_click_commands:
+            - "[player] categorias"
+    next_page:
+        material: PAPER
+        slots:
+            - 50
+            - 51
+            - 52
+            - 53
+        model_data: 500
+        display_name: "&aSiguiente"
+        left_click_commands:
+            - "[player] cat_construccion_2"

@@ -1,0 +1,5 @@
+on load:
+    send "Test PAPI" to console
+
+placeholderapi placeholder with the prefix "test":
+    set the result to "works"

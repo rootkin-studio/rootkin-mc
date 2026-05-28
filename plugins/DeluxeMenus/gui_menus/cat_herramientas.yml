@@ -1,0 +1,371 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_herramientas
+size: 54
+items:
+  wooden_pickaxe:
+    material: WOODEN_PICKAXE
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_wooden_pickaxe%"
+    - "&7Stock: &f%pool_stock_wooden_pickaxe%"
+    left_click_commands:
+    - '[player] setbuyingitem wooden_pickaxe cat_herramientas'
+  wooden_shovel:
+    material: WOODEN_SHOVEL
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_wooden_shovel%"
+    - "&7Stock: &f%pool_stock_wooden_shovel%"
+    left_click_commands:
+    - '[player] setbuyingitem wooden_shovel cat_herramientas'
+  wooden_axe:
+    material: WOODEN_AXE
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_wooden_axe%"
+    - "&7Stock: &f%pool_stock_wooden_axe%"
+    left_click_commands:
+    - '[player] setbuyingitem wooden_axe cat_herramientas'
+  wooden_hoe:
+    material: WOODEN_HOE
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_wooden_hoe%"
+    - "&7Stock: &f%pool_stock_wooden_hoe%"
+    left_click_commands:
+    - '[player] setbuyingitem wooden_hoe cat_herramientas'
+  stone_pickaxe:
+    material: STONE_PICKAXE
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_stone_pickaxe%"
+    - "&7Stock: &f%pool_stock_stone_pickaxe%"
+    left_click_commands:
+    - '[player] setbuyingitem stone_pickaxe cat_herramientas'
+  stone_shovel:
+    material: STONE_SHOVEL
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_stone_shovel%"
+    - "&7Stock: &f%pool_stock_stone_shovel%"
+    left_click_commands:
+    - '[player] setbuyingitem stone_shovel cat_herramientas'
+  stone_axe:
+    material: STONE_AXE
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_stone_axe%"
+    - "&7Stock: &f%pool_stock_stone_axe%"
+    left_click_commands:
+    - '[player] setbuyingitem stone_axe cat_herramientas'
+  stone_hoe:
+    material: STONE_HOE
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_stone_hoe%"
+    - "&7Stock: &f%pool_stock_stone_hoe%"
+    left_click_commands:
+    - '[player] setbuyingitem stone_hoe cat_herramientas'
+  iron_pickaxe:
+    material: IRON_PICKAXE
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_iron_pickaxe%"
+    - "&7Stock: &f%pool_stock_iron_pickaxe%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_pickaxe cat_herramientas'
+  iron_shovel:
+    material: IRON_SHOVEL
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_iron_shovel%"
+    - "&7Stock: &f%pool_stock_iron_shovel%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_shovel cat_herramientas'
+  iron_axe:
+    material: IRON_AXE
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_iron_axe%"
+    - "&7Stock: &f%pool_stock_iron_axe%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_axe cat_herramientas'
+  iron_hoe:
+    material: IRON_HOE
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_iron_hoe%"
+    - "&7Stock: &f%pool_stock_iron_hoe%"
+    left_click_commands:
+    - '[player] setbuyingitem iron_hoe cat_herramientas'
+  golden_pickaxe:
+    material: GOLDEN_PICKAXE
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_golden_pickaxe%"
+    - "&7Stock: &f%pool_stock_golden_pickaxe%"
+    left_click_commands:
+    - '[player] setbuyingitem golden_pickaxe cat_herramientas'
+  golden_shovel:
+    material: GOLDEN_SHOVEL
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_golden_shovel%"
+    - "&7Stock: &f%pool_stock_golden_shovel%"
+    left_click_commands:
+    - '[player] setbuyingitem golden_shovel cat_herramientas'
+  golden_axe:
+    material: GOLDEN_AXE
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_golden_axe%"
+    - "&7Stock: &f%pool_stock_golden_axe%"
+    left_click_commands:
+    - '[player] setbuyingitem golden_axe cat_herramientas'
+  golden_hoe:
+    material: GOLDEN_HOE
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_golden_hoe%"
+    - "&7Stock: &f%pool_stock_golden_hoe%"
+    left_click_commands:
+    - '[player] setbuyingitem golden_hoe cat_herramientas'
+  diamond_pickaxe:
+    material: DIAMOND_PICKAXE
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_diamond_pickaxe%"
+    - "&7Stock: &f%pool_stock_diamond_pickaxe%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond_pickaxe cat_herramientas'
+  diamond_shovel:
+    material: DIAMOND_SHOVEL
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_diamond_shovel%"
+    - "&7Stock: &f%pool_stock_diamond_shovel%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond_shovel cat_herramientas'
+  diamond_axe:
+    material: DIAMOND_AXE
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_diamond_axe%"
+    - "&7Stock: &f%pool_stock_diamond_axe%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond_axe cat_herramientas'
+  diamond_hoe:
+    material: DIAMOND_HOE
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_diamond_hoe%"
+    - "&7Stock: &f%pool_stock_diamond_hoe%"
+    left_click_commands:
+    - '[player] setbuyingitem diamond_hoe cat_herramientas'
+  netherite_pickaxe:
+    material: NETHERITE_PICKAXE
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_pickaxe%"
+    - "&7Stock: &f%pool_stock_netherite_pickaxe%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_pickaxe cat_herramientas'
+  netherite_shovel:
+    material: NETHERITE_SHOVEL
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_shovel%"
+    - "&7Stock: &f%pool_stock_netherite_shovel%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_shovel cat_herramientas'
+  netherite_axe:
+    material: NETHERITE_AXE
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_axe%"
+    - "&7Stock: &f%pool_stock_netherite_axe%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_axe cat_herramientas'
+  netherite_hoe:
+    material: NETHERITE_HOE
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_netherite_hoe%"
+    - "&7Stock: &f%pool_stock_netherite_hoe%"
+    left_click_commands:
+    - '[player] setbuyingitem netherite_hoe cat_herramientas'
+  flint_and_steel:
+    material: FLINT_AND_STEEL
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_flint_and_steel%"
+    - "&7Stock: &f%pool_stock_flint_and_steel%"
+    left_click_commands:
+    - '[player] setbuyingitem flint_and_steel cat_herramientas'
+  fire_charge:
+    material: FIRE_CHARGE
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_fire_charge%"
+    - "&7Stock: &f%pool_stock_fire_charge%"
+    left_click_commands:
+    - '[player] setbuyingitem fire_charge cat_herramientas'
+  brush:
+    material: BRUSH
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_brush%"
+    - "&7Stock: &f%pool_stock_brush%"
+    left_click_commands:
+    - '[player] setbuyingitem brush cat_herramientas'
+  shears:
+    material: SHEARS
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_shears%"
+    - "&7Stock: &f%pool_stock_shears%"
+    left_click_commands:
+    - '[player] setbuyingitem shears cat_herramientas'
+  spyglass:
+    material: SPYGLASS
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_spyglass%"
+    - "&7Stock: &f%pool_stock_spyglass%"
+    left_click_commands:
+    - '[player] setbuyingitem spyglass cat_herramientas'
+  clock:
+    material: CLOCK
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_clock%"
+    - "&7Stock: &f%pool_stock_clock%"
+    left_click_commands:
+    - '[player] setbuyingitem clock cat_herramientas'
+  compass:
+    material: COMPASS
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_compass%"
+    - "&7Stock: &f%pool_stock_compass%"
+    left_click_commands:
+    - '[player] setbuyingitem compass cat_herramientas'
+  recovery_compass:
+    material: RECOVERY_COMPASS
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_recovery_compass%"
+    - "&7Stock: &f%pool_stock_recovery_compass%"
+    left_click_commands:
+    - '[player] setbuyingitem recovery_compass cat_herramientas'
+  lead:
+    material: LEAD
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_lead%"
+    - "&7Stock: &f%pool_stock_lead%"
+    left_click_commands:
+    - '[player] setbuyingitem lead cat_herramientas'
+  fishing_rod:
+    material: FISHING_ROD
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_fishing_rod%"
+    - "&7Stock: &f%pool_stock_fishing_rod%"
+    left_click_commands:
+    - '[player] setbuyingitem fishing_rod cat_herramientas'
+  bucket:
+    material: BUCKET
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_bucket%"
+    - "&7Stock: &f%pool_stock_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem bucket cat_herramientas'
+  water_bucket:
+    material: WATER_BUCKET
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_water_bucket%"
+    - "&7Stock: &f%pool_stock_water_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem water_bucket cat_herramientas'
+  lava_bucket:
+    material: LAVA_BUCKET
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_lava_bucket%"
+    - "&7Stock: &f%pool_stock_lava_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem lava_bucket cat_herramientas'
+  powder_snow_bucket:
+    material: POWDER_SNOW_BUCKET
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_powder_snow_bucket%"
+    - "&7Stock: &f%pool_stock_powder_snow_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem powder_snow_bucket cat_herramientas'
+  axolotl_bucket:
+    material: AXOLOTL_BUCKET
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_axolotl_bucket%"
+    - "&7Stock: &f%pool_stock_axolotl_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem axolotl_bucket cat_herramientas'
+  cod_bucket:
+    material: COD_BUCKET
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_cod_bucket%"
+    - "&7Stock: &f%pool_stock_cod_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem cod_bucket cat_herramientas'
+  salmon_bucket:
+    material: SALMON_BUCKET
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_salmon_bucket%"
+    - "&7Stock: &f%pool_stock_salmon_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem salmon_bucket cat_herramientas'
+  pufferfish_bucket:
+    material: PUFFERFISH_BUCKET
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_pufferfish_bucket%"
+    - "&7Stock: &f%pool_stock_pufferfish_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem pufferfish_bucket cat_herramientas'
+  tropical_fish_bucket:
+    material: TROPICAL_FISH_BUCKET
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_tropical_fish_bucket%"
+    - "&7Stock: &f%pool_stock_tropical_fish_bucket%"
+    left_click_commands:
+    - '[player] setbuyingitem tropical_fish_bucket cat_herramientas'
+  minecart:
+    material: MINECART
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_minecart%"
+    - "&7Stock: &f%pool_stock_minecart%"
+    left_click_commands:
+    - '[player] setbuyingitem minecart cat_herramientas'
+  chest_minecart:
+    material: CHEST_MINECART
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_chest_minecart%"
+    - "&7Stock: &f%pool_stock_chest_minecart%"
+    left_click_commands:
+    - '[player] setbuyingitem chest_minecart cat_herramientas'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'

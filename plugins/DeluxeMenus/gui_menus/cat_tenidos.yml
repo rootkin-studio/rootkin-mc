@@ -1,0 +1,382 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_tenidos
+size: 54
+items:
+  white_wool:
+    material: WHITE_WOOL
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_white_wool%"
+    - "&7Stock: &f%pool_stock_white_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem white_wool cat_tenidos'
+  light_gray_wool:
+    material: LIGHT_GRAY_WOOL
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_light_gray_wool%"
+    - "&7Stock: &f%pool_stock_light_gray_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem light_gray_wool cat_tenidos'
+  gray_wool:
+    material: GRAY_WOOL
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_gray_wool%"
+    - "&7Stock: &f%pool_stock_gray_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem gray_wool cat_tenidos'
+  black_wool:
+    material: BLACK_WOOL
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_black_wool%"
+    - "&7Stock: &f%pool_stock_black_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem black_wool cat_tenidos'
+  brown_wool:
+    material: BROWN_WOOL
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_brown_wool%"
+    - "&7Stock: &f%pool_stock_brown_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_wool cat_tenidos'
+  red_wool:
+    material: RED_WOOL
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_red_wool%"
+    - "&7Stock: &f%pool_stock_red_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem red_wool cat_tenidos'
+  orange_wool:
+    material: ORANGE_WOOL
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_orange_wool%"
+    - "&7Stock: &f%pool_stock_orange_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_wool cat_tenidos'
+  yellow_wool:
+    material: YELLOW_WOOL
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_yellow_wool%"
+    - "&7Stock: &f%pool_stock_yellow_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem yellow_wool cat_tenidos'
+  lime_wool:
+    material: LIME_WOOL
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_lime_wool%"
+    - "&7Stock: &f%pool_stock_lime_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem lime_wool cat_tenidos'
+  green_wool:
+    material: GREEN_WOOL
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_green_wool%"
+    - "&7Stock: &f%pool_stock_green_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem green_wool cat_tenidos'
+  cyan_wool:
+    material: CYAN_WOOL
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_cyan_wool%"
+    - "&7Stock: &f%pool_stock_cyan_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem cyan_wool cat_tenidos'
+  light_blue_wool:
+    material: LIGHT_BLUE_WOOL
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_light_blue_wool%"
+    - "&7Stock: &f%pool_stock_light_blue_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem light_blue_wool cat_tenidos'
+  blue_wool:
+    material: BLUE_WOOL
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_blue_wool%"
+    - "&7Stock: &f%pool_stock_blue_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_wool cat_tenidos'
+  purple_wool:
+    material: PURPLE_WOOL
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_purple_wool%"
+    - "&7Stock: &f%pool_stock_purple_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem purple_wool cat_tenidos'
+  magenta_wool:
+    material: MAGENTA_WOOL
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_magenta_wool%"
+    - "&7Stock: &f%pool_stock_magenta_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem magenta_wool cat_tenidos'
+  pink_wool:
+    material: PINK_WOOL
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_pink_wool%"
+    - "&7Stock: &f%pool_stock_pink_wool%"
+    left_click_commands:
+    - '[player] setbuyingitem pink_wool cat_tenidos'
+  white_carpet:
+    material: WHITE_CARPET
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_white_carpet%"
+    - "&7Stock: &f%pool_stock_white_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem white_carpet cat_tenidos'
+  light_gray_carpet:
+    material: LIGHT_GRAY_CARPET
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_light_gray_carpet%"
+    - "&7Stock: &f%pool_stock_light_gray_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem light_gray_carpet cat_tenidos'
+  gray_carpet:
+    material: GRAY_CARPET
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_gray_carpet%"
+    - "&7Stock: &f%pool_stock_gray_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem gray_carpet cat_tenidos'
+  black_carpet:
+    material: BLACK_CARPET
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_black_carpet%"
+    - "&7Stock: &f%pool_stock_black_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem black_carpet cat_tenidos'
+  brown_carpet:
+    material: BROWN_CARPET
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_brown_carpet%"
+    - "&7Stock: &f%pool_stock_brown_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_carpet cat_tenidos'
+  red_carpet:
+    material: RED_CARPET
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_red_carpet%"
+    - "&7Stock: &f%pool_stock_red_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem red_carpet cat_tenidos'
+  orange_carpet:
+    material: ORANGE_CARPET
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_orange_carpet%"
+    - "&7Stock: &f%pool_stock_orange_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_carpet cat_tenidos'
+  yellow_carpet:
+    material: YELLOW_CARPET
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_yellow_carpet%"
+    - "&7Stock: &f%pool_stock_yellow_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem yellow_carpet cat_tenidos'
+  lime_carpet:
+    material: LIME_CARPET
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_lime_carpet%"
+    - "&7Stock: &f%pool_stock_lime_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem lime_carpet cat_tenidos'
+  green_carpet:
+    material: GREEN_CARPET
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_green_carpet%"
+    - "&7Stock: &f%pool_stock_green_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem green_carpet cat_tenidos'
+  cyan_carpet:
+    material: CYAN_CARPET
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_cyan_carpet%"
+    - "&7Stock: &f%pool_stock_cyan_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem cyan_carpet cat_tenidos'
+  light_blue_carpet:
+    material: LIGHT_BLUE_CARPET
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_light_blue_carpet%"
+    - "&7Stock: &f%pool_stock_light_blue_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem light_blue_carpet cat_tenidos'
+  blue_carpet:
+    material: BLUE_CARPET
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_blue_carpet%"
+    - "&7Stock: &f%pool_stock_blue_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_carpet cat_tenidos'
+  purple_carpet:
+    material: PURPLE_CARPET
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_purple_carpet%"
+    - "&7Stock: &f%pool_stock_purple_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem purple_carpet cat_tenidos'
+  magenta_carpet:
+    material: MAGENTA_CARPET
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_magenta_carpet%"
+    - "&7Stock: &f%pool_stock_magenta_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem magenta_carpet cat_tenidos'
+  pink_carpet:
+    material: PINK_CARPET
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_pink_carpet%"
+    - "&7Stock: &f%pool_stock_pink_carpet%"
+    left_click_commands:
+    - '[player] setbuyingitem pink_carpet cat_tenidos'
+  white_concrete:
+    material: WHITE_CONCRETE
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_white_concrete%"
+    - "&7Stock: &f%pool_stock_white_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem white_concrete cat_tenidos'
+  light_gray_concrete:
+    material: LIGHT_GRAY_CONCRETE
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_light_gray_concrete%"
+    - "&7Stock: &f%pool_stock_light_gray_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem light_gray_concrete cat_tenidos'
+  gray_concrete:
+    material: GRAY_CONCRETE
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_gray_concrete%"
+    - "&7Stock: &f%pool_stock_gray_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem gray_concrete cat_tenidos'
+  black_concrete:
+    material: BLACK_CONCRETE
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_black_concrete%"
+    - "&7Stock: &f%pool_stock_black_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem black_concrete cat_tenidos'
+  brown_concrete:
+    material: BROWN_CONCRETE
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_brown_concrete%"
+    - "&7Stock: &f%pool_stock_brown_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem brown_concrete cat_tenidos'
+  red_concrete:
+    material: RED_CONCRETE
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_red_concrete%"
+    - "&7Stock: &f%pool_stock_red_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem red_concrete cat_tenidos'
+  orange_concrete:
+    material: ORANGE_CONCRETE
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_orange_concrete%"
+    - "&7Stock: &f%pool_stock_orange_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem orange_concrete cat_tenidos'
+  yellow_concrete:
+    material: YELLOW_CONCRETE
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_yellow_concrete%"
+    - "&7Stock: &f%pool_stock_yellow_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem yellow_concrete cat_tenidos'
+  lime_concrete:
+    material: LIME_CONCRETE
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_lime_concrete%"
+    - "&7Stock: &f%pool_stock_lime_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem lime_concrete cat_tenidos'
+  green_concrete:
+    material: GREEN_CONCRETE
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_green_concrete%"
+    - "&7Stock: &f%pool_stock_green_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem green_concrete cat_tenidos'
+  cyan_concrete:
+    material: CYAN_CONCRETE
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_cyan_concrete%"
+    - "&7Stock: &f%pool_stock_cyan_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem cyan_concrete cat_tenidos'
+  light_blue_concrete:
+    material: LIGHT_BLUE_CONCRETE
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_light_blue_concrete%"
+    - "&7Stock: &f%pool_stock_light_blue_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem light_blue_concrete cat_tenidos'
+  blue_concrete:
+    material: BLUE_CONCRETE
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_blue_concrete%"
+    - "&7Stock: &f%pool_stock_blue_concrete%"
+    left_click_commands:
+    - '[player] setbuyingitem blue_concrete cat_tenidos'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  next_page:
+    material: PAPER
+    slots:
+    - 50
+    - 51
+    - 52
+    - 53
+    model_data: 500
+    display_name: '&aSiguiente'
+    left_click_commands:
+    - '[player] cat_tenidos_2'

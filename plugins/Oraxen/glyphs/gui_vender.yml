@@ -2,3 +2,4 @@ gui_vender:
   texture: required/ui/gui_vender
   ascent: 13
   height: 256
+  char: ꐒ

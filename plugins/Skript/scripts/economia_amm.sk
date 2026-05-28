@@ -1,0 +1,314 @@
+# ========================================================
+# SISTEMA DE ECONOMÍA AMM (Automated Market Maker)
+# ========================================================
+# v2.0 - Sistema de Vales (Papel con CMD) y Banco
+
+options:
+    currency_item: oraxen item "chatarra"
+    vale_item: oraxen item "tarjeta_debito"
+    invisible_paper: oraxen item "invisible_item"
+    fee_percentage: 0.05
+    initial_stock: 100
+    min_liquidity: 10
+
+# --- Función para crear un Vale de Chatarra ---
+function createVale(amount: integer) :: item:
+    set {_i} to {@vale_item} named "&a&lTarjeta de Debito"
+    set lore of {_i} to "&7Valor almacenado: &a€%{_amount}%"
+    return {_i}
+
+# --- Función para obtener valor de un Vale ---
+function getValeValue(i: item) :: integer:
+    if custom model data of {_i} is 1001:
+        set {_lore::*} to lore of {_i}
+        loop {_lore::*}:
+            set {_l} to uncolored loop-value
+            if {_l} contains "Valor almacenado:":
+                replace all "Valor almacenado: " and " chatarras" and " " with "" in {_l}
+                return ({_l} parsed as integer)
+    return 0
+
+# --- Función para entregar Chatarra de forma inteligente ---
+function giveScrap(p: player, amount: integer):
+    set {_remaining} to {_amount}
+
+    # Calcular espacio libre
+    set {_slots_needed} to floor({_remaining} / 64)
+    if mod({_remaining}, 64) > 0:
+        add 1 to {_slots_needed}
+    set {_free} to 0
+    loop 36 times:
+        if slot (loop-number - 1) of {_p}'s inventory is air:
+            add 1 to {_free}
+
+    # Si la cantidad es masiva (>5000) o no cabe, dar un Vale
+    set {_use_vale} to false
+    if {_remaining} > 5000:
+        set {_use_vale} to true
+    if {_slots_needed} > {_free}:
+        set {_use_vale} to true
+
+    if {_use_vale} is true:
+        set {_vale} to createVale({_remaining})
+        if {_p} can hold {_vale}:
+            give {_vale} to {_p}
+        else:
+            drop {_vale} at {_p}
+    else:
+        give {_remaining} of {@currency_item} to {_p}
+
+# --- Función para pagar con Chatarra (Soporta Vales) ---
+function payScrap(p: player, amount: integer) :: boolean:
+    set {_needed} to {_amount}
+
+    # 1. Contar total
+    set {_total_has} to amount of {@currency_item} in {_p}'s inventory
+    loop all items in {_p}'s inventory:
+        add getValeValue(loop-item) to {_total_has}
+
+    if {_total_has} < {_needed}:
+        return false
+
+    # 2. Chatarra suelta primero
+    set {_loose} to amount of {@currency_item} in {_p}'s inventory
+    if {_loose} >= {_needed}:
+        remove {_needed} of {@currency_item} from {_p}'s inventory
+        return true
+    else:
+        remove {_loose} of {@currency_item} from {_p}'s inventory
+        remove {_loose} from {_needed}
+
+    # 3. Consumir Vales
+    loop all items in {_p}'s inventory:
+        if {_needed} <= 0:
+            exit loop
+        set {_val} to getValeValue(loop-item)
+        if {_val} > 0:
+            set {_item} to 1 of loop-item
+            remove {_item} from {_p}'s inventory
+
+            if {_val} >= {_needed}:
+                set {_leftover} to {_val} - {_needed}
+                if {_leftover} > 0:
+                    giveScrap({_p}, {_leftover})
+                set {_needed} to 0
+            else:
+                remove {_val} from {_needed}
+    return true
+
+# --- Función para compatibilidad con armario.sk ---
+function getAMMPrice(i: object) :: number:
+    set {_type} to type of {_i}
+    if {amm::stock::%{_type}%} is not set:
+        set {amm::k::%{_type}%} to 50 * 100
+        set {amm::stock::%{_type}%} to 100
+    return {amm::k::%{_type}%} / {amm::stock::%{_type}%}
+
+# --- PlaceholderAPI Support ---
+placeholderapi placeholder with the prefix "pool":
+    if identifier is "buying_item":
+        set the result to {amm::buying::%player%::item}
+    else if identifier is "buying_amount":
+        set the result to "%{amm::buying::%player%::amount}%"
+    else if identifier is "buying_last_menu":
+        set the result to {amm::buying::%player%::last_menu}
+    else if identifier contains "buying_stack_":
+        set {_stack_num} to subtext of identifier from 14 to length of identifier parsed as integer
+        set {_total} to {amm::buying::%player%::amount}
+        set {_start} to ({_stack_num} - 1) * 64
+        if {_total} > {_start}:
+            set {_amount_in_stack} to {_total} - {_start}
+            if {_amount_in_stack} > 64:
+                set {_amount_in_stack} to 64
+            set the result to "%{_amount_in_stack}%"
+        else:
+            set the result to "0"
+    else if identifier is "buyprice_total":
+        set {_item_text} to {amm::buying::%player%::item}
+        set {_amount} to {amm::buying::%player%::amount}
+        if {_item_text} is set:
+            set {_i} to {_item_text} parsed as item
+            set the result to "%calculateBuyPrice({_i}, {_amount})%"
+        else:
+            set the result to "0"
+    else if identifier is "buyprice_base":
+        set {_item_text} to {amm::buying::%player%::item}
+        set {_amount} to {amm::buying::%player%::amount}
+        if {_item_text} is set:
+            set {_i} to {_item_text} parsed as item
+            set {_type} to type of {_i}
+            set {_stock} to {amm::stock::%{_type}%}
+            set {_total} to 0
+            loop {_amount} times:
+                add ({amm::k::%{_type}%} / {_stock}) to {_total}
+                remove 1 from {_stock}
+            set the result to "%round({_total} * 100) / 100%"
+        else:
+            set the result to "0"
+    else if identifier is "buyprice_fee":
+        set {_item_text} to {amm::buying::%player%::item}
+        set {_amount} to {amm::buying::%player%::amount}
+        if {_item_text} is set:
+            set {_i} to {_item_text} parsed as item
+            set {_type} to type of {_i}
+            set {_stock} to {amm::stock::%{_type}%}
+            set {_total} to 0
+            loop {_amount} times:
+                add ({amm::k::%{_type}%} / {_stock}) to {_total}
+                remove 1 from {_stock}
+            set the result to "%round({_total} * {@fee_percentage} * 100) / 100%"
+        else:
+            set the result to "0"
+    else if identifier is "buying_tax":
+        set {_item_text} to {amm::buying::%player%::item}
+        set {_amount} to {amm::buying::%player%::amount}
+        if {_item_text} is set:
+            set {_i} to {_item_text} parsed as item
+            set {_type} to type of {_i}
+            set {_stock} to {amm::stock::%{_type}%}
+            set {_total} to 0
+            loop {_amount} times:
+                add ({amm::k::%{_type}%} / {_stock}) to {_total}
+                remove 1 from {_stock}
+            set {_base_plus_fee} to {_total} * (1 + {@fee_percentage})
+            set {_final} to ceil({_base_plus_fee})
+            set the result to "%round(({_final} - {_base_plus_fee}) * 100) / 100%"
+        else:
+            set the result to "0"
+    else if identifier contains "price_":
+        set {_item_name} to subtext of identifier from 7 to length of identifier
+        set {_i} to {_item_name} parsed as item
+        set the result to "%calculateBuyPrice({_i}, 1)%"
+    else if identifier contains "stock_":
+        set {_item_name} to subtext of identifier from 7 to length of identifier
+        set {_i} to {_item_name} parsed as item
+        set {_type} to type of {_i}
+        set the result to "%{amm::stock::%{_type}%}%"
+
+# --- Comandos ---
+
+command /setbuyingitem <text> <text>:
+    trigger:
+        set {amm::buying::%player%::item} to arg-1
+        set {amm::buying::%player%::amount} to 1
+        set {amm::buying::%player%::last_menu} to arg-2
+        execute player command "comprar"
+
+command /ammbuyadjust <offline player> <integer>:
+    permission: op
+    trigger:
+        set {_p} to arg-1
+        set {_amount} to arg-2
+        add {_amount} to {amm::buying::%{_p}%::amount}
+        if {amm::buying::%{_p}%::amount} < 1:
+            set {amm::buying::%{_p}%::amount} to 1
+
+command /ammbuy <offline player>:
+    permission: op
+    trigger:
+        set {_p} to arg-1
+        set {_item_text} to {amm::buying::%{_p}%::item}
+        set {_amount} to {amm::buying::%{_p}%::amount}
+        if {_item_text} is not set:
+            stop
+        set {_i} to {_item_text} parsed as item
+        set {_type} to type of {_i}
+        if {amm::stock::%{_type}%} - {_amount} < {@min_liquidity}:
+            send "<red>Sin liquidez." to {_p}
+            stop
+        set {_total_cost} to calculateBuyPrice({_i}, {_amount})
+        if payScrap({_p}, {_total_cost}) is false:
+            send "<red>No tienes suficiente chatarra." to {_p}
+            stop
+        if {_p} doesn't have enough space for {_amount} of {_i}:
+            giveScrap({_p}, {_total_cost})
+            send "<red>Sin espacio inventario." to {_p}
+            stop
+        give {_amount} of {_i} to {_p}
+        remove {_amount} from {amm::stock::%{_type}%}
+        send "<green>Compra exitosa." to {_p}
+
+# --- Menú de Venta Masiva ---
+
+command /venderpool:
+    trigger:
+        open chest inventory with 6 rows named "§f<shift:-8>ꐒ" to player
+        set {_inv} to player's current inventory
+        set slot 45 of {_inv} to {@invisible_paper} named "&7Volver"
+        set {_confirm} to {@invisible_paper} named "&a&lCONFIRMAR VENTA"
+        loop 7 times:
+            set slot (46 + loop-number - 1) of {_inv} to {_confirm}
+
+on inventory click:
+    if name of event-inventory is "§f<shift:-8>ꐒ":
+        set {_idx} to index of event-slot
+        if {_idx} is 45:
+            cancel event
+            execute player command "dm open gui_tienda"
+            stop
+        if {_idx} is between 46 and 52:
+            cancel event
+            set {_total_profit} to 0
+            loop 45 times:
+                set {_i} to slot (loop-number - 1) of event-inventory
+                if {_i} is not air:
+                    set {_type} to type of {_i}
+                    if {amm::stock::%{_type}%} is set:
+                        set {_count} to item amount of {_i}
+                        add calculateSellPrice({_i}, {_count}) to {_total_profit}
+                        add {_count} to {amm::stock::%{_type}%}
+                        set slot (loop-number - 1) of event-inventory to air
+            if {_total_profit} > 0:
+                giveScrap(player, {_total_profit})
+                send "<green>Venta exitosa por %{_total_profit}%." to player
+            stop
+
+        if {_idx} < 45:
+            wait 1 tick
+            set {_base} to 0
+            loop 45 times:
+                set {_i} to slot (loop-number - 1) of player's current inventory
+                if {_i} is not air:
+                    set {_type} to type of {_i}
+                    if {amm::stock::%{_type}%} is set:
+                        set {_stk} to {amm::stock::%{_type}%}
+                        loop (item amount of {_i}) times:
+                            add ({amm::k::%{_type}%} / {_stk}) to {_base}
+                            add 1 to {_stk}
+            set {_total} to floor({_base} * (1 - {@fee_percentage}))
+            set {_fee} to round({_base} * {@fee_percentage} * 100) / 100
+            set {_confirm} to {@invisible_paper} named "&a&lCONFIRMAR VENTA"
+            set {_text1} to "&7Precio base: &f%round({_base})% chatarra"
+            set {_text2} to "&7Tasa servicio (5%%): &f-%round({_fee})% chatarra"
+            set {_text3} to ""
+            set {_text4} to "&7Total a recibir: &a&l%round({_total})% chatarra"
+            set lore of {_confirm} to {_text1} and {_text2} and {_text3} and {_text4}
+            loop 7 times:
+                set slot (46 + loop-number - 1) of player's current inventory to {_confirm}
+            stop
+
+on inventory close:
+    if name of event-inventory is "§f<shift:-8>ꐒ":
+        loop 45 times:
+            set {_i} to slot (loop-number - 1) of event-inventory
+            if {_i} is not air:
+                give {_i} to player
+
+# Simulación
+function calculateBuyPrice(i: item, amount: integer) :: number:
+    set {_type} to type of {_i}
+    set {_stock} to {amm::stock::%{_type}%}
+    set {_total} to 0
+    loop {_amount} times:
+        add ({amm::k::%{_type}%} / {_stock}) to {_total}
+        remove 1 from {_stock}
+    return ceil({_total} * (1 + {@fee_percentage}))
+
+function calculateSellPrice(i: item, amount: integer) :: number:
+    set {_type} to type of {_i}
+    set {_stock} to {amm::stock::%{_type}%}
+    set {_total} to 0
+    loop {_amount} times:
+        add ({amm::k::%{_type}%} / {_stock}) to {_total}
+        add 1 to {_stock}
+    return floor({_total} * (1 - {@fee_percentage}))

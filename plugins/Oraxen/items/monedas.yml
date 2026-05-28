@@ -1,0 +1,9 @@
+chatarra:
+  itemname: <white>Chatarra
+  material: PAPER
+  Pack:
+    generate_model: true
+    parent_model: item/generated
+    textures:
+    - required/chatarra
+    custom_model_data: 600

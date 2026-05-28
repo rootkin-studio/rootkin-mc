@@ -1,0 +1,189 @@
+# ========================================================
+# SISTEMA DE BANCO - Gestión de Vales de Chatarra
+# ========================================================
+
+options:
+    currency_item: oraxen item "chatarra"
+    vale_item: oraxen item "tarjeta_debito"
+    invisible_paper: oraxen item "invisible_item"
+
+# --- Comando /banco ---
+command /banco:
+    trigger:
+        set {_current_vale} to air
+        if name of player's current inventory is "§f<shift:-8>ꐗ":
+            set {_current_vale} to slot 13 of player's current inventory
+            # Marcar como refrescando para evitar que on inventory close devuelva el item
+            set {bank::refreshing::%player%} to true
+        else:
+            set {bank::session::%player%::pending} to 0
+
+        open chest inventory with 6 rows named "§f<shift:-8>ꐗ" to player
+        set {_inv} to player's current inventory
+
+        # Una vez abierto el nuevo, quitamos la marca de refresco
+        delete {bank::refreshing::%player%}
+
+        # Llenar con items del menú
+        set {_filler} to {@invisible_paper} named " "
+        loop 54 times:
+            set {_s} to loop-number - 1
+            if {_s} is not 13:
+                set slot {_s} of {_inv} to {_filler}
+
+        # Restaurar el vale si existía
+        if {_current_vale} is not air:
+            set slot 13 of {_inv} to {_current_vale}
+
+        set {_val_vale} to getValeValue(slot 13 of {_inv})
+        set {_pending} to {bank::session::%player%::pending}
+
+        # Configurar Botones
+        set slot 28 of {_inv} to {@invisible_paper} named "&cRetirar €64"
+        set slot 29 of {_inv} to {@invisible_paper} named "&cRetirar €10"
+        set slot 30 of {_inv} to {@invisible_paper} named "&cRetirar €1"
+        set slot 31 of {_inv} to {@invisible_paper} named "&bReiniciar Cambios"
+        set slot 32 of {_inv} to {@invisible_paper} named "&aDepositar €1"
+        set slot 33 of {_inv} to {@invisible_paper} named "&aDepositar €10"
+        set slot 34 of {_inv} to {@invisible_paper} named "&aDepositar €64"
+
+        # Botón de Confirmación
+        set {_confirm} to {@invisible_paper} named "&6&lCONFIRMAR CAMBIOS"
+        if {_pending} > 0:
+            set lore of {_confirm} to "&7Acción: &aDepositar", "&7Cantidad: &a€%{_pending}%", "" and "&eHaz clic para aplicar y cerrar"
+        else if {_pending} < 0:
+            set {_abs} to abs({_pending})
+            set lore of {_confirm} to "&7Acción: &cRetirar", "&7Cantidad: &c€%{_abs}%", "" and "&eHaz clic para aplicar y cerrar"
+        else:
+            set lore of {_confirm} to "&7No hay cambios pendientes.", "" and "&eAjusta el valor con los botones"
+
+        set slot 45, 46, 47, 48, 49, 50, 51 and 52 of {_inv} to {_confirm}
+
+        set slot 53 of {_inv} to {@invisible_paper} named "&b&lINFORMACIÓN" with lore "&7Usa este banco para modificar", "&7el valor de tu tarjeta.", "", "&7Valor inicial: &f%{_val_vale}% chatarras" and "&7Cambio pendiente: &f%{_pending}%"
+
+# --- Devolver el vale al cerrar el menú ---
+on inventory close:
+    if name of event-inventory is "§f<shift:-8>ꐗ":
+        # SI es un refresco interno, NO devolvemos el item (porque se encarga el siguiente /banco)
+        if {bank::refreshing::%player%} is true:
+            stop
+
+        set {_i} to slot 13 of event-inventory
+        if {_i} is not air:
+            if player can hold {_i}:
+                give {_i} to player
+            else:
+                drop {_i} at player
+            send "&7Recuperaste tu tarjeta del banco." to player
+
+        # Limpieza total al cerrar de verdad
+        delete {bank::session::%player%::pending}
+        delete {bank::refreshing::%player%}
+
+# --- Lógica de Ajuste ---
+command /bankadjust <player> <integer>:
+    permission: op
+    trigger:
+        set {_p} to arg-1
+        set {_mod} to arg-2
+        add {_mod} to {bank::session::%{_p}%::pending}
+
+# --- Lógica de Confirmación ---
+command /bankconfirm <player>:
+    permission: op
+    trigger:
+        set {_p} to arg-1
+        set {_inv} to {_p}'s current inventory
+        set {_vale} to slot 13 of {_inv}
+        set {_val} to getValeValue({_vale})
+        set {_pending} to {bank::session::%{_p}%::pending}
+
+        if {_pending} is 0:
+            close {_p}'s inventory
+            stop
+
+        # Retirada
+        if {_pending} < 0:
+            set {_amount} to abs({_pending})
+            if {_val} < {_amount}:
+                send "&cLa tarjeta no tiene suficiente chatarra." to {_p}
+                stop
+
+            giveScrap({_p}, {_amount})
+            set {_new_val} to {_val} - {_amount}
+            if {_new_val} <= 0:
+                set slot 13 of {_inv} to air
+                send "&aRetiraste toda la chatarra." to {_p}
+            else:
+                set slot 13 of {_inv} to createVale({_new_val})
+                send "&aRetiraste &f%{_amount}% &achatarra." to {_p}
+
+        # Depósito
+        else if {_pending} > 0:
+            set {_has} to amount of {@currency_item} in {_p}'s inventory
+            if {_has} < {_pending}:
+                send "&cNo tienes suficiente chatarra." to {_p}
+                stop
+
+            remove {_pending} of {@currency_item} from {_p}'s inventory
+            if {_val} <= 0:
+                set slot 13 of {_inv} to createVale({_pending})
+            else:
+                set {_new_val} to {_val} + {_pending}
+                set slot 13 of {_inv} to createVale({_new_val})
+            send "&aAñadiste &f%{_pending}% &achatarra a la tarjeta." to {_p}
+
+
+        # --- ENTREGA DEL VALE AL JUGADOR ---
+        set {_final} to slot 13 of {_inv}
+        if {_final} is not air:
+            if {_p} can hold {_final}:
+                give {_final} to {_p}
+            else:
+                drop {_final} at {_p}
+            set slot 13 of {_inv} to air
+
+        # Marcar como refrescando para evitar duplicados en on inventory close
+        set {bank::refreshing::%{_p}%} to true
+        close {_p}'s inventory
+        delete {bank::refreshing::%{_p}%}
+# --- Eventos de Inventario ---
+on inventory click:
+    if name of event-inventory is "§f<shift:-8>ꐗ":
+        if clicked inventory is player's inventory:
+            stop
+        set {_idx} to index of event-slot
+        if {_idx} is 13:
+            stop
+        cancel event
+
+        if {_idx} is 28: # -64
+            execute player command "bankadjust %player% -64"
+            execute player command "banco"
+        else if {_idx} is 29: # -10
+            execute player command "bankadjust %player% -10"
+            execute player command "banco"
+        else if {_idx} is 30: # -1
+            execute player command "bankadjust %player% -1"
+            execute player command "banco"
+        else if {_idx} is 31: # Reset
+            set {bank::session::%player%::pending} to 0
+            execute player command "banco"
+        else if {_idx} is 32: # +1
+            execute player command "bankadjust %player% 1"
+            execute player command "banco"
+        else if {_idx} is 33: # +10
+            execute player command "bankadjust %player% 10"
+            execute player command "banco"
+        else if {_idx} is 34: # +64
+            execute player command "bankadjust %player% 64"
+            execute player command "banco"
+        else if {_idx} is 45 or 46 or 47 or 48 or 49 or 50 or 51 or 52: # Confirmar
+            execute player command "bankconfirm %player%"
+
+on inventory drag:
+    if name of event-inventory is "§f<shift:-8>ꐗ":
+        loop event-slots:
+            if loop-value is not 13:
+                cancel event
+                stop

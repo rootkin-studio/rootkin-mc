@@ -1,0 +1,7 @@
+command /mapa:
+    description: Muestra el enlace al mapa dinámico del servidor.
+    trigger:
+        set {_m} to text component of "&9&nhttps://map.rootkin.studio/"
+        set hover event of {_m} to hover event showing "&b¡Haz clic para abrir el mapa!"
+        set click event of {_m} to click event to open url "https://map.rootkin.studio/"
+        send component {_m} to player

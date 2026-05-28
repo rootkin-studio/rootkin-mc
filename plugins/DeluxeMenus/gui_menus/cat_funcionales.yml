@@ -1,0 +1,382 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_funcionales
+size: 54
+items:
+  crafting_table:
+    material: CRAFTING_TABLE
+    slot: 0
+    lore:
+    - "&7Precio: &a€%pool_price_crafting_table%"
+    - "&7Stock: &f%pool_stock_crafting_table%"
+    left_click_commands:
+    - '[player] setbuyingitem crafting_table cat_funcionales'
+  furnace:
+    material: FURNACE
+    slot: 1
+    lore:
+    - "&7Precio: &a€%pool_price_furnace%"
+    - "&7Stock: &f%pool_stock_furnace%"
+    left_click_commands:
+    - '[player] setbuyingitem furnace cat_funcionales'
+  smoker:
+    material: SMOKER
+    slot: 2
+    lore:
+    - "&7Precio: &a€%pool_price_smoker%"
+    - "&7Stock: &f%pool_stock_smoker%"
+    left_click_commands:
+    - '[player] setbuyingitem smoker cat_funcionales'
+  blast_furnace:
+    material: BLAST_FURNACE
+    slot: 3
+    lore:
+    - "&7Precio: &a€%pool_price_blast_furnace%"
+    - "&7Stock: &f%pool_stock_blast_furnace%"
+    left_click_commands:
+    - '[player] setbuyingitem blast_furnace cat_funcionales'
+  brewing_stand:
+    material: BREWING_STAND
+    slot: 4
+    lore:
+    - "&7Precio: &a€%pool_price_brewing_stand%"
+    - "&7Stock: &f%pool_stock_brewing_stand%"
+    left_click_commands:
+    - '[player] setbuyingitem brewing_stand cat_funcionales'
+  cauldron:
+    material: CAULDRON
+    slot: 5
+    lore:
+    - "&7Precio: &a€%pool_price_cauldron%"
+    - "&7Stock: &f%pool_stock_cauldron%"
+    left_click_commands:
+    - '[player] setbuyingitem cauldron cat_funcionales'
+  anvil:
+    material: ANVIL
+    slot: 6
+    lore:
+    - "&7Precio: &a€%pool_price_anvil%"
+    - "&7Stock: &f%pool_stock_anvil%"
+    left_click_commands:
+    - '[player] setbuyingitem anvil cat_funcionales'
+  enchanting_table:
+    material: ENCHANTING_TABLE
+    slot: 7
+    lore:
+    - "&7Precio: &a€%pool_price_enchanting_table%"
+    - "&7Stock: &f%pool_stock_enchanting_table%"
+    left_click_commands:
+    - '[player] setbuyingitem enchanting_table cat_funcionales'
+  lectern:
+    material: LECTERN
+    slot: 8
+    lore:
+    - "&7Precio: &a€%pool_price_lectern%"
+    - "&7Stock: &f%pool_stock_lectern%"
+    left_click_commands:
+    - '[player] setbuyingitem lectern cat_funcionales'
+  loom:
+    material: LOOM
+    slot: 9
+    lore:
+    - "&7Precio: &a€%pool_price_loom%"
+    - "&7Stock: &f%pool_stock_loom%"
+    left_click_commands:
+    - '[player] setbuyingitem loom cat_funcionales'
+  smithing_table:
+    material: SMITHING_TABLE
+    slot: 10
+    lore:
+    - "&7Precio: &a€%pool_price_smithing_table%"
+    - "&7Stock: &f%pool_stock_smithing_table%"
+    left_click_commands:
+    - '[player] setbuyingitem smithing_table cat_funcionales'
+  grindstone:
+    material: GRINDSTONE
+    slot: 11
+    lore:
+    - "&7Precio: &a€%pool_price_grindstone%"
+    - "&7Stock: &f%pool_stock_grindstone%"
+    left_click_commands:
+    - '[player] setbuyingitem grindstone cat_funcionales'
+  stonecutter:
+    material: STONECUTTER
+    slot: 12
+    lore:
+    - "&7Precio: &a€%pool_price_stonecutter%"
+    - "&7Stock: &f%pool_stock_stonecutter%"
+    left_click_commands:
+    - '[player] setbuyingitem stonecutter cat_funcionales'
+  cartography_table:
+    material: CARTOGRAPHY_TABLE
+    slot: 13
+    lore:
+    - "&7Precio: &a€%pool_price_cartography_table%"
+    - "&7Stock: &f%pool_stock_cartography_table%"
+    left_click_commands:
+    - '[player] setbuyingitem cartography_table cat_funcionales'
+  chest:
+    material: CHEST
+    slot: 14
+    lore:
+    - "&7Precio: &a€%pool_price_chest%"
+    - "&7Stock: &f%pool_stock_chest%"
+    left_click_commands:
+    - '[player] setbuyingitem chest cat_funcionales'
+  trapped_chest:
+    material: TRAPPED_CHEST
+    slot: 15
+    lore:
+    - "&7Precio: &a€%pool_price_trapped_chest%"
+    - "&7Stock: &f%pool_stock_trapped_chest%"
+    left_click_commands:
+    - '[player] setbuyingitem trapped_chest cat_funcionales'
+  ender_chest:
+    material: ENDER_CHEST
+    slot: 16
+    lore:
+    - "&7Precio: &a€%pool_price_ender_chest%"
+    - "&7Stock: &f%pool_stock_ender_chest%"
+    left_click_commands:
+    - '[player] setbuyingitem ender_chest cat_funcionales'
+  barrel:
+    material: BARREL
+    slot: 17
+    lore:
+    - "&7Precio: &a€%pool_price_barrel%"
+    - "&7Stock: &f%pool_stock_barrel%"
+    left_click_commands:
+    - '[player] setbuyingitem barrel cat_funcionales'
+  shulker_box:
+    material: SHULKER_BOX
+    slot: 18
+    lore:
+    - "&7Precio: &a€%pool_price_shulker_box%"
+    - "&7Stock: &f%pool_stock_shulker_box%"
+    left_click_commands:
+    - '[player] setbuyingitem shulker_box cat_funcionales'
+  chiseled_bookshelf:
+    material: CHISELED_BOOKSHELF
+    slot: 19
+    lore:
+    - "&7Precio: &a€%pool_price_chiseled_bookshelf%"
+    - "&7Stock: &f%pool_stock_chiseled_bookshelf%"
+    left_click_commands:
+    - '[player] setbuyingitem chiseled_bookshelf cat_funcionales'
+  torch:
+    material: TORCH
+    slot: 20
+    lore:
+    - "&7Precio: &a€%pool_price_torch%"
+    - "&7Stock: &f%pool_stock_torch%"
+    left_click_commands:
+    - '[player] setbuyingitem torch cat_funcionales'
+  soul_torch:
+    material: SOUL_TORCH
+    slot: 21
+    lore:
+    - "&7Precio: &a€%pool_price_soul_torch%"
+    - "&7Stock: &f%pool_stock_soul_torch%"
+    left_click_commands:
+    - '[player] setbuyingitem soul_torch cat_funcionales'
+  lantern:
+    material: LANTERN
+    slot: 22
+    lore:
+    - "&7Precio: &a€%pool_price_lantern%"
+    - "&7Stock: &f%pool_stock_lantern%"
+    left_click_commands:
+    - '[player] setbuyingitem lantern cat_funcionales'
+  soul_lantern:
+    material: SOUL_LANTERN
+    slot: 23
+    lore:
+    - "&7Precio: &a€%pool_price_soul_lantern%"
+    - "&7Stock: &f%pool_stock_soul_lantern%"
+    left_click_commands:
+    - '[player] setbuyingitem soul_lantern cat_funcionales'
+  campfire:
+    material: CAMPFIRE
+    slot: 24
+    lore:
+    - "&7Precio: &a€%pool_price_campfire%"
+    - "&7Stock: &f%pool_stock_campfire%"
+    left_click_commands:
+    - '[player] setbuyingitem campfire cat_funcionales'
+  soul_campfire:
+    material: SOUL_CAMPFIRE
+    slot: 25
+    lore:
+    - "&7Precio: &a€%pool_price_soul_campfire%"
+    - "&7Stock: &f%pool_stock_soul_campfire%"
+    left_click_commands:
+    - '[player] setbuyingitem soul_campfire cat_funcionales'
+  glowstone:
+    material: GLOWSTONE
+    slot: 26
+    lore:
+    - "&7Precio: &a€%pool_price_glowstone%"
+    - "&7Stock: &f%pool_stock_glowstone%"
+    left_click_commands:
+    - '[player] setbuyingitem glowstone cat_funcionales'
+  sea_lantern:
+    material: SEA_LANTERN
+    slot: 27
+    lore:
+    - "&7Precio: &a€%pool_price_sea_lantern%"
+    - "&7Stock: &f%pool_stock_sea_lantern%"
+    left_click_commands:
+    - '[player] setbuyingitem sea_lantern cat_funcionales'
+  end_rod:
+    material: END_ROD
+    slot: 28
+    lore:
+    - "&7Precio: &a€%pool_price_end_rod%"
+    - "&7Stock: &f%pool_stock_end_rod%"
+    left_click_commands:
+    - '[player] setbuyingitem end_rod cat_funcionales'
+  shroomlight:
+    material: SHROOMLIGHT
+    slot: 29
+    lore:
+    - "&7Precio: &a€%pool_price_shroomlight%"
+    - "&7Stock: &f%pool_stock_shroomlight%"
+    left_click_commands:
+    - '[player] setbuyingitem shroomlight cat_funcionales'
+  jack_o_lantern:
+    material: JACK_O_LANTERN
+    slot: 30
+    lore:
+    - "&7Precio: &a€%pool_price_jack_o_lantern%"
+    - "&7Stock: &f%pool_stock_jack_o_lantern%"
+    left_click_commands:
+    - '[player] setbuyingitem jack_o_lantern cat_funcionales'
+  bell:
+    material: BELL
+    slot: 31
+    lore:
+    - "&7Precio: &a€%pool_price_bell%"
+    - "&7Stock: &f%pool_stock_bell%"
+    left_click_commands:
+    - '[player] setbuyingitem bell cat_funcionales'
+  jukebox:
+    material: JUKEBOX
+    slot: 32
+    lore:
+    - "&7Precio: &a€%pool_price_jukebox%"
+    - "&7Stock: &f%pool_stock_jukebox%"
+    left_click_commands:
+    - '[player] setbuyingitem jukebox cat_funcionales'
+  note_block:
+    material: NOTE_BLOCK
+    slot: 33
+    lore:
+    - "&7Precio: &a€%pool_price_note_block%"
+    - "&7Stock: &f%pool_stock_note_block%"
+    left_click_commands:
+    - '[player] setbuyingitem note_block cat_funcionales'
+  painting:
+    material: PAINTING
+    slot: 34
+    lore:
+    - "&7Precio: &a€%pool_price_painting%"
+    - "&7Stock: &f%pool_stock_painting%"
+    left_click_commands:
+    - '[player] setbuyingitem painting cat_funcionales'
+  item_frame:
+    material: ITEM_FRAME
+    slot: 35
+    lore:
+    - "&7Precio: &a€%pool_price_item_frame%"
+    - "&7Stock: &f%pool_stock_item_frame%"
+    left_click_commands:
+    - '[player] setbuyingitem item_frame cat_funcionales'
+  glow_item_frame:
+    material: GLOW_ITEM_FRAME
+    slot: 36
+    lore:
+    - "&7Precio: &a€%pool_price_glow_item_frame%"
+    - "&7Stock: &f%pool_stock_glow_item_frame%"
+    left_click_commands:
+    - '[player] setbuyingitem glow_item_frame cat_funcionales'
+  beacon:
+    material: BEACON
+    slot: 37
+    lore:
+    - "&7Precio: &a€%pool_price_beacon%"
+    - "&7Stock: &f%pool_stock_beacon%"
+    left_click_commands:
+    - '[player] setbuyingitem beacon cat_funcionales'
+  conduit:
+    material: CONDUIT
+    slot: 38
+    lore:
+    - "&7Precio: &a€%pool_price_conduit%"
+    - "&7Stock: &f%pool_stock_conduit%"
+    left_click_commands:
+    - '[player] setbuyingitem conduit cat_funcionales'
+  respawn_anchor:
+    material: RESPAWN_ANCHOR
+    slot: 39
+    lore:
+    - "&7Precio: &a€%pool_price_respawn_anchor%"
+    - "&7Stock: &f%pool_stock_respawn_anchor%"
+    left_click_commands:
+    - '[player] setbuyingitem respawn_anchor cat_funcionales'
+  lodestone:
+    material: LODESTONE
+    slot: 40
+    lore:
+    - "&7Precio: &a€%pool_price_lodestone%"
+    - "&7Stock: &f%pool_stock_lodestone%"
+    left_click_commands:
+    - '[player] setbuyingitem lodestone cat_funcionales'
+  sponge:
+    material: SPONGE
+    slot: 41
+    lore:
+    - "&7Precio: &a€%pool_price_sponge%"
+    - "&7Stock: &f%pool_stock_sponge%"
+    left_click_commands:
+    - '[player] setbuyingitem sponge cat_funcionales'
+  wet_sponge:
+    material: WET_SPONGE
+    slot: 42
+    lore:
+    - "&7Precio: &a€%pool_price_wet_sponge%"
+    - "&7Stock: &f%pool_stock_wet_sponge%"
+    left_click_commands:
+    - '[player] setbuyingitem wet_sponge cat_funcionales'
+  cobweb:
+    material: COBWEB
+    slot: 43
+    lore:
+    - "&7Precio: &a€%pool_price_cobweb%"
+    - "&7Stock: &f%pool_stock_cobweb%"
+    left_click_commands:
+    - '[player] setbuyingitem cobweb cat_funcionales'
+  crafter:
+    material: CRAFTER
+    slot: 44
+    lore:
+    - "&7Precio: &a€%pool_price_crafter%"
+    - "&7Stock: &f%pool_stock_crafter%"
+    left_click_commands:
+    - '[player] setbuyingitem crafter cat_funcionales'
+  back:
+    material: PAPER
+    slot: 45
+    model_data: 500
+    display_name: '&7Volver a Categorías'
+    left_click_commands:
+    - '[player] categorias'
+  next_page:
+    material: PAPER
+    slots:
+    - 50
+    - 51
+    - 52
+    - 53
+    model_data: 500
+    display_name: '&aSiguiente'
+    left_click_commands:
+    - '[player] cat_funcionales_2'

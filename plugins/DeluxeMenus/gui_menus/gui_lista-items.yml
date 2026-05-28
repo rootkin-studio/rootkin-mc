@@ -1,0 +1,59 @@
+menu_title: '§f<shift:-8>ꐔ'
+open_command: lista_items
+size: 54
+items:
+  'stone':
+    material: STONE
+    slot: 0
+    display_name: '&fPiedra'
+    lore:
+      - ''
+      - '&7Precio: &f%pool_price_stone% chatarra'
+      - '&7Stock: &f%pool_stock_stone%'
+      - ''
+      - '&eHaz clic para comprar'
+    left_click_commands:
+      - '[player] setbuyingitem stone'
+  'cobblestone':
+    material: COBBLESTONE
+    slot: 1
+    display_name: '&fAdoquín'
+    lore:
+      - ''
+      - '&7Precio: &f%pool_price_cobblestone% chatarra'
+      - '&7Stock: &f%pool_stock_cobblestone%'
+      - ''
+      - '&eHaz clic para comprar'
+    left_click_commands:
+      - '[player] setbuyingitem cobblestone'
+  'oak_planks':
+    material: OAK_PLANKS
+    slot: 2
+    display_name: '&fTablones de Roble'
+    lore:
+      - ''
+      - '&7Precio: &f%pool_price_oak_planks% chatarra'
+      - '&7Stock: &f%pool_stock_oak_planks%'
+      - ''
+      - '&eHaz clic para comprar'
+    left_click_commands:
+      - '[player] setbuyingitem oak_planks'
+  'bricks':
+    material: BRICKS
+    slot: 3
+    display_name: '&fLadrillos'
+    lore:
+      - ''
+      - '&7Precio: &f%pool_price_bricks% chatarra'
+      - '&7Stock: &f%pool_stock_bricks%'
+      - ''
+      - '&eHaz clic para comprar'
+    left_click_commands:
+      - '[player] setbuyingitem bricks'
+  'back':
+    material: PAPER
+    slots: [45]
+    model_data: 500
+    display_name: ' '
+    left_click_commands:
+      - '[opener] categorias'

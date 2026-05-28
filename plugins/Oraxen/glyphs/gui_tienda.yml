@@ -2,3 +2,4 @@ gui_tienda:
   texture: required/ui/gui_tienda
   ascent: 13
   height: 256
+  char: ꐑ

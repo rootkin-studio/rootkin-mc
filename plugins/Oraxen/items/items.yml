@@ -1,0 +1,39 @@
+invisible_item:
+    itemname: <white>
+    material: PAPER
+    Pack:
+        generate_model: true
+        parent_model: item/generated
+        textures:
+            - required/particle
+        custom_model_data: 500
+
+reloj_rojo:
+    itemname: <red>Tiempo de Vida (Sin Chatarra)
+    material: PAPER
+    pack:
+        generate_model: true
+        parent_model: item/generated
+        textures:
+            - required/reloj-rojo
+        custom_model_data: 502
+
+reloj_verde:
+    itemname: <green>Tiempo de Vida (Con Chatarra)
+    material: PAPER
+    pack:
+        generate_model: true
+        parent_model: item/generated
+        textures:
+            - required/reloj-verde
+        custom_model_data: 503
+
+tarjeta_debito:
+    itemname: "&a&lTarjeta de Debito"
+    material: PAPER
+    pack:
+        generate_model: true
+        parent_model: item/generated
+        textures:
+            - required/tarjeta64
+        custom_model_data: 1001

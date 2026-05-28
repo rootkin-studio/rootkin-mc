@@ -148,7 +148,7 @@ Pack:
       # Generates assets/minecraft/items/<material>.json using minecraft:range_dispatch.
       # Also sets integer CustomModelData on items for plugin compatibility.
       # Cannot be combined with model_data_ids (they write to the same file).
-      model_data_float: false
+      model_data_float: true
       
       # GENERATE_PREDICATES (default: false)
       # Generates legacy predicate overrides (assets/minecraft/models/item/*.json).

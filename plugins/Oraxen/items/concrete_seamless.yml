@@ -1,0 +1,13 @@
+concrete_seamless:
+    itemname: <white>Concrete Seamless
+    material: PAPER
+    pack:
+        model: furniture/concrete_seamless
+        custom_model_data: 606
+    Mechanics:
+        furniture:
+            type: DISPLAY_ENTITY
+            properties:
+                display_transform: NONE
+            barriers:
+                - origin

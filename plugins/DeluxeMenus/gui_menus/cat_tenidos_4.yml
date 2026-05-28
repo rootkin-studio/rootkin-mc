@@ -1,0 +1,222 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_tenidos_4
+size: 54
+items:
+    yellow_shulker_box:
+        material: YELLOW_SHULKER_BOX
+        slot: 0
+        lore:
+            - "&7Precio: &a€%pool_price_yellow_shulker_box%"
+            - "&7Stock: &f%pool_stock_yellow_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem yellow_shulker_box cat_tenidos_4"
+    lime_shulker_box:
+        material: LIME_SHULKER_BOX
+        slot: 1
+        lore:
+            - "&7Precio: &a€%pool_price_lime_shulker_box%"
+            - "&7Stock: &f%pool_stock_lime_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem lime_shulker_box cat_tenidos_4"
+    green_shulker_box:
+        material: GREEN_SHULKER_BOX
+        slot: 2
+        lore:
+            - "&7Precio: &a€%pool_price_green_shulker_box%"
+            - "&7Stock: &f%pool_stock_green_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem green_shulker_box cat_tenidos_4"
+    cyan_shulker_box:
+        material: CYAN_SHULKER_BOX
+        slot: 3
+        lore:
+            - "&7Precio: &a€%pool_price_cyan_shulker_box%"
+            - "&7Stock: &f%pool_stock_cyan_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem cyan_shulker_box cat_tenidos_4"
+    light_blue_shulker_box:
+        material: LIGHT_BLUE_SHULKER_BOX
+        slot: 4
+        lore:
+            - "&7Precio: &a€%pool_price_light_blue_shulker_box%"
+            - "&7Stock: &f%pool_stock_light_blue_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem light_blue_shulker_box cat_tenidos_4"
+    blue_shulker_box:
+        material: BLUE_SHULKER_BOX
+        slot: 5
+        lore:
+            - "&7Precio: &a€%pool_price_blue_shulker_box%"
+            - "&7Stock: &f%pool_stock_blue_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem blue_shulker_box cat_tenidos_4"
+    purple_shulker_box:
+        material: PURPLE_SHULKER_BOX
+        slot: 6
+        lore:
+            - "&7Precio: &a€%pool_price_purple_shulker_box%"
+            - "&7Stock: &f%pool_stock_purple_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem purple_shulker_box cat_tenidos_4"
+    magenta_shulker_box:
+        material: MAGENTA_SHULKER_BOX
+        slot: 7
+        lore:
+            - "&7Precio: &a€%pool_price_magenta_shulker_box%"
+            - "&7Stock: &f%pool_stock_magenta_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem magenta_shulker_box cat_tenidos_4"
+    pink_shulker_box:
+        material: PINK_SHULKER_BOX
+        slot: 8
+        lore:
+            - "&7Precio: &a€%pool_price_pink_shulker_box%"
+            - "&7Stock: &f%pool_stock_pink_shulker_box%"
+        left_click_commands:
+            - "[player] setbuyingitem pink_shulker_box cat_tenidos_4"
+    white_candle:
+        material: WHITE_CANDLE
+        slot: 9
+        lore:
+            - "&7Precio: &a€%pool_price_white_candle%"
+            - "&7Stock: &f%pool_stock_white_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem white_candle cat_tenidos_4"
+    light_gray_candle:
+        material: LIGHT_GRAY_CANDLE
+        slot: 10
+        lore:
+            - "&7Precio: &a€%pool_price_light_gray_candle%"
+            - "&7Stock: &f%pool_stock_light_gray_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem light_gray_candle cat_tenidos_4"
+    gray_candle:
+        material: GRAY_CANDLE
+        slot: 11
+        lore:
+            - "&7Precio: &a€%pool_price_gray_candle%"
+            - "&7Stock: &f%pool_stock_gray_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem gray_candle cat_tenidos_4"
+    black_candle:
+        material: BLACK_CANDLE
+        slot: 12
+        lore:
+            - "&7Precio: &a€%pool_price_black_candle%"
+            - "&7Stock: &f%pool_stock_black_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem black_candle cat_tenidos_4"
+    brown_candle:
+        material: BROWN_CANDLE
+        slot: 13
+        lore:
+            - "&7Precio: &a€%pool_price_brown_candle%"
+            - "&7Stock: &f%pool_stock_brown_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem brown_candle cat_tenidos_4"
+    red_candle:
+        material: RED_CANDLE
+        slot: 14
+        lore:
+            - "&7Precio: &a€%pool_price_red_candle%"
+            - "&7Stock: &f%pool_stock_red_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem red_candle cat_tenidos_4"
+    orange_candle:
+        material: ORANGE_CANDLE
+        slot: 15
+        lore:
+            - "&7Precio: &a€%pool_price_orange_candle%"
+            - "&7Stock: &f%pool_stock_orange_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem orange_candle cat_tenidos_4"
+    yellow_candle:
+        material: YELLOW_CANDLE
+        slot: 16
+        lore:
+            - "&7Precio: &a€%pool_price_yellow_candle%"
+            - "&7Stock: &f%pool_stock_yellow_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem yellow_candle cat_tenidos_4"
+    lime_candle:
+        material: LIME_CANDLE
+        slot: 17
+        lore:
+            - "&7Precio: &a€%pool_price_lime_candle%"
+            - "&7Stock: &f%pool_stock_lime_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem lime_candle cat_tenidos_4"
+    green_candle:
+        material: GREEN_CANDLE
+        slot: 18
+        lore:
+            - "&7Precio: &a€%pool_price_green_candle%"
+            - "&7Stock: &f%pool_stock_green_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem green_candle cat_tenidos_4"
+    cyan_candle:
+        material: CYAN_CANDLE
+        slot: 19
+        lore:
+            - "&7Precio: &a€%pool_price_cyan_candle%"
+            - "&7Stock: &f%pool_stock_cyan_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem cyan_candle cat_tenidos_4"
+    light_blue_candle:
+        material: LIGHT_BLUE_CANDLE
+        slot: 20
+        lore:
+            - "&7Precio: &a€%pool_price_light_blue_candle%"
+            - "&7Stock: &f%pool_stock_light_blue_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem light_blue_candle cat_tenidos_4"
+    blue_candle:
+        material: BLUE_CANDLE
+        slot: 21
+        lore:
+            - "&7Precio: &a€%pool_price_blue_candle%"
+            - "&7Stock: &f%pool_stock_blue_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem blue_candle cat_tenidos_4"
+    purple_candle:
+        material: PURPLE_CANDLE
+        slot: 22
+        lore:
+            - "&7Precio: &a€%pool_price_purple_candle%"
+            - "&7Stock: &f%pool_stock_purple_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem purple_candle cat_tenidos_4"
+    magenta_candle:
+        material: MAGENTA_CANDLE
+        slot: 23
+        lore:
+            - "&7Precio: &a€%pool_price_magenta_candle%"
+            - "&7Stock: &f%pool_stock_magenta_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem magenta_candle cat_tenidos_4"
+    pink_candle:
+        material: PINK_CANDLE
+        slot: 24
+        lore:
+            - "&7Precio: &a€%pool_price_pink_candle%"
+            - "&7Stock: &f%pool_stock_pink_candle%"
+        left_click_commands:
+            - "[player] setbuyingitem pink_candle cat_tenidos_4"
+    back:
+        material: PAPER
+        slot: 45
+        model_data: 500
+        display_name: "&7Volver a Categorías"
+        left_click_commands:
+            - "[player] categorias"
+    prev_page:
+        material: PAPER
+        slots:
+            - 46
+            - 47
+            - 48
+            - 49
+        model_data: 500
+        display_name: "&cAnterior"
+        left_click_commands:
+            - "[player] cat_tenidos_3"

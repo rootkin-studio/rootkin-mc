@@ -1,0 +1,355 @@
+menu_title: §f<shift:-8>ꐔ
+open_command: cat_combate
+size: 54
+items:
+    wooden_sword:
+        material: WOODEN_SWORD
+        slot: 0
+        lore:
+            - "&7Precio: &a€%pool_price_wooden_sword%"
+            - "&7Stock: &f%pool_stock_wooden_sword%"
+        left_click_commands:
+            - "[player] setbuyingitem wooden_sword cat_combate"
+    stone_sword:
+        material: STONE_SWORD
+        slot: 1
+        lore:
+            - "&7Precio: &a€%pool_price_stone_sword%"
+            - "&7Stock: &f%pool_stock_stone_sword%"
+        left_click_commands:
+            - "[player] setbuyingitem stone_sword cat_combate"
+    iron_sword:
+        material: IRON_SWORD
+        slot: 2
+        lore:
+            - "&7Precio: &a€%pool_price_iron_sword%"
+            - "&7Stock: &f%pool_stock_iron_sword%"
+        left_click_commands:
+            - "[player] setbuyingitem iron_sword cat_combate"
+    golden_sword:
+        material: GOLDEN_SWORD
+        slot: 3
+        lore:
+            - "&7Precio: &a€%pool_price_golden_sword%"
+            - "&7Stock: &f%pool_stock_golden_sword%"
+        left_click_commands:
+            - "[player] setbuyingitem golden_sword cat_combate"
+    diamond_sword:
+        material: DIAMOND_SWORD
+        slot: 4
+        lore:
+            - "&7Precio: &a€%pool_price_diamond_sword%"
+            - "&7Stock: &f%pool_stock_diamond_sword%"
+        left_click_commands:
+            - "[player] setbuyingitem diamond_sword cat_combate"
+    netherite_sword:
+        material: NETHERITE_SWORD
+        slot: 5
+        lore:
+            - "&7Precio: &a€%pool_price_netherite_sword%"
+            - "&7Stock: &f%pool_stock_netherite_sword%"
+        left_click_commands:
+            - "[player] setbuyingitem netherite_sword cat_combate"
+    wooden_axe:
+        material: WOODEN_AXE
+        slot: 6
+        lore:
+            - "&7Precio: &a€%pool_price_wooden_axe%"
+            - "&7Stock: &f%pool_stock_wooden_axe%"
+        left_click_commands:
+            - "[player] setbuyingitem wooden_axe cat_combate"
+    stone_axe:
+        material: STONE_AXE
+        slot: 7
+        lore:
+            - "&7Precio: &a€%pool_price_stone_axe%"
+            - "&7Stock: &f%pool_stock_stone_axe%"
+        left_click_commands:
+            - "[player] setbuyingitem stone_axe cat_combate"
+    iron_axe:
+        material: IRON_AXE
+        slot: 8
+        lore:
+            - "&7Precio: &a€%pool_price_iron_axe%"
+            - "&7Stock: &f%pool_stock_iron_axe%"
+        left_click_commands:
+            - "[player] setbuyingitem iron_axe cat_combate"
+    golden_axe:
+        material: GOLDEN_AXE
+        slot: 9
+        lore:
+            - "&7Precio: &a€%pool_price_golden_axe%"
+            - "&7Stock: &f%pool_stock_golden_axe%"
+        left_click_commands:
+            - "[player] setbuyingitem golden_axe cat_combate"
+    diamond_axe:
+        material: DIAMOND_AXE
+        slot: 10
+        lore:
+            - "&7Precio: &a€%pool_price_diamond_axe%"
+            - "&7Stock: &f%pool_stock_diamond_axe%"
+        left_click_commands:
+            - "[player] setbuyingitem diamond_axe cat_combate"
+    netherite_axe:
+        material: NETHERITE_AXE
+        slot: 11
+        lore:
+            - "&7Precio: &a€%pool_price_netherite_axe%"
+            - "&7Stock: &f%pool_stock_netherite_axe%"
+        left_click_commands:
+            - "[player] setbuyingitem netherite_axe cat_combate"
+    trident:
+        material: TRIDENT
+        slot: 12
+        lore:
+            - "&7Precio: &a€%pool_price_trident%"
+            - "&7Stock: &f%pool_stock_trident%"
+        left_click_commands:
+            - "[player] setbuyingitem trident cat_combate"
+    bow:
+        material: BOW
+        slot: 13
+        lore:
+            - "&7Precio: &a€%pool_price_bow%"
+            - "&7Stock: &f%pool_stock_bow%"
+        left_click_commands:
+            - "[player] setbuyingitem bow cat_combate"
+    crossbow:
+        material: CROSSBOW
+        slot: 14
+        lore:
+            - "&7Precio: &a€%pool_price_crossbow%"
+            - "&7Stock: &f%pool_stock_crossbow%"
+        left_click_commands:
+            - "[player] setbuyingitem crossbow cat_combate"
+    arrow:
+        material: ARROW
+        slot: 15
+        lore:
+            - "&7Precio: &a€%pool_price_arrow%"
+            - "&7Stock: &f%pool_stock_arrow%"
+        left_click_commands:
+            - "[player] setbuyingitem arrow cat_combate"
+    tipped_arrow:
+        material: TIPPED_ARROW
+        slot: 16
+        lore:
+            - "&7Precio: &a€%pool_price_tipped_arrow%"
+            - "&7Stock: &f%pool_stock_tipped_arrow%"
+        left_click_commands:
+            - "[player] setbuyingitem tipped_arrow cat_combate"
+    leather_helmet:
+        material: LEATHER_HELMET
+        slot: 17
+        lore:
+            - "&7Precio: &a€%pool_price_leather_helmet%"
+            - "&7Stock: &f%pool_stock_leather_helmet%"
+        left_click_commands:
+            - "[player] setbuyingitem leather_helmet cat_combate"
+    leather_chestplate:
+        material: LEATHER_CHESTPLATE
+        slot: 18
+        lore:
+            - "&7Precio: &a€%pool_price_leather_chestplate%"
+            - "&7Stock: &f%pool_stock_leather_chestplate%"
+        left_click_commands:
+            - "[player] setbuyingitem leather_chestplate cat_combate"
+    leather_leggings:
+        material: LEATHER_LEGGINGS
+        slot: 19
+        lore:
+            - "&7Precio: &a€%pool_price_leather_leggings%"
+            - "&7Stock: &f%pool_stock_leather_leggings%"
+        left_click_commands:
+            - "[player] setbuyingitem leather_leggings cat_combate"
+    leather_boots:
+        material: LEATHER_BOOTS
+        slot: 20
+        lore:
+            - "&7Precio: &a€%pool_price_leather_boots%"
+            - "&7Stock: &f%pool_stock_leather_boots%"
+        left_click_commands:
+            - "[player] setbuyingitem leather_boots cat_combate"
+    chainmail_helmet:
+        material: CHAINMAIL_HELMET
+        slot: 21
+        lore:
+            - "&7Precio: &a€%pool_price_chainmail_helmet%"
+            - "&7Stock: &f%pool_stock_chainmail_helmet%"
+        left_click_commands:
+            - "[player] setbuyingitem chainmail_helmet cat_combate"
+    chainmail_chestplate:
+        material: CHAINMAIL_CHESTPLATE
+        slot: 22
+        lore:
+            - "&7Precio: &a€%pool_price_chainmail_chestplate%"
+            - "&7Stock: &f%pool_stock_chainmail_chestplate%"
+        left_click_commands:
+            - "[player] setbuyingitem chainmail_chestplate cat_combate"
+    chainmail_leggings:
+        material: CHAINMAIL_LEGGINGS
+        slot: 23
+        lore:
+            - "&7Precio: &a€%pool_price_chainmail_leggings%"
+            - "&7Stock: &f%pool_stock_chainmail_leggings%"
+        left_click_commands:
+            - "[player] setbuyingitem chainmail_leggings cat_combate"
+    chainmail_boots:
+        material: CHAINMAIL_BOOTS
+        slot: 24
+        lore:
+            - "&7Precio: &a€%pool_price_chainmail_boots%"
+            - "&7Stock: &f%pool_stock_chainmail_boots%"
+        left_click_commands:
+            - "[player] setbuyingitem chainmail_boots cat_combate"
+    iron_helmet:
+        material: IRON_HELMET
+        slot: 25
+        lore:
+            - "&7Precio: &a€%pool_price_iron_helmet%"
+            - "&7Stock: &f%pool_stock_iron_helmet%"
+        left_click_commands:
+            - "[player] setbuyingitem iron_helmet cat_combate"
+    iron_chestplate:
+        material: IRON_CHESTPLATE
+        slot: 26
+        lore:
+            - "&7Precio: &a€%pool_price_iron_chestplate%"
+            - "&7Stock: &f%pool_stock_iron_chestplate%"
+        left_click_commands:
+            - "[player] setbuyingitem iron_chestplate cat_combate"
+    iron_leggings:
+        material: IRON_LEGGINGS
+        slot: 27
+        lore:
+            - "&7Precio: &a€%pool_price_iron_leggings%"
+            - "&7Stock: &f%pool_stock_iron_leggings%"
+        left_click_commands:
+            - "[player] setbuyingitem iron_leggings cat_combate"
+    iron_boots:
+        material: IRON_BOOTS
+        slot: 28
+        lore:
+            - "&7Precio: &a€%pool_price_iron_boots%"
+            - "&7Stock: &f%pool_stock_iron_boots%"
+        left_click_commands:
+            - "[player] setbuyingitem iron_boots cat_combate"
+    gold_helmet:
+        material: GOLDEN_HELMET
+        slot: 29
+        lore:
+            - "&7Precio: &a€%pool_price_gold_helmet%"
+            - "&7Stock: &f%pool_stock_gold_helmet%"
+        left_click_commands:
+            - "[player] setbuyingitem gold_helmet cat_combate"
+    gold_chestplate:
+        material: GOLDEN_CHESTPLATE
+        slot: 30
+        lore:
+            - "&7Precio: &a€%pool_price_gold_chestplate%"
+            - "&7Stock: &f%pool_stock_gold_chestplate%"
+        left_click_commands:
+            - "[player] setbuyingitem gold_chestplate cat_combate"
+    gold_leggings:
+        material: GOLDEN_LEGGINGS
+        slot: 31
+        lore:
+            - "&7Precio: &a€%pool_price_gold_leggings%"
+            - "&7Stock: &f%pool_stock_gold_leggings%"
+        left_click_commands:
+            - "[player] setbuyingitem gold_leggings cat_combate"
+    gold_boots:
+        material: GOLDEN_BOOTS
+        slot: 32
+        lore:
+            - "&7Precio: &a€%pool_price_gold_boots%"
+            - "&7Stock: &f%pool_stock_gold_boots%"
+        left_click_commands:
+            - "[player] setbuyingitem gold_boots cat_combate"
+    diamond_helmet:
+        material: DIAMOND_HELMET
+        slot: 33
+        lore:
+            - "&7Precio: &a€%pool_price_diamond_helmet%"
+            - "&7Stock: &f%pool_stock_diamond_helmet%"
+        left_click_commands:
+            - "[player] setbuyingitem diamond_helmet cat_combate"
+    diamond_chestplate:
+        material: DIAMOND_CHESTPLATE
+        slot: 34
+        lore:
+            - "&7Precio: &a€%pool_price_diamond_chestplate%"
+            - "&7Stock: &f%pool_stock_diamond_chestplate%"
+        left_click_commands:
+            - "[player] setbuyingitem diamond_chestplate cat_combate"
+    diamond_leggings:
+        material: DIAMOND_LEGGINGS
+        slot: 35
+        lore:
+            - "&7Precio: &a€%pool_price_diamond_leggings%"
+            - "&7Stock: &f%pool_stock_diamond_leggings%"
+        left_click_commands:
+            - "[player] setbuyingitem diamond_leggings cat_combate"
+    diamond_boots:
+        material: DIAMOND_BOOTS
+        slot: 36
+        lore:
+            - "&7Precio: &a€%pool_price_diamond_boots%"
+            - "&7Stock: &f%pool_stock_diamond_boots%"
+        left_click_commands:
+            - "[player] setbuyingitem diamond_boots cat_combate"
+    netherite_helmet:
+        material: NETHERITE_HELMET
+        slot: 37
+        lore:
+            - "&7Precio: &a€%pool_price_netherite_helmet%"
+            - "&7Stock: &f%pool_stock_netherite_helmet%"
+        left_click_commands:
+            - "[player] setbuyingitem netherite_helmet cat_combate"
+    netherite_chestplate:
+        material: NETHERITE_CHESTPLATE
+        slot: 38
+        lore:
+            - "&7Precio: &a€%pool_price_netherite_chestplate%"
+            - "&7Stock: &f%pool_stock_netherite_chestplate%"
+        left_click_commands:
+            - "[player] setbuyingitem netherite_chestplate cat_combate"
+    netherite_leggings:
+        material: NETHERITE_LEGGINGS
+        slot: 39
+        lore:
+            - "&7Precio: &a€%pool_price_netherite_leggings%"
+            - "&7Stock: &f%pool_stock_netherite_leggings%"
+        left_click_commands:
+            - "[player] setbuyingitem netherite_leggings cat_combate"
+    netherite_boots:
+        material: NETHERITE_BOOTS
+        slot: 40
+        lore:
+            - "&7Precio: &a€%pool_price_netherite_boots%"
+            - "&7Stock: &f%pool_stock_netherite_boots%"
+        left_click_commands:
+            - "[player] setbuyingitem netherite_boots cat_combate"
+    shield:
+        material: SHIELD
+        slot: 41
+        lore:
+            - "&7Precio: &a€%pool_price_shield%"
+            - "&7Stock: &f%pool_stock_shield%"
+        left_click_commands:
+            - "[player] setbuyingitem shield cat_combate"
+    totem_of_undying:
+        material: TOTEM_OF_UNDYING
+        slot: 42
+        lore:
+            - "&7Precio: &a€%pool_price_totem_of_undying%"
+            - "&7Stock: &f%pool_stock_totem_of_undying%"
+        left_click_commands:
+            - "[player] setbuyingitem totem_of_undying cat_combate"
+    back:
+        material: PAPER
+        slot: 45
+        model_data: 500
+        display_name: "&7Volver a Categorías"
+        left_click_commands:
+            - "[player] categorias"

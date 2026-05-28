@@ -1,0 +1,98 @@
+# ========================================================
+# AMM LORE - ITEM EDITOR STYLE (DROPS & STACK-FRIENDLY)
+# ========================================================
+
+options:
+    lore_prefix: &aValor: €
+    fee_percentage: 0.05
+
+# Función para obtener el precio por UNIDAD
+function getUnitMarketValue(i: item) :: number:
+    set {_type} to type of {_i}
+    if {amm::stock::%{_type}%} is not set:
+        return -1
+    set {_stock} to {amm::stock::%{_type}%}
+    set {_val} to ({amm::k::%{_type}%} / {_stock})
+    set {_final} to floor({_val} * (1 - {@fee_percentage}))
+    # Asegurar que el precio mínimo sea 1 si tiene valor, para evitar "0"
+    if {_final} <= 0:
+        if {_val} > 0:
+            return 1
+    return {_final}
+
+# Función para obtener el precio del STACK completo (Solo para /tasar)
+function getStackMarketValue(i: item) :: number:
+    set {_type} to type of {_i}
+    set {_amount} to item amount of {_i}
+    if {amm::stock::%{_type}%} is not set:
+        return -1
+    set {_stock} to {amm::stock::%{_type}%}
+    set {_total} to 0
+    loop {_amount} times:
+        add ({amm::k::%{_type}%} / {_stock}) to {_total}
+        add 1 to {_stock}
+    return floor({_total} * (1 - {@fee_percentage}))
+
+# Comando /tasar (Muestra el valor de todo el stack)
+command /tasar:
+    description: Añade el precio del STACK actual al item.
+    trigger:
+        set {_i} to player's tool
+        if {_i} is air:
+            send "&cDebes tener un item en la mano."
+            stop
+        set {_val} to getStackMarketValue({_i})
+        if {_val} < 0:
+            send "&cEste item no tiene valor de mercado."
+            stop
+        set {_line} to "{@lore_prefix}%{_val}%"
+        set {_lore::*} to lore of {_i}
+        loop {_lore::*}:
+            if uncolored loop-value does not contain "Valor:":
+                add loop-value to {_temp_lore::*}
+        add {_line} to {_temp_lore::*}
+        set lore of player's tool to {_temp_lore::*}
+        send "&a[AMM] Item tasado (Total): &f%{_line}%"
+
+# --- APLICACIÓN INSTANTÁNEA ---
+
+on spawn of dropped item:
+    applyLoreToEntity(event-entity)
+
+on drop:
+    applyLoreToEntity(event-entity)
+
+on death:
+    loop dropped items:
+        applyLoreToEntity(loop-dropped item)
+
+function applyLoreToEntity(e: entity):
+    set {_i} to item of {_e}
+    set {_val} to getUnitMarketValue({_i})
+
+    if {_val} >= 0:
+        set {_line} to "{@lore_prefix}%{_val}%"
+        set {_lore::*} to lore of {_i}
+
+        set {_found} to false
+        loop {_lore::*}:
+            if uncolored loop-value contains "Valor:":
+                set {_found} to true
+                exit loop
+
+        if {_found} is false:
+            add {_line} to {_lore::*}
+            set item of {_e} to {_i}
+
+on pick up:
+    set {_i} to event-item
+    set {_val} to getUnitMarketValue({_i})
+    if {_val} >= 0:
+        set {_line} to "{@lore_prefix}%{_val}%"
+        set {_lore::*} to lore of {_i}
+        set {_found} to false
+        loop {_lore::*}:
+            if uncolored loop-value contains "Valor:":
+                set {_found} to true
+        if {_found} is false:
+            add {_line} to lore of event-item

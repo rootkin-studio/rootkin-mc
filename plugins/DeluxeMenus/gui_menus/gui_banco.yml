@@ -1,0 +1,106 @@
+menu_title: "§f<shift:-8>ꐗ"
+# open_command removed to use Skript
+update_interval: 1
+size: 54
+items:
+    "vale_item":
+        material: PAPER
+        model_data: 500
+        slot: 13
+        display_name: "&b&lDepositar Vale"
+        lore:
+            - "&7Haz clic aquí con un vale"
+            - "&7en tu mano para depositarlo."
+            - ""
+            - "&7Valor almacenado: &f%pool_bank_vale_lore% chatarras"
+    "withdraw_1":
+        material: PAPER
+        model_data: 500
+        slot: 20
+        display_name: "&cRetirar 1"
+        left_click_commands:
+            - "[console] bankaction %player_name% withdraw 1"
+            - "[refresh]"
+    "withdraw_64":
+        material: PAPER
+        model_data: 500
+        slot: 21
+        display_name: "&cRetirar 64"
+        left_click_commands:
+            - "[console] bankaction %player_name% withdraw 64"
+            - "[refresh]"
+    "withdraw_all":
+        material: PAPER
+        model_data: 500
+        slot: 22
+        display_name: "&cRetirar TODO"
+        left_click_commands:
+            - "[console] bankaction %player_name% withdraw all"
+            - "[refresh]"
+    "reset":
+        material: PAPER
+        model_data: 500
+        slot: 23
+        display_name: "&bRefrescar"
+        left_click_commands:
+            - "[refresh]"
+    "deposit_1":
+        material: PAPER
+        model_data: 500
+        slot: 24
+        display_name: "&aDepositar 1"
+        left_click_commands:
+            - "[console] bankaction %player_name% deposit 1"
+            - "[refresh]"
+    "deposit_64":
+        material: PAPER
+        model_data: 500
+        slot: 25
+        display_name: "&aDepositar 64"
+        left_click_commands:
+            - "[console] bankaction %player_name% deposit 64"
+            - "[refresh]"
+    "deposit_all":
+        material: PAPER
+        model_data: 500
+        slot: 26
+        display_name: "&aDepositar TODO"
+        left_click_commands:
+            - "[console] bankaction %player_name% deposit all"
+            - "[refresh]"
+    "withdraw_button":
+        material: PAPER
+        model_data: 500
+        slots: [28, 29, 30]
+        display_name: "&c&lRETIRAR TODO"
+        left_click_commands:
+            - "[console] bankaction %player_name% withdraw all"
+            - "[refresh]"
+    "info":
+        material: PAPER
+        model_data: 500
+        slot: 31
+        display_name: "&b&lINFORMACIÓN"
+        lore:
+            - "&7Usa este banco para guardar"
+            - "&7tu chatarra de forma segura."
+            - ""
+            - "&7Saldo actual: &f%pool_bank_vale_lore% chatarras"
+    "deposit_button":
+        material: PAPER
+        model_data: 500
+        slots: [32, 33, 34]
+        display_name: "&a&lDEPOSITAR TODO"
+        left_click_commands:
+            - "[console] bankaction %player_name% deposit all"
+            - "[refresh]"
+    "filler":
+        material: PAPER
+        model_data: 500
+        slots:
+            - 0-12
+            - 14-19
+            - 27
+            - 35
+            - 36-53
+        display_name: " "
